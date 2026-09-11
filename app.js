@@ -58,10 +58,15 @@ function renderJobs() {
         }
 
         if (activeLocation !== 'All') {
-            if (activeLocation === 'Remote' && !job.location.toLowerCase().includes('remote')) {
-                return false;
-            } else if (activeLocation !== 'Remote' && !job.location.toLowerCase().includes(activeLocation.toLowerCase())) {
-                return false;
+            const jobLoc = (job.location || '').toLowerCase();
+            const filterLoc = activeLocation.toLowerCase();
+            
+            if (filterLoc === 'vienna') {
+                if (!jobLoc.includes('vienna') && !jobLoc.includes('wien')) return false;
+            } else if (filterLoc === 'remote') {
+                if (!jobLoc.includes('remote')) return false;
+            } else {
+                if (!jobLoc.includes(filterLoc)) return false;
             }
         }
 
@@ -81,7 +86,7 @@ function renderJobs() {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-secondary);">
                 <h3>No matching jobs found</h3>
-                <p>Try broadening your search criteria or resetting filters.</p>
+                <p>Try broadening your search criteria or resetting city filters.</p>
             </div>
         `;
         return;
