@@ -30,33 +30,57 @@ def extract_tags(text):
             matched.append(tag)
     return matched[:6]
 
-def is_strictly_english(title, description=""):
-    text = (title + " " + description).lower()
+def is_strictly_english_tech_job(title, description=""):
     title_lower = title.lower()
+    text_lower = (title + " " + description).lower()
     
-    # 1. German Title Terms (Ignore German role titles)
-    german_title_terms = [
+    # 1. Must be IT / Software / Data / AI / Cloud / Engineering / Product
+    tech_keywords = [
+        'developer', 'engineer', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
+        'fullstack', 'full-stack', 'full stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
+        'tech', 'it', 'python', 'java', 'react', 'node', 'sql', 'sysadmin', 'scrum', 'cybersecurity'
+    ]
+    if not any(k in title_lower for k in tech_keywords):
+        return False
+        
+    # 2. Reject non-tech corporate admin roles
+    non_tech_terms = [
+        'writer', 'copywriter', 'counsel', 'sales contractor', 'office assistant', 'recruiter', 'hr',
+        'accountant', 'legal', 'finance manager', 'fp&a', 'customer success manager', 'event', 'digital marketing'
+    ]
+    if any(t in title_lower for t in non_tech_terms):
+        return False
+
+    # 3. Reject German job title terms
+    german_title_words = [
         'entwickler', 'entwicklerin', 'mitarbeiter', 'mitarbeiterin',
         'berater', 'beraterin', 'projektleiter', 'projektleiterin',
         'techniker', 'technikerin', 'spezialist', 'spezialistin',
         'fachkraft', 'führungskraft', 'leitung', 'fokus', 'schwerpunkt',
-        'bereich', 'verwaltung', 'öffentliche', 'bau', 'vertrieb', 'buchhaltung'
+        'bereich', 'verwaltung', 'öffentliche', 'bau', 'vertrieb', 'buchhaltung',
+        'buchhalter', 'buchhalterin', 'assistent', 'assistentin', 'planer', 'planerin',
+        'objektleiter', 'objektleiterin', 'einkäufer', 'einkäuferin', 'verkäufer', 'verkäuferin',
+        'versicherungsexperte', 'fachplanung', 'architektur', 'betreuung', 'sachbearbeiter',
+        'teamleiter', 'teamleiterin', 'praktikum', 'schlosser', 'geodatenmanager', 'abteilung',
+        'veranstaltungen', 'kongresse', 'dienstort', 'vollzeit', 'teilzeit'
     ]
-    for term in german_title_terms:
-        if re.search(r'\b' + re.escape(term) + r'\b', title_lower):
+    
+    title_clean = re.sub(r'[:\*\/\(\)\-\_\.]', ' ', title_lower)
+    for word in german_title_words:
+        if re.search(r'\b' + re.escape(word) + r'\b', title_clean):
             return False
-            
-    # 2. German Vocabulary Words in body/description
-    german_phrases = [
+
+    # 4. Strict German Body / Description Detection
+    german_body_vocab = [
         ' und ', ' mit ', ' für ', ' der ', ' die ', ' das ', ' dem ', ' den ', ' ein ', ' eine ',
         'wir suchen', 'deine aufgaben', 'ihre aufgaben', 'dein profil', 'ihr profil',
         'erfahrung', 'kenntnisse', 'abgeschlossenes', 'dienstort', 'gehalt',
         'vollzeit', 'teilzeit', 'standort', 'bewerbung', 'anforderung', 'bieten wir',
-        'unserem team', 'sowie', 'oder', 'nachhaltig'
+        'unserem team', 'sowie', 'oder', 'nachhaltig', 'einführung', 'bereich'
     ]
     
-    german_count = sum(1 for p in german_phrases if p in text)
-    if german_count >= 2:
+    german_hits = sum(1 for v in german_body_vocab if v in text_lower)
+    if german_hits >= 1:
         return False
         
     return True
@@ -107,9 +131,9 @@ def fetch_karriere_jobs():
                     locations = "Austria"
                     
                 job_url = j.get('link') or ('https://www.karriere.at/jobs/' + str(j.get('id')))
-                teaser = j.get('snippet', '') or j.get('teaser', '') or f"Exciting tech role at {company} in {locations}."
+                teaser = j.get('snippet', '') or j.get('teaser', '')
                 
-                if is_strictly_english(title, teaser):
+                if is_strictly_english_tech_job(title, teaser):
                     jobs.append({
                         "id": f"karriere-{j.get('id')}",
                         "title": title,
@@ -118,7 +142,7 @@ def fetch_karriere_jobs():
                         "location": locations,
                         "category": categorize_job(title, teaser),
                         "tags": extract_tags(title + " " + teaser),
-                        "description": teaser,
+                        "description": teaser or f"Tech role at {company} in {locations}.",
                         "url": job_url,
                         "source": "Karriere.at",
                         "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
@@ -141,7 +165,7 @@ def fetch_arbeitnow_jobs():
             title = item.get('title', '')
             desc = item.get('description', '')
             if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'innsbruck']) or 'remote' in loc:
-                if is_strictly_english(title, desc):
+                if is_strictly_english_tech_job(title, desc):
                     jobs.append({
                         "id": f"arbeitnow-{item.get('slug')}",
                         "title": title,
@@ -172,7 +196,7 @@ def fetch_jobicy_jobs():
             title = item.get('jobTitle', '')
             desc = item.get('jobExcerpt', '') or item.get('jobDescription', '')
             if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'europe', 'anywhere']):
-                if is_strictly_english(title, desc):
+                if is_strictly_english_tech_job(title, desc):
                     jobs.append({
                         "id": f"jobicy-{item.get('id')}",
                         "title": title,
@@ -208,7 +232,7 @@ def fetch_remotive_jobs():
                 if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'europe', 'worldwide', 'anywhere']):
                     title = item.get('title', '')
                     desc = item.get('description', '')
-                    if is_strictly_english(title, desc):
+                    if is_strictly_english_tech_job(title, desc):
                         jobs.append({
                             "id": f"remotive-{item.get('id')}",
                             "title": title,
@@ -228,7 +252,7 @@ def fetch_remotive_jobs():
     return jobs
 
 def main():
-    print("Fetching ONLY strictly English tech jobs across all of Austria...")
+    print("Fetching ONLY strictly English Tech jobs across all of Austria...")
     
     karriere_jobs = fetch_karriere_jobs()
     arbeitnow_jobs = fetch_arbeitnow_jobs()
@@ -245,7 +269,7 @@ def main():
             seen.add(key)
             unique_jobs.append(job)
             
-    print(f"Collected {len(unique_jobs)} strictly English tech jobs in Austria.")
+    print(f"Collected {len(unique_jobs)} strictly English Tech jobs in Austria.")
     
     out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(out_dir, exist_ok=True)
