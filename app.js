@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadJobs() {
     try {
-        const response = await fetch('./data/jobs.json');
+        const response = await fetch('./data/jobs.json?v=' + Date.now());
         const data = await response.json();
         allJobs = data.jobs || [];
         
