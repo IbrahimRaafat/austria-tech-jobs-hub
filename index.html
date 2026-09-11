@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austria Tech Jobs in English | Daily Aggregator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <span class="flag">🇦🇹</span>
+                <span class="logo-text">Austria<strong>TechJobs</strong></span>
+                <span class="badge-english">English Roles</span>
+            </div>
+            <div class="meta-status">
+                <span class="pulse-dot"></span>
+                <span id="last-updated">Updating daily at 08:00 AM</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section">
+            <h1>English Tech Jobs in Austria</h1>
+            <p class="subtitle">Automatically aggregated daily at 8:00 AM from Austria's top job portals & tech companies (Vienna, Graz, Linz, & Remote).</p>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" placeholder="Search by title, company, technology (e.g. Python, AI, React, Vienna)...">
+                </div>
+            </div>
+
+            <div class="filter-pills" id="category-pills">
+                <button class="pill active" data-category="All">All Roles (<span id="count-all">0</span>)</button>
+                <button class="pill" data-category="Data & AI">Data & AI</button>
+                <button class="pill" data-category="Software Engineering">Software Engineering</button>
+                <button class="pill" data-category="Backend">Backend</button>
+                <button class="pill" data-category="Frontend">Frontend</button>
+                <button class="pill" data-category="DevOps & Cloud">DevOps & Cloud</button>
+            </div>
+        </section>
+
+        <section class="jobs-section">
+            <div class="section-header">
+                <h2 id="jobs-count-title">Loading Jobs...</h2>
+                <div class="sort-selector">
+                    <label for="location-filter">Location:</label>
+                    <select id="location-filter">
+                        <option value="All">All Locations</option>
+                        <option value="Vienna">Vienna / Wien</option>
+                        <option value="Graz">Graz</option>
+                        <option value="Linz">Linz</option>
+                        <option value="Remote">Remote</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="jobs-grid" id="jobs-container">
+                <!-- Job cards will be rendered dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Austria Tech Jobs Aggregator • Automated daily via GitHub Actions</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
