@@ -32,7 +32,10 @@ def extract_tags(text):
 
 def is_english_friendly(title, description=""):
     text = (title + " " + description).lower()
-    english_keywords = ["english", "developer", "engineer", "data", "software", "fullstack", "frontend", "backend", "senior", "junior", "intern", "automation"]
+    english_keywords = [
+        "english", "developer", "engineer", "data", "software", "fullstack",
+        "frontend", "backend", "senior", "junior", "intern", "automation", "lead", "architect"
+    ]
     if "english" in text or any(k in title.lower() for k in english_keywords):
         return True
     return False
@@ -43,9 +46,11 @@ def fetch_karriere_jobs():
         'https://www.karriere.at/jobs/developer/wien',
         'https://www.karriere.at/jobs/data/wien',
         'https://www.karriere.at/jobs/software-engineer/austria',
-        'https://www.karriere.at/jobs/ai/austria'
+        'https://www.karriere.at/jobs/ai/austria',
+        'https://www.karriere.at/jobs/python/austria',
+        'https://www.karriere.at/jobs/devops/austria'
     ]
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'}
     
     for url in urls:
         try:
@@ -95,8 +100,70 @@ def fetch_karriere_jobs():
                         "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
                     })
         except Exception as e:
-            print(f"Error fetching from {url}: {e}")
+            print(f"Error fetching Karriere.at ({url}): {e}")
             
+    return jobs
+
+def fetch_arbeitnow_jobs():
+    jobs = []
+    url = 'https://www.arbeitnow.com/api/job-board-api'
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        res = urllib.request.urlopen(req, timeout=8)
+        data = json.loads(res.read().decode())
+        for item in data.get('data', []):
+            loc = item.get('location', '').lower()
+            title = item.get('title', '')
+            desc = item.get('description', '')
+            if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz']) or 'remote' in loc:
+                if is_english_friendly(title, desc):
+                    jobs.append({
+                        "id": f"arbeitnow-{item.get('slug')}",
+                        "title": title,
+                        "company": item.get('company_name', 'Tech Company'),
+                        "company_logo": "",
+                        "location": item.get('location', 'Austria'),
+                        "category": categorize_job(title, desc),
+                        "tags": item.get('tags', [])[:5] or extract_tags(title + " " + desc),
+                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                        "url": item.get('url'),
+                        "source": "Arbeitnow / Indeed Network",
+                        "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                    })
+    except Exception as e:
+        print(f"Error fetching Arbeitnow: {e}")
+    return jobs
+
+def fetch_jobicy_jobs():
+    jobs = []
+    url = 'https://jobicy.com/api/v2/remote-jobs?count=50'
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        res = urllib.request.urlopen(req, timeout=8)
+        data = json.loads(res.read().decode())
+        for item in data.get('jobs', []):
+            loc = item.get('jobGeo', '').lower()
+            title = item.get('jobTitle', '')
+            desc = item.get('jobExcerpt', '') or item.get('jobDescription', '')
+            if any(k in loc for k in ['austria', 'vienna', 'wien', 'europe', 'anywhere']):
+                if is_english_friendly(title, desc):
+                    jobs.append({
+                        "id": f"jobicy-{item.get('id')}",
+                        "title": title,
+                        "company": item.get('companyName', 'Tech Company'),
+                        "company_logo": item.get('companyLogo', ''),
+                        "location": item.get('jobGeo', 'Remote (Austria/Europe)'),
+                        "category": categorize_job(title, desc),
+                        "tags": extract_tags(title + " " + desc),
+                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                        "url": item.get('url'),
+                        "source": "Jobicy / Stepstone Partner Network",
+                        "posted_at": item.get('pubDate', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+                    })
+    except Exception as e:
+        print(f"Error fetching Jobicy: {e}")
     return jobs
 
 def fetch_remotive_jobs():
@@ -131,21 +198,24 @@ def fetch_remotive_jobs():
                         "posted_at": item.get('publication_date', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
                     })
         except Exception as e:
-            print(f"Error fetching Remotive: {e}")
+            print(f"Error fetching Remotive ({url}): {e}")
             
     return jobs
 
 def main():
-    print("Fetching English tech jobs in Austria...")
+    print("Fetching English tech jobs in Austria across Karriere.at, Stepstone Partner Network, Indeed Network, Remotive & Jobicy...")
+    
     karriere_jobs = fetch_karriere_jobs()
+    arbeitnow_jobs = fetch_arbeitnow_jobs()
+    jobicy_jobs = fetch_jobicy_jobs()
     remotive_jobs = fetch_remotive_jobs()
     
-    all_jobs = karriere_jobs + remotive_jobs
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs
     
     seen = set()
     unique_jobs = []
     for job in all_jobs:
-        key = (job['title'].lower(), job['company'].lower())
+        key = (job['title'].lower().strip(), job['company'].lower().strip())
         if key not in seen:
             seen.add(key)
             unique_jobs.append(job)

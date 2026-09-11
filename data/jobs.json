@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-11T12:07:08.753599+00:00",
-  "total_count": 66,
+  "updated_at": "2026-09-11T12:37:26.972278+00:00",
+  "total_count": 112,
   "jobs": [
     {
       "id": "karriere-7855916",
@@ -408,6 +408,19 @@
       "posted_at": "2026-09-11"
     },
     {
+      "id": "karriere-7851521",
+      "title": "Application Security Engineer (w/m/d)",
+      "company": "3 Banken IT GmbH",
+      "company_logo": "https://kcdn.at/company/18100/3266040/logo-3-banken-it.companysquare.gif",
+      "location": "Linz",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Application Security Engineer (w/m/d) Als Application Security Engineer unterstützt du unsere Entwicklungsteams bei der nachhaltigen Integration von Anwendungssicherheit in den...",
+      "url": "https://www.karriere.at/jobs/7851521",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
       "id": "karriere-10030336",
       "title": "Automation Engineer (w/m/d) Schwerpunkt Safety & Steuerungstechnik",
       "company": "AGILOX Services GmbH",
@@ -421,15 +434,15 @@
       "posted_at": "2026-09-11"
     },
     {
-      "id": "karriere-10027635",
-      "title": "Network & IT Solutions Engineer (w/m/d)",
-      "company": "AGILOX Services GmbH",
-      "company_logo": "https://kcdn.at/company/113885/4116115/agilox_karriereat_profilbilder_1920x1080.companysquare.jpg",
-      "location": "Linz, Neukirchen bei Lambach",
-      "category": "Software Engineering",
+      "id": "karriere-7829222",
+      "title": "Software Solution Engineer (m/w/d)",
+      "company": "SPL Tele Group GmbH",
+      "company_logo": "https://kcdn.at/company/110964/3723827/quadrat_298x92.companysquare.jpg",
+      "location": "Wolkersdorf",
+      "category": "Data & AI",
       "tags": [],
-      "description": "Exciting tech role at AGILOX Services GmbH in Linz, Neukirchen bei Lambach.",
-      "url": "https://www.karriere.at/jobs/10027635",
+      "description": "Deine Aufgaben: Bei uns, Du bist die Schnittstelle zwischen Kunden, Produktentwicklung und unserem Consulting Team. Mit deinem technischen Verständnis stellst du sicher, dass unsere Kunden unsere Softwarelösungen...",
+      "url": "https://www.karriere.at/jobs/7829222",
       "source": "Karriere.at",
       "posted_at": "2026-09-11"
     },
@@ -579,6 +592,19 @@
       "posted_at": "2026-09-11"
     },
     {
+      "id": "karriere-10031055",
+      "title": "AI Solutions Lead – Business Analyst (m/w/d)",
+      "company": "EVER Pharma",
+      "company_logo": "https://kcdn.at/company/17697/1246402/logo-ever-neuro-pharma-gmbh.companysquare.gif",
+      "location": "Unterach am Attersee",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at EVER Pharma in Unterach am Attersee.",
+      "url": "https://www.karriere.at/jobs/10031055",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
       "id": "karriere-7856390",
       "title": "Stabsstelle Artificial Intelligence & AI Governance (Senior Expert) (w/m/d)",
       "company": "OeKB Gruppe",
@@ -618,6 +644,71 @@
       "posted_at": "2026-09-11"
     },
     {
+      "id": "karriere-10028125",
+      "title": "Software Engineer – Odoo & AI Solutions (w/m/d)",
+      "company": "Datenpol Gmbh",
+      "company_logo": "https://kcdn.at/company/82533/3758177/datenpol_wortmarke_med.companysquare.png",
+      "location": "Wien, Graz, Linz",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at Datenpol Gmbh in Wien, Graz, Linz.",
+      "url": "https://www.karriere.at/jobs/10028125",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10029632",
+      "title": "Team Lead Business Solutions, AI & Collaboration (m/w/d)",
+      "company": "EVER Pharma",
+      "company_logo": "https://kcdn.at/company/17697/1246402/logo-ever-neuro-pharma-gmbh.companysquare.gif",
+      "location": "Unterach am Attersee",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at EVER Pharma in Unterach am Attersee.",
+      "url": "https://www.karriere.at/jobs/10029632",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10026563",
+      "title": "AI Platform & Engineering Lead (m/w/d)",
+      "company": "PÜSPÖK Erneuerbare Energie GmbH",
+      "company_logo": "https://kcdn.at/company/130529/3716570/puespoek_logo_rgb_quadratisch-gruen-blau.companysquare.png",
+      "location": "Parndorf",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at PÜSPÖK Erneuerbare Energie GmbH in Parndorf.",
+      "url": "https://www.karriere.at/jobs/10026563",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10026562",
+      "title": "AI Lead (m/w/d)",
+      "company": "PÜSPÖK Erneuerbare Energie GmbH",
+      "company_logo": "https://kcdn.at/company/130529/3716570/puespoek_logo_rgb_quadratisch-gruen-blau.companysquare.png",
+      "location": "Parndorf, Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at PÜSPÖK Erneuerbare Energie GmbH in Parndorf, Wien.",
+      "url": "https://www.karriere.at/jobs/10026562",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10030468",
+      "title": "AI Engineer:in",
+      "company": "p.how GmbH",
+      "company_logo": "https://kcdn.at/company/120142/3514972/logo_filled_padding_p.how.companysquare.png",
+      "location": "Wien 21. Bezirk (Floridsdorf)",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at p.how GmbH in Wien 21. Bezirk (Floridsdorf).",
+      "url": "https://www.karriere.at/jobs/10030468",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
       "id": "karriere-10026639",
       "title": "Senior AI Engineer (w/m/d)",
       "company": "Fabasoft",
@@ -644,58 +735,607 @@
       "posted_at": "2026-09-11"
     },
     {
-      "id": "karriere-10028125",
-      "title": "Software Engineer – Odoo & AI Solutions (w/m/d)",
-      "company": "Datenpol Gmbh",
-      "company_logo": "https://kcdn.at/company/82533/3758177/datenpol_wortmarke_med.companysquare.png",
-      "location": "Wien, Graz, Linz",
+      "id": "karriere-10030230",
+      "title": "Junior Specialist Innovation & AI (m/w/d)",
+      "company": "MAM Baby Österreich",
+      "company_logo": "https://kcdn.at/company/11782/3909067/logo.companysquare.png",
+      "location": "Großhöflein",
       "category": "Data & AI",
       "tags": [],
-      "description": "Exciting tech role at Datenpol Gmbh in Wien, Graz, Linz.",
-      "url": "https://www.karriere.at/jobs/10028125",
+      "description": "Exciting tech role at MAM Baby Österreich in Großhöflein.",
+      "url": "https://www.karriere.at/jobs/10030230",
       "source": "Karriere.at",
       "posted_at": "2026-09-11"
     },
     {
-      "id": "karriere-10030983",
-      "title": "Lead AI Engineer (Java or .NET)",
-      "company": "SQUER Group Services GmbH",
-      "company_logo": "https://kcdn.at/company/153609/4040850/squer_querformat.companysquare.png",
-      "location": "Wien 9. Bezirk (Alsergrund)",
+      "id": "karriere-10029847",
+      "title": "Senior Backend Engineer (f/m/d) with Social Impact",
+      "company": "Formunauts GmbH",
+      "company_logo": "https://kcdn.at/company/114254/3835946/formunauts_logo_cmyk_formunauts-visual_type_claim-wide_duotone--5-.companysquare.png",
+      "location": "Wien 1. Bezirk (Innere Stadt)",
+      "category": "Backend",
+      "tags": [],
+      "description": "Exciting tech role at Formunauts GmbH in Wien 1. Bezirk (Innere Stadt).",
+      "url": "https://www.karriere.at/jobs/10029847",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7840805",
+      "title": "Senior Software Engineer - Data (Python, AWS)",
+      "company": "SPORTRADAR Austria",
+      "company_logo": "https://kcdn.at/company/53756/3403700/sr.companysquare.jpg",
+      "location": "Wien",
       "category": "Data & AI",
       "tags": [
-        "Java"
+        "Python",
+        "AWS"
       ],
-      "description": "Exciting tech role at SQUER Group Services GmbH in Wien 9. Bezirk (Alsergrund).",
-      "url": "https://www.karriere.at/jobs/10030983",
+      "description": "Senior Software Engineer, Data (Python, AWS) Vienna We're the world's leading sports technology company, at the intersection between sports, media, and betting. More than 1,700 sports...",
+      "url": "https://www.karriere.at/jobs/7840805",
       "source": "Karriere.at",
       "posted_at": "2026-09-11"
     },
     {
-      "id": "karriere-10026563",
-      "title": "AI Platform & Engineering Lead (m/w/d)",
-      "company": "PÜSPÖK Erneuerbare Energie GmbH",
-      "company_logo": "https://kcdn.at/company/130529/3716570/puespoek_logo_rgb_quadratisch-gruen-blau.companysquare.png",
-      "location": "Parndorf",
-      "category": "Data & AI",
+      "id": "karriere-7870585",
+      "title": "Fullstack Entwickler (m/w/d)",
+      "company": "Raiffeisen Niederösterreich-Wien",
+      "company_logo": "https://kcdn.at/company/3592/3779645/quadrat_298x92.companysquare.jpg",
+      "location": "Stegersbach",
+      "category": "Software Engineering",
       "tags": [],
-      "description": "Exciting tech role at PÜSPÖK Erneuerbare Energie GmbH in Parndorf.",
-      "url": "https://www.karriere.at/jobs/10026563",
+      "description": "Fullstack Entwickler (m/w/d) Stegersbach, Anstellungsart: Vollzeit Die Enlion Service GmbH entwickelt, plant, errichtet und betreibt Energielösungen für Gemeinden, Unternehmen, Genossenschaften...",
+      "url": "https://www.karriere.at/jobs/7870585",
       "source": "Karriere.at",
       "posted_at": "2026-09-11"
     },
     {
-      "id": "karriere-10030468",
-      "title": "AI Engineer:in",
-      "company": "p.how GmbH",
-      "company_logo": "https://kcdn.at/company/120142/3514972/logo_filled_padding_p.how.companysquare.png",
-      "location": "Wien 21. Bezirk (Floridsdorf)",
+      "id": "karriere-7868596",
+      "title": "Data Scientist mit Schwerpunkt Investment Data und Analytics (w/m/d)",
+      "company": "Merkur Versicherung AG",
+      "company_logo": "https://kcdn.at/company/2088/3518807/merkur_versicherung_karriere-logo.companysquare.jpg",
+      "location": "Graz",
       "category": "Data & AI",
       "tags": [],
-      "description": "Exciting tech role at p.how GmbH in Wien 21. Bezirk (Floridsdorf).",
-      "url": "https://www.karriere.at/jobs/10030468",
+      "description": "Data Scientist mit Schwerpunkt Investment Data und Analytics (w/m/d) Graz, Vollzeit #jetztbewerben: Ihr Talent für das Wunder Mensch, Merkur Campus (Conrad-von-Hötzendorf-Straße...",
+      "url": "https://www.karriere.at/jobs/7868596",
       "source": "Karriere.at",
       "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7858892",
+      "title": "Data Engineer (w/m/d)",
+      "company": "Siemens Personaldienstleistungen GmbH",
+      "company_logo": "https://kcdn.at/company/13673/3529782/832e9c7e-612f-4ce0-b60d-32e78431f436.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [
+        "AWS"
+      ],
+      "description": "Ihre Aufgaben: Sie entwickeln, betreiben und optimieren robuste Datenpipelines und ELT-Prozesse für analytische und operative Anwendungsfälle. Sie bauen serverlose Infrastruktur in AWS auf. Sie modellieren...",
+      "url": "https://www.karriere.at/jobs/7858892",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7850855",
+      "title": "Data Engineer (w/m/d)",
+      "company": "STEINER-HITECH GmbH",
+      "company_logo": "https://kcdn.at/company/62/1421165/logo-steiner-hitech.companysquare.gif",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [
+        "Python",
+        "SQL",
+        "AWS"
+      ],
+      "description": "Data Engineer (w/m/d) EUR 3.500 bis EUR 5.500 AWS Python Homeoffice Kantine SQL Wien Ref.-Nr.: 5760-BH-KA Sie möchten moderne Datenplattformen entwickeln und Daten für Analyse...",
+      "url": "https://www.karriere.at/jobs/7850855",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7874620",
+      "title": "Internship Data Science",
+      "company": "Red Bull",
+      "company_logo": "https://kcdn.at/company/2408/4105496/logo.companysquare.png",
+      "location": "Elsbethen",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Praktika Internship Data Science Elsbethen, Österreich Apply now As an intern in our Data Science team, you'll gain hands-on experience in contributing to Global Data Science projects...",
+      "url": "https://www.karriere.at/jobs/7874620",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10031572",
+      "title": "Entwickler (m/w/d) für Aufbau und Weiterentwicklung interner Tools",
+      "company": "AXIS Flight Training Systems GmbH",
+      "company_logo": "https://kcdn.at/company/18700/3760016/logo-axis-simulation-4c-2000px.companysquare.jpg",
+      "location": "Lebring-Sankt Margarethen",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at AXIS Flight Training Systems GmbH in Lebring-Sankt Margarethen.",
+      "url": "https://www.karriere.at/jobs/10031572",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10032490",
+      "title": "Senior GIS Data Engineer & Architekt (*all humans)",
+      "company": "Equip GmbH",
+      "company_logo": "https://kcdn.at/company/84305/3502550/logo-gross.companysquare.gif",
+      "location": "Maria Enzersdorf",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at Equip GmbH in Maria Enzersdorf.",
+      "url": "https://www.karriere.at/jobs/10032490",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7874326",
+      "title": "AI Developer:in",
+      "company": "TECHSEARCH",
+      "company_logo": "https://kcdn.at/company/51531/3835493/png_logo_2560x1440_karriere_2018.06.25.companysquare.png",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [
+        "Python"
+      ],
+      "description": "AI Developer:in Wir suchen für unseren Kunden eine:n AI Developer:in mit Grundkenntnissen in Python und im Umgang mit LLMs, um AI-Lösungen für bestehende Applikationen...",
+      "url": "https://www.karriere.at/jobs/7874326",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7866010",
+      "title": "Data Science Student (Supply Chain)",
+      "company": "Red Bull",
+      "company_logo": "https://kcdn.at/company/2408/4105496/logo.companysquare.png",
+      "location": "Elsbethen",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Vollzeit Data Science Student (Supply Chain) Elsbethen, Österreich Apply now Do you study DS/AI/ML and want to give it a go in a global company setting? Love solving puzzles and...",
+      "url": "https://www.karriere.at/jobs/7866010",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7863337",
+      "title": "(Senior) DevOps Engineer - OpenShift & CI/CD (m/w/d)",
+      "company": "Capgemini",
+      "company_logo": "https://kcdn.at/company/905/4078853/quadrat_298x92.companysquare.jpg",
+      "location": "Wien",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "(Senior) DevOps Engineer, OpenShift & CI/CD (m/w/d) Wien, 40 Stunden / Woche Mit Capgemini entscheidest du dich für ein Unternehmen, in dem du die Möglichkeit hast, deine...",
+      "url": "https://www.karriere.at/jobs/7863337",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7863346",
+      "title": "AI Architect (m/w/d)",
+      "company": "Capgemini",
+      "company_logo": "https://kcdn.at/company/905/4078853/quadrat_298x92.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "AI Architect (m/w/d) Wien, 40 Stunden / Woche Mit Capgemini entscheidest du dich für ein Unternehmen, in dem du die Möglichkeit hast, deine Karriere so zu gestalten, wie du...",
+      "url": "https://www.karriere.at/jobs/7863346",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10032332",
+      "title": "DevOps / DevSecOps Engineer (m/w/d) – IT Security & Cloud Infrastructure",
+      "company": "Cubicure GmbH",
+      "company_logo": "https://kcdn.at/company/113028/3799763/2021_cubicure-logo-rgb.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at Cubicure GmbH in Wien.",
+      "url": "https://www.karriere.at/jobs/10032332",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10030479",
+      "title": "Devops Engineer (m/w/d)",
+      "company": "eurofunk Kappacher GmbH",
+      "company_logo": "https://kcdn.at/company/6915/3274721/logo-gross.companysquare.gif",
+      "location": "Sankt Johann im Pongau, Salzburg",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Exciting tech role at eurofunk Kappacher GmbH in Sankt Johann im Pongau, Salzburg.",
+      "url": "https://www.karriere.at/jobs/10030479",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10026853",
+      "title": "Product Owner / Lead - Devops-Team (f/m/d)",
+      "company": "Hitachi Rail Austria GmbH",
+      "company_logo": "https://kcdn.at/company/14372/3959719/cs_01_01.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at Hitachi Rail Austria GmbH in Wien.",
+      "url": "https://www.karriere.at/jobs/10026853",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10032045",
+      "title": "Senior DevOps Engineer (f/m/d)",
+      "company": "Raiffeisen Digital Bank AG",
+      "company_logo": "https://kcdn.at/company/18280/3763340/quadrat_298x92.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Exciting tech role at Raiffeisen Digital Bank AG in Wien.",
+      "url": "https://www.karriere.at/jobs/10032045",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10030952",
+      "title": "C# Entwickler & DevOps Engineer (w/m/d)",
+      "company": "ÖSW Österreichisches Siedlungswerk Gemeinnützige Wohnungs AG",
+      "company_logo": "https://kcdn.at/company/13368/4107179/--sw-ag_logo_karriere.at.companysquare.jpg",
+      "location": "Wien",
+      "category": "Backend",
+      "tags": [],
+      "description": "Exciting tech role at ÖSW Österreichisches Siedlungswerk Gemeinnützige Wohnungs AG in Wien.",
+      "url": "https://www.karriere.at/jobs/10030952",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-10030100",
+      "title": "Senior DevOps Engineer (w/m/d)",
+      "company": "Fabasoft",
+      "company_logo": "https://kcdn.at/company/1229/4024298/fabasoft-logo---electric-blue---rgb---png.companysquare.png",
+      "location": "Graz",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Exciting tech role at Fabasoft in Graz.",
+      "url": "https://www.karriere.at/jobs/10030100",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7849688",
+      "title": "Senior Linux & Devops Engineer (m/w/x)",
+      "company": "REWE Group Österreich",
+      "company_logo": "https://kcdn.at/company/5086/316489/logo-rewe-international-ag.companysquare.gif",
+      "location": "Wien",
+      "category": "DevOps & Cloud",
+      "tags": [
+        "Linux"
+      ],
+      "description": "Ihre Aufgaben: Vielseitig wie der Handel, Du administrierst, betreust und optimierst unsere Linux-Serverlandschaft in einer komplexen Enterprise-Umgebung. Du analysierst und behebst komplexe Störungen im...",
+      "url": "https://www.karriere.at/jobs/7849688",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7851458",
+      "title": "AI DevOps / Platform Engineer (m/w/d)",
+      "company": "STIWA Group",
+      "company_logo": "https://kcdn.at/company/14755/3870155/logo-group-4c-4k-rgb.companysquare.png",
+      "location": "Hagenberg im Mühlkreis, Attnang-Puchheim, Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Deine Aufgaben: Architektur, Tooling & Infrastuktur, AI-Tooling: Du evaluierst, konfigurierst und betreust KI-gestützte Coding- und Agent-Frameworks für unsere Entwicklungsteams, Architektur & Governance...",
+      "url": "https://www.karriere.at/jobs/7851458",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7834496",
+      "title": "DevOps Engineer (m/w/d)",
+      "company": "KNAPP",
+      "company_logo": "https://kcdn.at/company/3978/4103822/quadrat_298x92.companysquare.jpg",
+      "location": "Hart bei Graz",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "DevOps Engineer (m/w/d) Hart bei Graz #yourmission, Du baust eine Plattform, auf der Development-Teams schnell, sicher und skalierbar deployen können, Du eliminierst manuelle Schritte...",
+      "url": "https://www.karriere.at/jobs/7834496",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7860154",
+      "title": "Senior DevOps Engineer (m/w/x)",
+      "company": "BearingPoint GmbH",
+      "company_logo": "https://kcdn.at/company/14524/4027838/unbenannt-1.companysquare.jpg",
+      "location": "Wien",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Deine Aufgaben: Übernahme eigenverantwortlicher Aufgaben sowie aktives Mitwirken in einem erfahrenen Team von IT-Expert:innen, Konzeption, Optimierung und Weiterentwicklung von Entwicklungsplattformen (IDPs...",
+      "url": "https://www.karriere.at/jobs/7860154",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7854077",
+      "title": "DevOps Platform Engineer (m/w/x)",
+      "company": "BearingPoint GmbH",
+      "company_logo": "https://kcdn.at/company/14524/4027838/unbenannt-1.companysquare.jpg",
+      "location": "Graz",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Deine Aufgaben: Weiterentwicklung und Optimierung von CI/CD-Pipelines, Build-, Test- und Deployment-Prozessen, Automatisierung und Weiterentwicklung moderner Plattform- und Entwicklungsumgebungen, Planung, Koordination...",
+      "url": "https://www.karriere.at/jobs/7854077",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7867456",
+      "title": "DevOps Engineer Observability & Logging (f/m/d)",
+      "company": "UNIQA Insurance Group AG",
+      "company_logo": "https://kcdn.at/company/2773/3393751/logo_karriere_298x92.companysquare.jpg",
+      "location": "Wien",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "DevOps Engineer Observability & Logging (f/m/d) Als eine der führenden Versicherungen wissen wir, dass wir gemeinsam mehr bewegen können. Bei UNIQA sind wir deshalb die Gemeinschaft...",
+      "url": "https://www.karriere.at/jobs/7867456",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "karriere-7848164",
+      "title": "DevOps Engineer (m/w/d) – Schwerpunkt Kubernetes & CI/CD",
+      "company": "Atikon EDV & Marketing GmbH",
+      "company_logo": "https://kcdn.at/company/5632/3775838/atikon_logo_mithintergrund_aufweiss_rgb.companysquare.jpg",
+      "location": "Pasching",
+      "category": "DevOps & Cloud",
+      "tags": [
+        "Kubernetes"
+      ],
+      "description": "Deine Aufgaben: Als Teil unseres Teams übernimmst du eine zentrale Rolle bei der Weiterentwicklung und dem Betrieb unserer modernen IT-Infrastruktur. Du unterstützt uns dabei, Anwendungen zuverlässig...",
+      "url": "https://www.karriere.at/jobs/7848164",
+      "source": "Karriere.at",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-senior-product-engineer-devtools-ai-reliability-remote-berlin-432404",
+      "title": "Senior Product Engineer (DevTools & AI reliability, remote)",
+      "company": "Checkly",
+      "company_logo": "",
+      "location": "Remote (UTC-3 to UTC+3)",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering"
+      ],
+      "description": "  (Fully remote, async-first, DevTools SaaS, 32-40h/week, time zones: UTC-3 to UTC+3)   The best developers don't wait for a customer to tell them something's broken.  They catch it first, in the pull request, in staging, or in the checkout flow at 3am, before a single user notic...",
+      "url": "https://www.arbeitnow.com/jobs/companies/checkly/senior-product-engineer-devtools-ai-reliability-remote-berlin-432404",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-project-manager-software-implementation-berlin-60317",
+      "title": "Project Manager - Software Implementation (m/f/x)",
+      "company": "Makersite GmbH",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Services and Data",
+        "Remote"
+      ],
+      "description": "  Job Title: Project Manager - Software Implementation (m/f/x)&nbsp;    Location: EU    (Remote)&nbsp;    &nbsp;     Who You’ll Work For:   &nbsp;    &nbsp;    At Makersite, we're pioneering the future of sustainable product development and digital collaboration. As a leading pla...",
+      "url": "https://www.arbeitnow.com/jobs/companies/makersite-gmbh/remote-project-manager-software-implementation-berlin-60317",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-qa-engineer-325150",
+      "title": "QA Engineer",
+      "company": "Miaplaza",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Product Development",
+        "Remote"
+      ],
+      "description": "  Location : Fully Remote (Global)   Classification : Full-time; 40 hours per week   Pay Range : €51,000-90,000   Experience : 2+ years as a QA engineer   Welcome to Miaplaza!   Our vision is to elevate online learning by applying the most successful approaches in virtual educati...",
+      "url": "https://www.arbeitnow.com/jobs/companies/miaplaza/remote-qa-engineer-325150",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-sr-counsel-employment-apac-emea-42521",
+      "title": "Sr. Counsel, Employment (APAC & EMEA)",
+      "company": "Hims And Hers",
+      "company_logo": "",
+      "location": "UK Remote",
+      "category": "Data & AI",
+      "tags": [
+        "LEGAL"
+      ],
+      "description": " Hims &amp; Hers is the leading health and wellness platform, on a mission to help the world feel great through the power of better health. We are redefining healthcare by putting the customer first and delivering access to care that is affordable, accessible, and personal, from ...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/hims-and-hers/remote-sr-counsel-employment-apac-emea-42521",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-backend-engineer-wallets-100-remote-london-355455",
+      "title": "Backend Engineer - Wallets (100% Remote)",
+      "company": "Tether Operations Limited",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Development",
+        "Remote"
+      ],
+      "description": "    Join Tether and Shape the Future of Digital Finance      At Tether, we’re not just building products, we’re pioneering a global financial revolution. Our cutting-edge solutions empower businesses—from exchanges and wallets to payment processors and ATMs—to seamlessly integrat...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/tether-operations-limited/backend-engineer-wallets-100-remote-london-355455",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-software-engineer-engineering-operations-22311",
+      "title": "Senior Software Engineer, Engineering Operations",
+      "company": "Camunda",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Products"
+      ],
+      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/camunda/remote-senior-software-engineer-engineering-operations-22311",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-software-engineer-backend-data-streaming-281046",
+      "title": "Senior Software Engineer, Backend - Data Streaming",
+      "company": "Camunda",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Products"
+      ],
+      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/camunda/remote-senior-software-engineer-backend-data-streaming-281046",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-software-engineer-backend-data-layer-223436",
+      "title": "Senior Software Engineer, Backend - Data Layer",
+      "company": "Camunda",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Products"
+      ],
+      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/camunda/remote-senior-software-engineer-backend-data-layer-223436",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-manager-fpa-72959",
+      "title": "Senior Manager, FP&A",
+      "company": "Camunda",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Finance"
+      ],
+      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/camunda/remote-senior-manager-fpa-72959",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-ai-engineer-notebooks-116524",
+      "title": "Senior AI Engineer – Notebooks",
+      "company": "Datadog",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Dev Eng"
+      ],
+      "description": "&lt;p&gt;Datadog Notebooks provide customers with a collaborative surface for ad-hoc data analysis, technical documentation, incident postmortems and runbooks. The power and flexibility of Notebooks also makes it the perfect place to integrate AI tools that can augment user workf...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/datadog/remote-senior-ai-engineer-notebooks-116524",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-data-engineer-real-time-analytics-62324",
+      "title": "Senior Data Engineer - Real time analytics",
+      "company": "Aircall",
+      "company_logo": "",
+      "location": "France Remote",
+      "category": "Data & AI",
+      "tags": [
+        "13001 - Engineering"
+      ],
+      "description": "  Aircall is a unicorn, AI-powered customer communications platform used by 22,000+ companies worldwide to drive revenue, resolve issues faster, and scale customer-facing teams. We’re redefining customer communications by bringing voice, SMS, WhatsApp, and AI together into one se...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/aircall/remote-senior-data-engineer-real-time-analytics-62324",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-senior-customer-success-engineer-390555",
+      "title": "Senior Customer Success Engineer",
+      "company": "veeamsoftware",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "WW Customer Success 1009886"
+      ],
+      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;div class=&quot;elementToProof&quot;&gt;\n&lt;p&gt;Veeam is the Data and AI Trust Company, specializing in helping organizations ensure their data and AI are fully understood, secured, and resilient to enable the acceleration of safe ...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/veeamsoftware/remote-senior-customer-success-engineer-390555",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "arbeitnow-remote-product-manager-350008",
+      "title": "Product Manager",
+      "company": "remotewoman",
+      "company_logo": "",
+      "location": "Remote • Germany, Canada, Spain or the UK",
+      "category": "Data & AI",
+      "tags": [
+        "Product & Engineering"
+      ],
+      "description": "&lt;h1&gt;&lt;span style=&quot;font-size: 14pt; font-family: helvetica, arial, sans-serif;&quot;&gt;&lt;strong&gt;About Upsun (formerly Platform.sh)&amp;nbsp;&lt;/strong&gt;&lt;/span&gt;&lt;/h1&gt;\n&lt;p&gt;&lt;span style=&quot;font-size: 12pt;&quot;&gt;Upsun is the cloud applica...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/remotewoman/remote-product-manager-350008",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-09-11"
+    },
+    {
+      "id": "jobicy-152985",
+      "title": "Senior Engineering Manager, Growth",
+      "company": "Synthesia",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/c69aad11-221.webp",
+      "location": "Europe",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Synthesia is the world’s leading AI video platform for business, used by over 90% of the Fortune 100. Founded in 2017, the company is headquartered in London, with offices and teams across Europe and the US. As AI continues to shape the way we live and work, Synthesia develops pr...",
+      "url": "https://jobicy.com/jobs/152985-senior-engineering-manager-growth",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-09-10"
+    },
+    {
+      "id": "jobicy-152977",
+      "title": "Staff Research Engineer - Interactive Avatars",
+      "company": "Synthesia",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/c69aad11-221.webp",
+      "location": "Europe",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Synthesia is the world’s leading AI video platform for business, used by over 90% of the Fortune 100. Founded in 2017, the company is headquartered in London, with offices and teams across Europe and the US. As AI continues to shape the way we live and work, Synthesia develops pr...",
+      "url": "https://jobicy.com/jobs/152977-staff-research-engineer-interactive-avatars",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-09-10"
+    },
+    {
+      "id": "jobicy-152972",
+      "title": "Research Engineer in Data",
+      "company": "Synthesia",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/c69aad11-221.webp",
+      "location": "Europe",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Synthesia is the world’s leading AI video platform for business, used by over 90% of the Fortune 100. Founded in 2017, the company is headquartered in London, with offices and teams across Europe and the US. As AI continues to shape the way we live and work, Synthesia develops pr...",
+      "url": "https://jobicy.com/jobs/152972-research-engineer-in-data",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-09-10"
     },
     {
       "id": "remotive-2086540",
