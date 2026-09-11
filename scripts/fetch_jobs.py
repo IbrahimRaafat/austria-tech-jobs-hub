@@ -34,16 +34,23 @@ def is_strictly_english_tech_job(title, description=""):
     title_lower = title.lower()
     text_lower = (title + " " + description).lower()
     
-    # 1. Must be IT / Software / Data / AI / Cloud / Engineering / Product
+    # 1. Require whole-word match for tech role keywords
     tech_keywords = [
         'developer', 'engineer', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
-        'fullstack', 'full-stack', 'full stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
+        'fullstack', 'full-stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
         'tech', 'it', 'python', 'java', 'react', 'node', 'sql', 'sysadmin', 'scrum', 'cybersecurity'
     ]
-    if not any(k in title_lower for k in tech_keywords):
+    
+    has_tech_word = False
+    for kw in tech_keywords:
+        if re.search(r'\b' + re.escape(kw) + r'\b', title_lower):
+            has_tech_word = True
+            break
+            
+    if not has_tech_word:
         return False
-        
-    # 2. Reject non-tech corporate admin roles
+
+    # 2. Reject non-tech corporate admin terms in title
     non_tech_terms = [
         'writer', 'copywriter', 'counsel', 'sales contractor', 'office assistant', 'recruiter', 'hr',
         'accountant', 'legal', 'finance manager', 'fp&a', 'customer success manager', 'event', 'digital marketing'
@@ -51,38 +58,26 @@ def is_strictly_english_tech_job(title, description=""):
     if any(t in title_lower for t in non_tech_terms):
         return False
 
-    # 3. Reject German job title terms
-    german_title_words = [
-        'entwickler', 'entwicklerin', 'mitarbeiter', 'mitarbeiterin',
-        'berater', 'beraterin', 'projektleiter', 'projektleiterin',
-        'techniker', 'technikerin', 'spezialist', 'spezialistin',
-        'fachkraft', 'führungskraft', 'leitung', 'fokus', 'schwerpunkt',
-        'bereich', 'verwaltung', 'öffentliche', 'bau', 'vertrieb', 'buchhaltung',
-        'buchhalter', 'buchhalterin', 'assistent', 'assistentin', 'planer', 'planerin',
-        'objektleiter', 'objektleiterin', 'einkäufer', 'einkäuferin', 'verkäufer', 'verkäuferin',
-        'versicherungsexperte', 'fachplanung', 'architektur', 'betreuung', 'sachbearbeiter',
-        'teamleiter', 'teamleiterin', 'praktikum', 'schlosser', 'geodatenmanager', 'abteilung',
-        'veranstaltungen', 'kongresse', 'dienstort', 'vollzeit', 'teilzeit'
+    # 3. Reject German words anywhere in title or body
+    german_keywords = [
+        'projektleitung', 'hochbau', 'elektrotechnik', 'servicetechniker', 'elektriker',
+        'monteur', 'maschinenbautechniker', 'vertriebsmitarbeiter', 'außendienst',
+        'sondermaschinenbau', 'entwickler', 'entwicklerin', 'mitarbeiter', 'mitarbeiterin',
+        'berater', 'beraterin', 'projektleiter', 'projektleiterin', 'techniker', 'technikerin',
+        'spezialist', 'spezialistin', 'fachkraft', 'führungskraft', 'leitung', 'fokus', 'schwerpunkt',
+        'bereich', 'verwaltung', 'öffentliche', 'bau', 'vertrieb', 'buchhaltung', 'buchhalter',
+        'assistent', 'planer', 'objektleiter', 'einkäufer', 'verkäufer', 'betreuung', 'sachbearbeiter',
+        'teamleiter', 'praktikum', 'schlosser', 'geodatenmanager', 'abteilung', 'veranstaltungen',
+        'kongresse', 'dienstort', 'vollzeit', 'teilzeit', 'standort', 'bewerbung', 'anforderung',
+        'wir suchen', 'deine aufgaben', 'ihre aufgaben', 'dein profil', 'ihr profil', 'erfahrung',
+        'kenntnisse', 'abgeschlossenes', 'gehalt', 'bieten wir', 'unserem team', 'sowie', 'oder', 'nachhaltig'
     ]
     
     title_clean = re.sub(r'[:\*\/\(\)\-\_\.]', ' ', title_lower)
-    for word in german_title_words:
-        if re.search(r'\b' + re.escape(word) + r'\b', title_clean):
+    for g_word in german_keywords:
+        if re.search(r'\b' + re.escape(g_word) + r'\b', title_clean) or g_word in text_lower:
             return False
-
-    # 4. Strict German Body / Description Detection
-    german_body_vocab = [
-        ' und ', ' mit ', ' für ', ' der ', ' die ', ' das ', ' dem ', ' den ', ' ein ', ' eine ',
-        'wir suchen', 'deine aufgaben', 'ihre aufgaben', 'dein profil', 'ihr profil',
-        'erfahrung', 'kenntnisse', 'abgeschlossenes', 'dienstort', 'gehalt',
-        'vollzeit', 'teilzeit', 'standort', 'bewerbung', 'anforderung', 'bieten wir',
-        'unserem team', 'sowie', 'oder', 'nachhaltig', 'einführung', 'bereich'
-    ]
-    
-    german_hits = sum(1 for v in german_body_vocab if v in text_lower)
-    if german_hits >= 1:
-        return False
-        
+            
     return True
 
 def fetch_karriere_jobs():
