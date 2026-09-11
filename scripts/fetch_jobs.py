@@ -3,6 +3,14 @@ import re
 import json
 import os
 import datetime
+import sys
+
+# Ensure scripts folder is on python path
+sys.path.insert(0, os.path.dirname(__file__))
+
+from agent_classifier import JobClassifierAgent
+
+agent = JobClassifierAgent()
 
 def categorize_job(title, description=""):
     text = (title + " " + description).lower()
@@ -30,57 +38,8 @@ def extract_tags(text):
             matched.append(tag)
     return matched[:6]
 
-def is_strictly_english_tech_job(title, description=""):
-    title_lower = title.lower()
-    text_lower = (title + " " + description).lower()
-    
-    # 1. Require whole-word match for tech role keywords
-    tech_keywords = [
-        'developer', 'engineer', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
-        'fullstack', 'full-stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
-        'tech', 'it', 'python', 'java', 'react', 'node', 'sql', 'sysadmin', 'scrum', 'cybersecurity'
-    ]
-    
-    has_tech_word = False
-    for kw in tech_keywords:
-        if re.search(r'\b' + re.escape(kw) + r'\b', title_lower):
-            has_tech_word = True
-            break
-            
-    if not has_tech_word:
-        return False
-
-    # 2. Reject non-tech corporate admin terms in title
-    non_tech_terms = [
-        'writer', 'copywriter', 'counsel', 'sales contractor', 'office assistant', 'recruiter', 'hr',
-        'accountant', 'legal', 'finance manager', 'fp&a', 'customer success manager', 'event', 'digital marketing'
-    ]
-    if any(t in title_lower for t in non_tech_terms):
-        return False
-
-    # 3. Reject German words anywhere in title or body
-    german_keywords = [
-        'projektleitung', 'hochbau', 'elektrotechnik', 'servicetechniker', 'elektriker',
-        'monteur', 'maschinenbautechniker', 'vertriebsmitarbeiter', 'außendienst',
-        'sondermaschinenbau', 'entwickler', 'entwicklerin', 'mitarbeiter', 'mitarbeiterin',
-        'berater', 'beraterin', 'projektleiter', 'projektleiterin', 'techniker', 'technikerin',
-        'spezialist', 'spezialistin', 'fachkraft', 'führungskraft', 'leitung', 'fokus', 'schwerpunkt',
-        'bereich', 'verwaltung', 'öffentliche', 'bau', 'vertrieb', 'buchhaltung', 'buchhalter',
-        'assistent', 'planer', 'objektleiter', 'einkäufer', 'verkäufer', 'betreuung', 'sachbearbeiter',
-        'teamleiter', 'praktikum', 'schlosser', 'geodatenmanager', 'abteilung', 'veranstaltungen',
-        'kongresse', 'dienstort', 'vollzeit', 'teilzeit', 'standort', 'bewerbung', 'anforderung',
-        'wir suchen', 'deine aufgaben', 'ihre aufgaben', 'dein profil', 'ihr profil', 'erfahrung',
-        'kenntnisse', 'abgeschlossenes', 'gehalt', 'bieten wir', 'unserem team', 'sowie', 'oder', 'nachhaltig'
-    ]
-    
-    title_clean = re.sub(r'[:\*\/\(\)\-\_\.]', ' ', title_lower)
-    for g_word in german_keywords:
-        if re.search(r'\b' + re.escape(g_word) + r'\b', title_clean) or g_word in text_lower:
-            return False
-            
-    return True
-
 def fetch_karriere_jobs():
+    print("[Agent Classifier] Fetching and auditing Karriere.at job listings...")
     jobs = []
     urls = [
         'https://www.karriere.at/jobs/developer/austria',
@@ -93,7 +52,7 @@ def fetch_karriere_jobs():
         'https://www.karriere.at/jobs/linz',
         'https://www.karriere.at/jobs/salzburg'
     ]
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
     
     for url in urls:
         try:
@@ -128,26 +87,32 @@ def fetch_karriere_jobs():
                 job_url = j.get('link') or ('https://www.karriere.at/jobs/' + str(j.get('id')))
                 teaser = j.get('snippet', '') or j.get('teaser', '')
                 
-                if is_strictly_english_tech_job(title, teaser):
-                    jobs.append({
-                        "id": f"karriere-{j.get('id')}",
-                        "title": title,
-                        "company": company,
-                        "company_logo": logo,
-                        "location": locations,
-                        "category": categorize_job(title, teaser),
-                        "tags": extract_tags(title + " " + teaser),
-                        "description": teaser or f"Tech role at {company} in {locations}.",
-                        "url": job_url,
-                        "source": "Karriere.at",
-                        "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
-                    })
+                raw_job = {
+                    "id": f"karriere-{j.get('id')}",
+                    "title": title,
+                    "company": company,
+                    "company_logo": logo,
+                    "location": locations,
+                    "category": categorize_job(title, teaser),
+                    "tags": extract_tags(title + " " + teaser),
+                    "description": teaser or f"Tech role at {company} in {locations}.",
+                    "url": job_url,
+                    "source": "Karriere.at",
+                    "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                }
+
+                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=True)
+                if processed:
+                    jobs.append(processed)
+                else:
+                    print(f"  [REJECTED Karriere.at ID {j.get('id')}] Title: '{title}' -> Reason: {reason}")
         except Exception as e:
             print(f"Error fetching Karriere.at ({url}): {e}")
             
     return jobs
 
 def fetch_arbeitnow_jobs():
+    print("[Agent Classifier] Fetching and auditing Arbeitnow job listings...")
     jobs = []
     url = 'https://www.arbeitnow.com/api/job-board-api'
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -160,25 +125,30 @@ def fetch_arbeitnow_jobs():
             title = item.get('title', '')
             desc = item.get('description', '')
             if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'innsbruck']) or 'remote' in loc:
-                if is_strictly_english_tech_job(title, desc):
-                    jobs.append({
-                        "id": f"arbeitnow-{item.get('slug')}",
-                        "title": title,
-                        "company": item.get('company_name', 'Tech Company'),
-                        "company_logo": "",
-                        "location": item.get('location', 'Austria'),
-                        "category": categorize_job(title, desc),
-                        "tags": item.get('tags', [])[:5] or extract_tags(title + " " + desc),
-                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
-                        "url": item.get('url'),
-                        "source": "Arbeitnow / Indeed Network",
-                        "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
-                    })
+                raw_job = {
+                    "id": f"arbeitnow-{item.get('slug')}",
+                    "title": title,
+                    "company": item.get('company_name', 'Tech Company'),
+                    "company_logo": "",
+                    "location": item.get('location', 'Austria'),
+                    "category": categorize_job(title, desc),
+                    "tags": item.get('tags', [])[:5] or extract_tags(title + " " + desc),
+                    "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                    "url": item.get('url'),
+                    "source": "Arbeitnow / Indeed Network",
+                    "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                }
+                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                if processed:
+                    jobs.append(processed)
+                else:
+                    print(f"  [REJECTED Arbeitnow] Title: '{title}' -> Reason: {reason}")
     except Exception as e:
         print(f"Error fetching Arbeitnow: {e}")
     return jobs
 
 def fetch_jobicy_jobs():
+    print("[Agent Classifier] Fetching and auditing Jobicy listings...")
     jobs = []
     url = 'https://jobicy.com/api/v2/remote-jobs?count=50'
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -191,25 +161,30 @@ def fetch_jobicy_jobs():
             title = item.get('jobTitle', '')
             desc = item.get('jobExcerpt', '') or item.get('jobDescription', '')
             if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'europe', 'anywhere']):
-                if is_strictly_english_tech_job(title, desc):
-                    jobs.append({
-                        "id": f"jobicy-{item.get('id')}",
-                        "title": title,
-                        "company": item.get('companyName', 'Tech Company'),
-                        "company_logo": item.get('companyLogo', ''),
-                        "location": item.get('jobGeo', 'Remote (Austria/Europe)'),
-                        "category": categorize_job(title, desc),
-                        "tags": extract_tags(title + " " + desc),
-                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
-                        "url": item.get('url'),
-                        "source": "Jobicy / Stepstone Partner Network",
-                        "posted_at": item.get('pubDate', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
-                    })
+                raw_job = {
+                    "id": f"jobicy-{item.get('id')}",
+                    "title": title,
+                    "company": item.get('companyName', 'Tech Company'),
+                    "company_logo": item.get('companyLogo', ''),
+                    "location": item.get('jobGeo', 'Remote (Austria/Europe)'),
+                    "category": categorize_job(title, desc),
+                    "tags": extract_tags(title + " " + desc),
+                    "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                    "url": item.get('url'),
+                    "source": "Jobicy / Stepstone Partner Network",
+                    "posted_at": item.get('pubDate', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+                }
+                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                if processed:
+                    jobs.append(processed)
+                else:
+                    print(f"  [REJECTED Jobicy] Title: '{title}' -> Reason: {reason}")
     except Exception as e:
         print(f"Error fetching Jobicy: {e}")
     return jobs
 
 def fetch_remotive_jobs():
+    print("[Agent Classifier] Fetching and auditing Remotive listings...")
     jobs = []
     urls = [
         'https://remotive.com/api/remote-jobs?category=software-dev',
@@ -227,27 +202,29 @@ def fetch_remotive_jobs():
                 if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'europe', 'worldwide', 'anywhere']):
                     title = item.get('title', '')
                     desc = item.get('description', '')
-                    if is_strictly_english_tech_job(title, desc):
-                        jobs.append({
-                            "id": f"remotive-{item.get('id')}",
-                            "title": title,
-                            "company": item.get('company_name', 'Tech Company'),
-                            "company_logo": item.get('company_logo_url', ''),
-                            "location": item.get('candidate_required_location', 'Remote (Austria / Europe)'),
-                            "category": categorize_job(title, desc),
-                            "tags": extract_tags(title + " " + " ".join(item.get('tags', []))),
-                            "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
-                            "url": item.get('url'),
-                            "source": "Remotive",
-                            "posted_at": item.get('publication_date', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
-                        })
+                    raw_job = {
+                        "id": f"remotive-{item.get('id')}",
+                        "title": title,
+                        "company": item.get('company_name', 'Tech Company'),
+                        "company_logo": item.get('company_logo_url', ''),
+                        "location": item.get('candidate_required_location', 'Remote (Austria / Europe)'),
+                        "category": categorize_job(title, desc),
+                        "tags": extract_tags(title + " " + " ".join(item.get('tags', []))),
+                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                        "url": item.get('url'),
+                        "source": "Remotive",
+                        "posted_at": item.get('publication_date', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+                    }
+                    processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                    if processed:
+                        jobs.append(processed)
         except Exception as e:
             print(f"Error fetching Remotive ({url}): {e}")
             
     return jobs
 
 def main():
-    print("Fetching ONLY strictly English Tech jobs across all of Austria...")
+    print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
     
     karriere_jobs = fetch_karriere_jobs()
     arbeitnow_jobs = fetch_arbeitnow_jobs()
@@ -264,7 +241,7 @@ def main():
             seen.add(key)
             unique_jobs.append(job)
             
-    print(f"Collected {len(unique_jobs)} strictly English Tech jobs in Austria.")
+    print(f"Collected {len(unique_jobs)} strictly 100% English Tech jobs in Austria.")
     
     out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(out_dir, exist_ok=True)

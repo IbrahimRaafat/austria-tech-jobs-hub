@@ -2,6 +2,8 @@ let allJobs = [];
 let activeCategory = 'All';
 let searchQuery = '';
 let activeLocation = 'All';
+let activeSeniority = 'All';
+let activeRelocation = 'All';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadJobs();
@@ -38,6 +40,16 @@ function setupEventListeners() {
         renderJobs();
     });
 
+    document.getElementById('seniority-filter').addEventListener('change', (e) => {
+        activeSeniority = e.target.value;
+        renderJobs();
+    });
+
+    document.getElementById('relocation-filter').addEventListener('change', (e) => {
+        activeRelocation = e.target.value;
+        renderJobs();
+    });
+
     document.getElementById('category-pills').addEventListener('click', (e) => {
         const target = e.target.closest('.pill');
         if (!target) return;
@@ -57,21 +69,38 @@ function renderJobs() {
             return false;
         }
 
+        if (activeSeniority !== 'All' && job.seniority !== activeSeniority) {
+            return false;
+        }
+
+        if (activeRelocation !== 'All' && job.relocation_support !== activeRelocation) {
+            return false;
+        }
+
         if (activeLocation !== 'All') {
             const jobLoc = (job.location || '').toLowerCase();
+            const jobCity = (job.city || '').toLowerCase();
             const filterLoc = activeLocation.toLowerCase();
             
             if (filterLoc === 'vienna') {
-                if (!jobLoc.includes('vienna') && !jobLoc.includes('wien')) return false;
+                if (!jobLoc.includes('vienna') && !jobLoc.includes('wien') && !jobCity.includes('vienna')) return false;
             } else if (filterLoc === 'remote') {
-                if (!jobLoc.includes('remote')) return false;
+                if (!jobLoc.includes('remote') && !jobCity.includes('remote')) return false;
             } else {
-                if (!jobLoc.includes(filterLoc)) return false;
+                if (!jobLoc.includes(filterLoc) && !jobCity.includes(filterLoc)) return false;
             }
         }
 
         if (searchQuery) {
-            const text = (job.title + ' ' + job.company + ' ' + job.location + ' ' + (job.tags || []).join(' ') + ' ' + job.description).toLowerCase();
+            const text = (
+                job.title + ' ' +
+                job.company + ' ' +
+                job.location + ' ' +
+                (job.seniority || '') + ' ' +
+                (job.relocation_support || '') + ' ' +
+                (job.tags || []).join(' ') + ' ' +
+                job.description
+            ).toLowerCase();
             if (!text.includes(searchQuery)) {
                 return false;
             }
@@ -86,7 +115,7 @@ function renderJobs() {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-secondary);">
                 <h3>No matching jobs found</h3>
-                <p>Try broadening your search criteria or resetting city filters.</p>
+                <p>Try broadening your search criteria or resetting city/seniority filters.</p>
             </div>
         `;
         return;
@@ -102,6 +131,18 @@ function createJobCardHTML(job) {
 
     const tagsHTML = (job.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('');
 
+    const seniorityBadge = job.seniority 
+        ? `<span class="meta-badge seniority-badge">${job.seniority}</span>` 
+        : '';
+        
+    const relocationBadge = (job.relocation_support && job.relocation_support !== 'Not Specified')
+        ? `<span class="meta-badge relocation-badge">✈️ ${job.relocation_support}</span>` 
+        : '';
+
+    const expBadge = job.experience_level
+        ? `<span class="meta-badge exp-badge">⏳ ${job.experience_level}</span>`
+        : '';
+
     return `
         <div class="job-card">
             <div>
@@ -111,6 +152,12 @@ function createJobCardHTML(job) {
                         <h3 class="job-title">${job.title}</h3>
                         <div class="company-name">${job.company}</div>
                     </div>
+                </div>
+
+                <div class="badges-row">
+                    ${seniorityBadge}
+                    ${expBadge}
+                    ${relocationBadge}
                 </div>
 
                 <div class="details-row">

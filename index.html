@@ -27,12 +27,12 @@
     <main class="container main-content">
         <section class="hero-section">
             <h1>English Tech Jobs in Austria</h1>
-            <p class="subtitle">100% English-written postings aggregated daily at 8:00 AM across Austria (Vienna, Graz, Linz, Salzburg, Innsbruck, & Remote).</p>
+            <p class="subtitle">100% English-written tech postings aggregated daily at 8:00 AM across Austria (Vienna, Graz, Linz, Salzburg, Innsbruck, & Remote).</p>
             
             <div class="search-box">
                 <div class="input-group">
                     <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" id="search-input" placeholder="Search by title, company, technology (e.g. Python, AI, React)...">
+                    <input type="text" id="search-input" placeholder="Search by title, company, technology (e.g. Python, AI, React, Docker)...">
                 </div>
             </div>
 
@@ -49,18 +49,43 @@
         <section class="jobs-section">
             <div class="section-header">
                 <h2 id="jobs-count-title">Loading Jobs...</h2>
-                <div class="sort-selector">
-                    <label for="location-filter">City / Region:</label>
-                    <select id="location-filter">
-                        <option value="All">All Locations (Austria)</option>
-                        <option value="Vienna">Vienna / Wien</option>
-                        <option value="Graz">Graz</option>
-                        <option value="Linz">Linz</option>
-                        <option value="Salzburg">Salzburg</option>
-                        <option value="Innsbruck">Innsbruck</option>
-                        <option value="Klagenfurt">Klagenfurt</option>
-                        <option value="Remote">Remote Austria</option>
-                    </select>
+                
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <label for="location-filter">City / Region:</label>
+                        <select id="location-filter">
+                            <option value="All">All Locations (Austria)</option>
+                            <option value="Vienna">Vienna / Wien</option>
+                            <option value="Graz">Graz</option>
+                            <option value="Linz">Linz</option>
+                            <option value="Salzburg">Salzburg</option>
+                            <option value="Innsbruck">Innsbruck</option>
+                            <option value="Carinthia">Carinthia (Klagenfurt/Villach)</option>
+                            <option value="Remote">Remote Austria</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="seniority-filter">Seniority:</label>
+                        <select id="seniority-filter">
+                            <option value="All">All Seniorities</option>
+                            <option value="Junior">Junior / Entry</option>
+                            <option value="Mid-Level">Mid-Level</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Lead / Manager">Lead / Management</option>
+                            <option value="Internship / Student">Internship / Student</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="relocation-filter">Relocation / Visa:</label>
+                        <select id="relocation-filter">
+                            <option value="All">All Visa Options</option>
+                            <option value="Visa Sponsorship">Visa Sponsorship Available</option>
+                            <option value="Relocation Supported">Relocation Supported</option>
+                            <option value="EU Work Permit Required">EU Work Permit Required</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -72,7 +97,7 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <p>Austria Tech Jobs Aggregator • Automated daily via GitHub Actions</p>
+            <p>Austria Tech Jobs Aggregator • Automated daily via GitHub Actions with Local AI Agent Language Classifier</p>
         </div>
     </footer>
 

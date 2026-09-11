@@ -199,9 +199,17 @@ body {
 
 .section-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 16px;
     margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .section-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .section-header h2 {
@@ -209,15 +217,21 @@ body {
     font-weight: 700;
 }
 
-.sort-selector {
+.filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-group {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
+    gap: 6px;
+    font-size: 13px;
     color: var(--text-secondary);
 }
 
-#location-filter {
+.filter-group select {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--text-primary);
@@ -225,6 +239,8 @@ body {
     border-radius: 8px;
     outline: none;
     font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .jobs-grid {
@@ -252,7 +268,7 @@ body {
 .card-top {
     display: flex;
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .company-logo {
@@ -287,13 +303,47 @@ body {
     font-weight: 500;
 }
 
+.badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.meta-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.seniority-badge {
+    background-color: #3b82f620;
+    color: #60a5fa;
+    border: 1px solid #3b82f640;
+}
+
+.relocation-badge {
+    background-color: #10b98120;
+    color: #34d399;
+    border: 1px solid #10b98140;
+}
+
+.exp-badge {
+    background-color: #8b5cf620;
+    color: #a78bfa;
+    border: 1px solid #8b5cf640;
+}
+
 .details-row {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     font-size: 13px;
     color: var(--text-secondary);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .detail-item {
