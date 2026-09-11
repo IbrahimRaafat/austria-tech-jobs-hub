@@ -1,21 +1,24 @@
 import urllib.request
 import re
 import html
+import os
+import json
 from collections import Counter
 
 class JobClassifierAgent:
     """
-    Custom Local Agent for inspecting full job post HTML, verifying 100% English language purity,
-    and extracting metadata tags (Seniority, Relocation, Work Permit, Experience Level, City).
+    Custom Hybrid Agent (Targeted NLP + optional Gemini API LLM Classifier)
+    Inspects full job posting content, strips website navigation templates,
+    verifies 100% English language purity, and extracts metadata tags.
     """
 
+    # Strong German section headers in job body text (excluding site nav links)
     GERMAN_STRONG_INDICATORS = [
         'deine aufgaben', 'ihre aufgaben', 'dein profil', 'ihr profil', 'wir bieten', 'ihr angebot',
-        'anforderungsprofil', 'unsere erwartungen', 'über uns', 'über das unternehmen',
-        'gehalt', 'mindestgehalt', 'brutto/monat', 'brutto/jahr', 'kollektivvertrag', 'überzahlung',
-        'dienstort', 'vollzeit', 'teilzeit', 'standort', 'bewerbung', 'deutschkenntnisse',
-        'sehr gute deutschkenntnisse', 'deutsch in wort und schrift', 'fliessend deutsch',
-        'fließend deutsch', 'deutsch c1', 'deutsch b2', 'gut ausgebildet', 'abgeschlossene ausbildung'
+        'anforderungsprofil', 'unsere erwartungen', 'über das unternehmen',
+        'brutto/monat', 'brutto/jahr', 'überzahlung', 'dienstort', 'vollzeit', 'teilzeit',
+        'deutschkenntnisse', 'sehr gute deutschkenntnisse', 'deutsch in wort und schrift',
+        'fliessend deutsch', 'fließend deutsch', 'deutsch c1', 'deutsch b2', 'abgeschlossene ausbildung'
     ]
 
     GERMAN_STOPWORDS = set([
@@ -27,8 +30,14 @@ class JobClassifierAgent:
         'als', 'auch', 'bei', 'uns', 'dich', 'du', 'sie', 'ihr', 'diese', 'dieser', 'dieses', 'unsere',
         'unserer', 'unserem', 'unseren', 'nachhaltig', 'bereich', 'abteilung', 'vereinbarung',
         'mindestgehalt', 'kollektivvertrag', 'überzahlung', 'bereitschaft', 'marktkonform',
-        'verstärkung', 'mitarbeiter', 'mitarbeiterin', 'suchen', 'freuen', 'uns'
+        'verstärkung', 'mitarbeiter', 'mitarbeiterin', 'suchen', 'freuen'
     ])
+
+    SITE_NAV_PHRASES = [
+        'zum seiteninhalt springen', 'jobs firmen lebenslauf', 'blog & tipps', 'über uns für arbeitgeber',
+        'jetzt anmelden', 'neu hier? kostenlos registrieren', 'job-alarm merkliste', 'firmen-alarm',
+        'nur für angemeldete bewerber', 'nachrichten , nur für angemeldete bewerber', 'lebenslauf bewerbungen'
+    ]
 
     TECH_KEYWORDS = [
         'developer', 'engineer', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
@@ -46,9 +55,10 @@ class JobClassifierAgent:
         self.headers = headers or {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
         }
+        self.gemini_api_key = os.environ.get('GEMINI_API_KEY', '')
 
     def fetch_full_text(self, url):
-        """Fetches and cleans the main body text from a job page URL."""
+        """Fetches job page HTML and strips site template nav/headers/footers."""
         if not url or not url.startswith('http'):
             return ""
         try:
@@ -56,62 +66,105 @@ class JobClassifierAgent:
             with urllib.request.urlopen(req, timeout=10) as resp:
                 raw_html = resp.read().decode('utf-8', errors='ignore')
             
-            # Clean scripts, styles, and html tags
+            # Remove scripts, styles, header, footer, nav elements
             clean = re.sub(r'<script[^>]*>.*?</script>', ' ', raw_html, flags=re.DOTALL)
             clean = re.sub(r'<style[^>]*>.*?</style>', ' ', clean, flags=re.DOTALL)
+            clean = re.sub(r'<header[^>]*>.*?</header>', ' ', clean, flags=re.DOTALL)
+            clean = re.sub(r'<footer[^>]*>.*?</footer>', ' ', clean, flags=re.DOTALL)
+            clean = re.sub(r'<nav[^>]*>.*?</nav>', ' ', clean, flags=re.DOTALL)
+
             text = re.sub(r'<[^>]+>', ' ', clean)
             text = html.unescape(text)
-            text = ' '.join(text.split())
+
+            # Strip standard site navigation text snippets
+            text_lower = text.lower()
+            for phrase in self.SITE_NAV_PHRASES:
+                text_lower = text_lower.replace(phrase, ' ')
+
+            text = ' '.join(text_lower.split())
             return text
         except Exception as e:
             return ""
 
+    def classify_with_gemini(self, title, text_content):
+        """Calls Gemini API to evaluate language purity & extract metadata tags."""
+        if not self.gemini_api_key:
+            return None
+
+        prompt = f"""
+Analyze this job posting from Austria and evaluate:
+1. Is the job description 100% written in English? (Answer false if it is written in German or requires German as a mandatory work language).
+2. What is the Seniority level? (Junior, Mid-Level, Senior, Lead / Manager, Internship / Student)
+3. Relocation & Visa support? (Relocation Supported, Visa Sponsorship, EU Work Permit Required, Not Specified)
+4. Experience level? (e.g. 0-2 years exp, 3-5 years exp, 5+ years exp)
+5. City / Region in Austria? (Vienna, Graz, Linz, Salzburg, Innsbruck, Carinthia, Remote, Austria)
+
+Title: {title}
+Content: {text_content[:2500]}
+
+Respond ONLY in JSON format:
+{{
+  "is_english": true/false,
+  "reason": "short rationale",
+  "seniority": "...",
+  "relocation_support": "...",
+  "experience_level": "...",
+  "city": "..."
+}}
+"""
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={self.gemini_api_key}"
+        headers = {'Content-Type': 'application/json'}
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"response_mime_type": "application/json"}
+        }).encode('utf-8')
+
+        try:
+            req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                result = json.loads(resp.read().decode())
+                text_resp = result['candidates'][0]['content']['parts'][0]['text']
+                data = json.loads(text_resp)
+                return data
+        except Exception as e:
+            print(f"Gemini API call skipped/failed: {e}")
+            return None
+
     def evaluate_language_purity(self, title, text_content):
-        """
-        Evaluates whether a job post is 100% English.
-        Returns (is_english, reason).
-        """
+        """Rule-based Targeted NLP language purity evaluator."""
         combined = (title + " " + text_content).lower()
 
-        # Check for explicit German section headers or requirements
+        # Check for explicit German body section headers
         for indicator in self.GERMAN_STRONG_INDICATORS:
             if indicator in combined:
-                return False, f"Matched German indicator: '{indicator}'"
+                return False, f"Matched German section header: '{indicator}'"
 
-        # Word tokenization for stopword count
         words = [w.lower() for w in re.findall(r'\b[a-zA-ZäöüßÄÖÜ]+\b', combined)]
         if not words:
             return False, "Empty content"
 
         german_words_found = [w for w in words if w in self.GERMAN_STOPWORDS]
-        
         german_count = len(german_words_found)
         ratio = german_count / len(words)
 
-        if german_count > 18 or ratio > 0.03:
+        if german_count > 25 or ratio > 0.04:
             top_found = Counter(german_words_found).most_common(5)
             return False, f"High German stopword density ({german_count} words, ratio {ratio:.2%}): {top_found}"
 
         return True, "Passed English Purity Check"
 
     def is_tech_job(self, title):
-        """Checks if the title indicates a genuine tech role."""
         title_lower = title.lower()
-        
         if any(term in title_lower for term in self.NON_TECH_TERMS):
             return False
-
         for kw in self.TECH_KEYWORDS:
             if re.search(r'\b' + re.escape(kw) + r'\b', title_lower):
                 return True
-
         return False
 
     def extract_metadata(self, title, description):
-        """Extracts Seniority, Relocation/Visa, Experience, and City tags."""
         text = (title + " " + description).lower()
 
-        # 1. Seniority
         seniority = "Mid-Level"
         if any(k in text for k in ["junior", "graduate", "entry level", "entry-level", "trainee", "associate"]):
             seniority = "Junior"
@@ -122,7 +175,6 @@ class JobClassifierAgent:
         elif any(k in text for k in ["intern", "internship", "working student", "werkstudent"]):
             seniority = "Internship / Student"
 
-        # 2. Relocation & Visa Support
         relocation_support = "Not Specified"
         if any(k in text for k in ["relocation support", "relocation package", "relocation assistance", "will assist with relocation"]):
             relocation_support = "Relocation Supported"
@@ -131,7 +183,6 @@ class JobClassifierAgent:
         elif any(k in text for k in ["eu citizen", "valid work permit", "eligible to work in Austria", "austrian work permit"]):
             relocation_support = "EU Work Permit Required"
 
-        # 3. Experience Level
         exp_match = re.search(r'(\d+)\+?\s*(-|\s*to\s*)?\s*(\d+)?\s*years?', text)
         if exp_match:
             yrs = exp_match.group(1)
@@ -143,7 +194,6 @@ class JobClassifierAgent:
         else:
             experience = "2-5 years exp"
 
-        # 4. City Normalization
         city = "Austria (Other)"
         if any(k in text for k in ["vienna", "wien"]):
             city = "Vienna"
@@ -168,10 +218,6 @@ class JobClassifierAgent:
         }
 
     def process_job(self, job_dict, fetch_detail_if_needed=True):
-        """
-        Main entry point for agent evaluation.
-        Returns (evaluated_job_dict, status_string).
-        """
         title = job_dict.get('title', '')
         snippet = job_dict.get('description', '')
         url = job_dict.get('url', '')
@@ -179,17 +225,30 @@ class JobClassifierAgent:
         if not self.is_tech_job(title):
             return None, "Not a tech job"
 
-        # If karriere.at or url provided, fetch full page to inspect body
         full_text = snippet
         if fetch_detail_if_needed and url and 'karriere.at' in url:
             fetched = self.fetch_full_text(url)
             if fetched:
                 full_text = fetched
 
+        # 1. Try Gemini API evaluation if key available
+        gemini_res = self.classify_with_gemini(title, full_text)
+        if gemini_res is not None:
+            if not gemini_res.get('is_english'):
+                return None, f"Gemini API: {gemini_res.get('reason', 'Not English')}"
+            job_dict.update({
+                "seniority": gemini_res.get('seniority', 'Mid-Level'),
+                "relocation_support": gemini_res.get('relocation_support', 'Not Specified'),
+                "experience_level": gemini_res.get('experience_level', '2-5 years exp'),
+                "city": gemini_res.get('city', 'Vienna')
+            })
+            return job_dict, "Accepted by Gemini API"
+
+        # 2. Targeted Rule-based NLP fallback
         is_english, reason = self.evaluate_language_purity(title, full_text)
         if not is_english:
             return None, reason
 
         meta = self.extract_metadata(title, snippet + " " + full_text)
         job_dict.update(meta)
-        return job_dict, "Accepted"
+        return job_dict, "Accepted by Targeted NLP Agent"
