@@ -4,6 +4,7 @@ import json
 import os
 import datetime
 import sys
+from urllib.parse import urljoin
 
 # Ensure scripts folder is on python path
 sys.path.insert(0, os.path.dirname(__file__))
@@ -223,15 +224,108 @@ def fetch_remotive_jobs():
             
     return jobs
 
+def fetch_jobleads_jobs():
+    """
+    Fetches JobLeads listings via a headless browser. JobLeads renders its
+    search results client-side and its SSR skips job data for bot traffic,
+    so a plain HTTP request returns no listings - Playwright is required.
+    """
+    print("[Agent Classifier] Fetching and auditing JobLeads.com listings...")
+    jobs = []
+    search_urls = [
+        'https://www.jobleads.com/at/jobs/l/1210/q/Software%20Engineer%20Intern',
+    ]
+
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("Error fetching JobLeads.com: playwright is not installed (pip install playwright && playwright install chromium)")
+        return jobs
+
+    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            try:
+                for url in search_urls:
+                    try:
+                        page = browser.new_page(user_agent=user_agent)
+                        page.goto(url, timeout=30000, wait_until='networkidle')
+                        page.wait_for_timeout(4000)
+
+                        cards = page.query_selector_all('[data-testid="search-job-card"]')
+                        for card in cards:
+                            link_el = card.query_selector('[data-testid="search-job-card-link"]')
+                            title = link_el.inner_text().strip() if link_el else ""
+                            href = link_el.get_attribute('href') if link_el else None
+                            if not title or not href:
+                                continue
+
+                            company_el = card.query_selector('[data-testid="search-job-card-company-name"]')
+                            company = company_el.inner_text().strip() if company_el else "Tech Company"
+
+                            company_container = card.query_selector('[data-testid="search-job-card-company"]')
+                            location = "Austria"
+                            if company_container:
+                                full_text = company_container.inner_text()
+                                if '•' in full_text:
+                                    location = full_text.split('•', 1)[1].strip() or "Austria"
+
+                            work_setting_el = card.query_selector('[data-testid="job-card-chip-work-setting"]')
+                            work_setting = work_setting_el.inner_text().strip() if work_setting_el else ""
+
+                            salary_el = card.query_selector('[data-testid="job-card-chip-salary"]')
+                            salary = salary_el.inner_text().strip() if salary_el else ""
+
+                            benefit_els = card.query_selector_all('[data-testid^="job-card-chip-benefit-"]')
+                            benefits = [b.inner_text().strip() for b in benefit_els if b.inner_text().strip()]
+
+                            description_parts = [p for p in [work_setting, salary] + benefits if p]
+                            description = f"{title} at {company} in {location}. " + ", ".join(description_parts)
+
+                            job_url = urljoin(url, href)
+                            job_id = href.rstrip('/').split('/')[-1]
+
+                            raw_job = {
+                                "id": f"jobleads-{job_id}",
+                                "title": title,
+                                "company": company,
+                                "company_logo": "",
+                                "location": location,
+                                "category": categorize_job(title, description),
+                                "tags": extract_tags(title + " " + description),
+                                "description": description,
+                                "url": job_url,
+                                "source": "JobLeads.com",
+                                "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                            }
+
+                            processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                            if processed:
+                                jobs.append(processed)
+                            else:
+                                print(f"  [REJECTED JobLeads.com] Title: '{title}' -> Reason: {reason}")
+                        page.close()
+                    except Exception as e:
+                        print(f"Error fetching JobLeads.com ({url}): {e}")
+            finally:
+                browser.close()
+    except Exception as e:
+        print(f"Error launching browser for JobLeads.com: {e}")
+
+    return jobs
+
 def main():
     print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
-    
+
     karriere_jobs = fetch_karriere_jobs()
     arbeitnow_jobs = fetch_arbeitnow_jobs()
     jobicy_jobs = fetch_jobicy_jobs()
     remotive_jobs = fetch_remotive_jobs()
-    
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs
+    jobleads_jobs = fetch_jobleads_jobs()
+
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs
     
     seen = set()
     unique_jobs = []

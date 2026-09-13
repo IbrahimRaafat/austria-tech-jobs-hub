@@ -4,7 +4,7 @@ An automated daily aggregator for English-friendly software, data, AI, frontend,
 
 ## 🚀 How it Works
 1. **Daily Automation**: A GitHub Actions workflow runs every day at **08:00 AM Vienna time (06:00 UTC)**.
-2. **Scraper**: Runs `scripts/fetch_jobs.py` to aggregate roles from Austria's top job sources (Karriere.at, Remotive, Jobicy, etc.).
+2. **Scraper**: Runs `scripts/fetch_jobs.py` to aggregate roles from Austria's top job sources (Karriere.at, Remotive, Jobicy, JobLeads.com, etc.).
 3. **Data**: Saves formatted listings into `data/jobs.json`.
 4. **Live Web Page**: `index.html` loads `data/jobs.json` to present a fast, searchable, filterable dashboard hosted free on **GitHub Pages**.
 
@@ -36,7 +36,14 @@ Your live website will be accessible at:
 ---
 
 ## 🛠 Local Testing
-You can run the scraper manually on your computer anytime:
+Install dependencies once (Playwright is used to render JobLeads.com, which requires a real browser):
+
+```bash
+pip install -r requirements.txt
+playwright install chromium
+```
+
+Then run the scraper manually on your computer anytime:
 
 ```bash
 python scripts/fetch_jobs.py
