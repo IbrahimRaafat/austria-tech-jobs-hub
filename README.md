@@ -50,3 +50,26 @@ python scripts/fetch_jobs.py
 ```
 
 To view the dashboard locally, simply open `index.html` in your web browser.
+
+---
+
+## 🧠 Optional: Local AI Classifier (Ollama)
+The 100% English-purity filter (`scripts/agent_classifier.py`) is always rule-based NLP — it was empirically tested and audited, and testing showed small LLMs (including local models) are unreliable at this specific judgment call (e.g. `llama3.2:1b`/`3b` both mislabeled genuinely English postings as German when the text mentioned "visa sponsorship" or "EU work permit"). So no LLM can ever cause a real English job to be silently dropped.
+
+What an LLM *can* do, when run **locally**, is enrich metadata tags (seniority, visa/relocation, experience, city) on jobs that already passed the rule-based gate — no API key, no cloud calls, nothing sent off your machine.
+
+1. Install [Ollama](https://ollama.com/download) (free, runs as a background service on Windows/Mac/Linux).
+2. Pull the default model (~2GB):
+   ```bash
+   ollama pull llama3.2:3b
+   ```
+3. Just run the scraper as usual — `agent_classifier.py` detects `http://localhost:11434` automatically and uses it:
+   ```bash
+   python scripts/fetch_jobs.py
+   ```
+
+If Ollama isn't running (e.g. in the GitHub Actions daily automation), it silently falls back to rule-based keyword metadata extraction — no errors, no config needed.
+
+Optional overrides via environment variables:
+- `OLLAMA_MODEL` — use a different local model (default: `llama3.2:3b`)
+- `OLLAMA_URL` — point at a different Ollama endpoint (default: `http://localhost:11434/api/generate`)

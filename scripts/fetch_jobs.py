@@ -2,6 +2,7 @@ import urllib.request
 import re
 import json
 import os
+import html
 import datetime
 import sys
 from urllib.parse import urljoin
@@ -224,6 +225,57 @@ def fetch_remotive_jobs():
             
     return jobs
 
+def fetch_unjobs_jobs():
+    """
+    Fetches Vienna duty-station listings from UNjobs.org (UN/international-organization
+    postings in Vienna: IAEA, UNODC, UNIDO, OSCE, OPEC Fund, ICMPD, etc.). Static HTML,
+    just needs a browser User-Agent to avoid a bot-check 403.
+    """
+    print("[Agent Classifier] Fetching and auditing UNjobs.org (Vienna duty station) listings...")
+    jobs = []
+    url = 'https://unjobs.org/duty_stations/vie'
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        page_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+
+        pattern = re.compile(
+            r'class="jtitle" href="([^"]+)">([^<]+)</a><br>([^<]+)<br>Updated:\s*<time[^>]*datetime="([^"]+)"',
+            re.DOTALL
+        )
+        for job_url, title, org, updated in pattern.findall(page_html):
+            title = html.unescape(title).strip()
+            org = html.unescape(org).strip()
+
+            if not agent.is_tech_job(title):
+                continue
+
+            description = f"{title} at {org} in Vienna, Austria."
+            raw_job = {
+                "id": f"unjobs-{job_url.rstrip('/').split('/')[-1]}",
+                "title": title,
+                "company": org,
+                "company_logo": "",
+                "location": "Vienna",
+                "category": categorize_job(title, description),
+                "tags": extract_tags(title),
+                "description": description,
+                "url": job_url,
+                "source": "UNjobs.org",
+                "posted_at": updated[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+            }
+
+            processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+            if processed:
+                jobs.append(processed)
+            else:
+                print(f"  [REJECTED UNjobs.org] Title: '{title}' -> Reason: {reason}")
+    except Exception as e:
+        print(f"Error fetching UNjobs.org: {e}")
+
+    return jobs
+
 def fetch_jobleads_jobs():
     """
     Fetches JobLeads listings via a headless browser. JobLeads renders its
@@ -324,8 +376,9 @@ def main():
     jobicy_jobs = fetch_jobicy_jobs()
     remotive_jobs = fetch_remotive_jobs()
     jobleads_jobs = fetch_jobleads_jobs()
+    unjobs_jobs = fetch_unjobs_jobs()
 
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs
     
     seen = set()
     unique_jobs = []

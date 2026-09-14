@@ -7,9 +7,17 @@ from collections import Counter
 
 class JobClassifierAgent:
     """
-    Custom Hybrid Agent (Targeted NLP + optional Gemini API LLM Classifier)
+    Custom Hybrid Agent (Targeted NLP + optional local Ollama LLM)
     Inspects full job posting content, strips website navigation templates,
     verifies 100% English language purity, and extracts metadata tags.
+
+    The rule-based NLP English-purity check is always the authoritative gate: small LLMs
+    (tested with llama3.2:1b and 3b) proved unreliable at this specific judgment, mislabeling
+    genuinely English postings as German. An LLM is only used afterwards, to enrich metadata
+    tags (seniority/relocation/experience/city) on jobs that already passed the gate:
+      1. Local Ollama model (if a local Ollama server is reachable) - free, private, no API key.
+      2. Rule-based keyword metadata extraction - always available, used in CI (GitHub Actions)
+         where no local Ollama server exists.
     """
 
     # Strong German section headers in job body text
@@ -40,7 +48,7 @@ class JobClassifierAgent:
     ]
 
     TECH_KEYWORDS = [
-        'developer', 'engineer', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
+        'developer', 'engineer', 'engineering', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
         'fullstack', 'full-stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
         'tech', 'it', 'python', 'java', 'react', 'node', 'sql', 'sysadmin', 'scrum', 'cybersecurity',
         'machine learning', 'data science', 'analytics', 'infrastructure', 'platform'
@@ -51,13 +59,15 @@ class JobClassifierAgent:
         'accountant', 'legal', 'finance manager', 'fp&a', 'customer success manager', 'event', 'digital marketing'
     ]
 
-    DEFAULT_GEMINI_KEY = "AIzaSyAyPLhgqxbZcA16LCtq2tLKZQHuuKUGRxA"
-
-    def __init__(self, headers=None, gemini_api_key=None):
+    def __init__(self, headers=None, ollama_url=None, ollama_model=None):
         self.headers = headers or {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
         }
-        self.gemini_api_key = gemini_api_key or os.environ.get('GEMINI_API_KEY', self.DEFAULT_GEMINI_KEY)
+
+        self.ollama_url = ollama_url or os.environ.get('OLLAMA_URL', 'http://localhost:11434/api/generate')
+        self.ollama_model = ollama_model or os.environ.get('OLLAMA_MODEL', 'llama3.2:3b')
+        self._ollama_checked = False
+        self._ollama_available = False
 
     def fetch_full_text(self, url):
         """Fetches job page HTML and strips site template nav/headers/footers."""
@@ -86,9 +96,23 @@ class JobClassifierAgent:
         except Exception:
             return ""
 
-    def classify_with_gemini(self, title, text_content):
-        """Calls Gemini API to evaluate language purity & extract metadata tags."""
-        if not self.gemini_api_key:
+    def _ollama_is_running(self):
+        """Cheap one-time check so we don't retry a dead local server for every job."""
+        if self._ollama_checked:
+            return self._ollama_available
+        self._ollama_checked = True
+        try:
+            base = self.ollama_url.split('/api/')[0]
+            urllib.request.urlopen(base, timeout=1)
+            self._ollama_available = True
+        except Exception:
+            self._ollama_available = False
+        return self._ollama_available
+
+    def classify_with_ollama(self, title, text_content):
+        """Calls a local Ollama server (e.g. `ollama run llama3.2:1b`) to evaluate
+        language purity & extract metadata tags, fully offline and free."""
+        if not self._ollama_is_running():
             return None
 
         prompt = (
@@ -103,23 +127,22 @@ class JobClassifierAgent:
             "5. City in Austria (Vienna, Graz, Linz, Salzburg, Innsbruck, Carinthia, Remote, Austria).\n\n"
             "Respond ONLY in valid JSON format: {\"is_english\": true, \"reason\": \"Rationale\", \"seniority\": \"...\", \"relocation_support\": \"...\", \"experience_level\": \"...\", \"city\": \"...\"}"
         )
-        
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key={self.gemini_api_key}"
-        headers = {'Content-Type': 'application/json'}
+
         payload = json.dumps({
-            "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"response_mime_type": "application/json"}
+            "model": self.ollama_model,
+            "prompt": prompt,
+            "stream": False,
+            "format": "json"
         }).encode('utf-8')
 
         try:
-            req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            req = urllib.request.Request(self.ollama_url, data=payload, headers={'Content-Type': 'application/json'}, method='POST')
+            with urllib.request.urlopen(req, timeout=30) as resp:
                 result = json.loads(resp.read().decode())
-                text_resp = result['candidates'][0]['content']['parts'][0]['text']
-                data = json.loads(text_resp)
+                data = json.loads(result['response'])
                 return data
-        except Exception as e:
-            # Fallback smoothly to rule-based agent if network/API fails
+        except Exception:
+            # Local model missing/slow/malformed output - fall through to next classifier
             return None
 
     def evaluate_language_purity(self, title, text_content):
@@ -222,24 +245,27 @@ class JobClassifierAgent:
             if fetched:
                 full_text = fetched
 
-        # 1. Try Gemini API evaluation if key available
-        gemini_res = self.classify_with_gemini(title, full_text)
-        if gemini_res is not None:
-            if not gemini_res.get('is_english'):
-                return None, f"Gemini API: {gemini_res.get('reason', 'Not English')}"
-            job_dict.update({
-                "seniority": gemini_res.get('seniority', 'Mid-Level'),
-                "relocation_support": gemini_res.get('relocation_support', 'Not Specified'),
-                "experience_level": gemini_res.get('experience_level', '2-5 years exp'),
-                "city": gemini_res.get('city', 'Vienna')
-            })
-            return job_dict, "Accepted by Gemini API Agent"
-
-        # 2. Rule-based NLP fallback
+        # 1. The rule-based English-purity check is always the authoritative language gate.
+        # LLMs (small local ones especially) were tested and are unreliable here - e.g.
+        # llama3.2:1b/3b both mislabeled genuinely English postings as German when the text
+        # mentioned "visa sponsorship" or "EU work permit required". Never let an LLM silently
+        # drop a real English job - it is only trusted below to enrich metadata tags.
         is_english, reason = self.evaluate_language_purity(title, full_text)
         if not is_english:
             return None, reason
 
+        # 2. Try local Ollama model to enrich metadata tags (seniority/relocation/experience/city)
+        ollama_res = self.classify_with_ollama(title, full_text)
+        if ollama_res is not None:
+            job_dict.update({
+                "seniority": ollama_res.get('seniority', 'Mid-Level'),
+                "relocation_support": ollama_res.get('relocation_support', 'Not Specified'),
+                "experience_level": ollama_res.get('experience_level', '2-5 years exp'),
+                "city": ollama_res.get('city', 'Vienna')
+            })
+            return job_dict, f"Accepted by Rule-based Filter + local Ollama metadata ({self.ollama_model})"
+
+        # 3. Rule-based metadata extraction (always available - used in CI/GitHub Actions)
         meta = self.extract_metadata(title, snippet + " " + full_text)
         job_dict.update(meta)
         return job_dict, "Accepted by Rule-based NLP Agent"
