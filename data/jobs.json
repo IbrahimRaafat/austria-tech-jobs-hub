@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-14T01:55:10.358328+00:00",
-  "total_count": 30,
+  "updated_at": "2026-09-14T18:01:04.670661+00:00",
+  "total_count": 24,
   "jobs": [
     {
       "id": "karriere-10029430",
@@ -14,46 +14,27 @@
       "url": "https://www.karriere.at/jobs/10029430",
       "source": "Karriere.at",
       "posted_at": "2026-09-14",
-      "seniority": "Senior",
+      "seniority": "Junior",
       "relocation_support": "Not Specified",
-      "experience_level": "3-5 years exp",
-      "city": "Kronstorf"
+      "experience_level": "2+ years exp",
+      "city": "Vienna"
     },
     {
-      "id": "karriere-10029853",
-      "title": "(Senior) Data Platform Engineer (m/w/d)",
-      "company": "smartpoint dataformers GmbH",
-      "company_logo": "https://kcdn.at/company/19307/3904282/smp_aurora_black_rgb_slogan.companysquare.png",
-      "location": "Wien, Linz",
+      "id": "karriere-10026563",
+      "title": "AI Platform & Engineering Lead (m/w/d)",
+      "company": "PÜSPÖK Erneuerbare Energie GmbH",
+      "company_logo": "https://kcdn.at/company/130529/3716570/puespoek_logo_rgb_quadratisch-gruen-blau.companysquare.png",
+      "location": "Parndorf",
       "category": "Data & AI",
       "tags": [],
-      "description": "Tech role at smartpoint dataformers GmbH in Wien, Linz.",
-      "url": "https://www.karriere.at/jobs/10029853",
+      "description": "Tech role at PÜSPÖK Erneuerbare Energie GmbH in Parndorf.",
+      "url": "https://www.karriere.at/jobs/10026563",
       "source": "Karriere.at",
       "posted_at": "2026-09-14",
-      "seniority": "Senior",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "5+ years exp",
-      "city": "Linz"
-    },
-    {
-      "id": "karriere-10030983",
-      "title": "Lead AI Engineer (Java)",
-      "company": "SQUER Group Services GmbH",
-      "company_logo": "https://kcdn.at/company/153609/4040850/squer_querformat.companysquare.png",
-      "location": "Wien 9. Bezirk (Alsergrund)",
-      "category": "Data & AI",
-      "tags": [
-        "Java"
-      ],
-      "description": "Tech role at SQUER Group Services GmbH in Wien 9. Bezirk (Alsergrund).",
-      "url": "https://www.karriere.at/jobs/10030983",
-      "source": "Karriere.at",
-      "posted_at": "2026-09-14",
-      "seniority": "Senior",
+      "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
-      "city": "Vienna"
+      "city": "Parndorf"
     },
     {
       "id": "karriere-10029847",
@@ -70,7 +51,7 @@
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
-      "city": "Wien 1. Bezirk (Innere Stadt)"
+      "city": "Vienna"
     },
     {
       "id": "karriere-10032045",
@@ -84,7 +65,7 @@
       "url": "https://www.karriere.at/jobs/10032045",
       "source": "Karriere.at",
       "posted_at": "2026-09-14",
-      "seniority": "Senior",
+      "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
       "city": "Vienna"
@@ -103,115 +84,27 @@
       "posted_at": "2026-09-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "3-5 years",
-      "city": "Wien"
+      "experience_level": "5+ years exp",
+      "city": "Vienna"
     },
     {
-      "id": "arbeitnow-remote-senior-backend-engineer-go-berlin-391760",
-      "title": "Senior Backend Engineer (Go) (m/w/d)",
-      "company": "Recare Deutschland GmbH",
+      "id": "arbeitnow-remote-technical-lead-gpu-infrastructure-london-173561",
+      "title": "Technical Lead - GPU Infrastructure",
+      "company": "Tether Operations Limited",
       "company_logo": "",
       "location": "Remote job",
       "category": "Data & AI",
       "tags": [
-        "Engineering",
+        "Data",
         "Remote"
       ],
-      "description": "     About us    As one of Germany's leading HealthTech companies, we are transforming discharge management by making it technology driven, patient centered, and free of bureaucracy. In addition to our market leading SaaS platform, we are developing AI solutions that radically si...",
-      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-backend-engineer-go-berlin-391760",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-09-14",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Austria (Other)"
-    },
-    {
-      "id": "arbeitnow-remote-senior-genai-solution-engineer-all-genders-440579",
-      "title": "Senior GenAI Solution Engineer (all genders)",
-      "company": "Eraneos",
-      "company_logo": "",
-      "location": "Hamburg, München, Düsseldorf, remote",
-      "category": "Data & AI",
-      "tags": [
-        "Data Engineer",
-        "Machine Learning",
-        "Software Development",
-        "Python",
-        "Cloud"
-      ],
-      "description": "  What you can expect from us  We are a technical, implementation-oriented spin-off of a global management consultancy. Our clients are primarily DAX and Fortune Global 500 companies, which we advise on issues in the areas of analytics, big data and machine learning. Within the g...",
-      "url": "https://www.arbeitnow.com/jobs/companies/eraneos/remote-senior-genai-solution-engineer-all-genders-440579",
+      "description": "   Join Tether and Shape the Future of Digital Finance    At Tether, we’re not just building products, we’re pioneering a global financial revolution. Our cutting-edge solutions empower businesses—from exchanges and wallets to payment processors and ATMs—to seamlessly integrate r...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/tether-operations-limited/remote-technical-lead-gpu-infrastructure-london-173561",
       "source": "Arbeitnow / Indeed Network",
       "posted_at": "2026-09-14",
       "seniority": "Senior",
       "relocation_support": "Relocation Supported",
       "experience_level": "5+ years",
-      "city": "Vienna"
-    },
-    {
-      "id": "arbeitnow-remote-forward-deployed-engineer-all-genders-99442",
-      "title": "Forward Deployed Engineer (all genders)",
-      "company": "Eraneos",
-      "company_logo": "",
-      "location": "Hamburg, München, Düsseldorf, remote",
-      "category": "Data & AI",
-      "tags": [
-        "Consulting",
-        "GenAI",
-        "Solution Engineering",
-        "Strategie",
-        "FDE"
-      ],
-      "description": "  What you can expect from us  Eraneos supports AI initiatives from strategy all the way through to production. In most AI projects, there's a gap between the strategy and what actually ends up running in production and creating real value. That's exactly the gap we close.   For ...",
-      "url": "https://www.arbeitnow.com/jobs/companies/eraneos/remote-forward-deployed-engineer-all-genders-99442",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-09-14",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years",
-      "city": "Remote"
-    },
-    {
-      "id": "arbeitnow-remote-data-engineer-all-genders-12735",
-      "title": "Data Engineer (all genders)",
-      "company": "Eraneos",
-      "company_logo": "",
-      "location": "Hamburg, München, Düsseldorf, remote",
-      "category": "Data & AI",
-      "tags": [
-        "Data Engineering",
-        "Cloud Engineering",
-        "Snowflake",
-        "Databricks",
-        "ETL"
-      ],
-      "description": "  What you can expect from us  We’re a high‑energy cloud- and data engineering team looking for like-minded, motivated tech builders. We are driven by ownership and business outcomes.   As the analytics unit within a global management consultancy, we turn data-driven strategies i...",
-      "url": "https://www.arbeitnow.com/jobs/companies/eraneos/remote-data-engineer-all-genders-12735",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-09-14",
-      "seniority": "Mid-Level",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "3-5 years exp",
-      "city": "Vienna"
-    },
-    {
-      "id": "arbeitnow-remote-software-engineer-396352",
-      "title": "Software Engineer",
-      "company": "Scarlet",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Software Engineering"
-      ],
-      "description": "  We pull medical technology from the future to solve human health.      Scarlet is authorised to assess and certify medical devices. We combine clinical, technical and regulatory expertise with AI agents and software so rigorous certification can keep pace with product developme...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/scarlet/remote-software-engineer-396352",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-09-14",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "0-2 years exp",
       "city": "Remote"
     },
     {
@@ -229,45 +122,26 @@
       "source": "Arbeitnow / Indeed Network",
       "posted_at": "2026-09-14",
       "seniority": "Senior",
-      "relocation_support": "Relocation Supported",
+      "relocation_support": "Not Specified",
       "experience_level": "5+ years",
       "city": "Remote"
     },
     {
-      "id": "arbeitnow-senior-machine-learning-engineer-embedded-ai-paris-309751",
-      "title": "Senior Machine Learning Engineer - Embedded AI",
-      "company": "Pennylane SAS",
-      "company_logo": "",
-      "location": "All France (remote)",
-      "category": "Data & AI",
-      "tags": [
-        "Tech"
-      ],
-      "description": " Are you looking to have an impact on the daily life of millions of entrepreneurs in France (and tomorrow in Europe)? Are you looking for a work environment that values trust, proactivity, and autonomy? Are our  Engineering principles  aligned with your vision? Then Pennylane is ...",
-      "url": "https://www.arbeitnow.fr/jobs/companies/pennylane-sas/senior-machine-learning-engineer-embedded-ai-paris-309751",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-09-14",
-      "seniority": "Senior",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "3-5 years exp",
-      "city": "Vienna"
-    },
-    {
-      "id": "jobicy-150575",
-      "title": "Data Support Specialist I, CDS Operations",
-      "company": "BCD Travel",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2025/06/512568c9-221.jpg",
-      "location": "Europe,  UK",
+      "id": "jobicy-153242",
+      "title": "Principal ML Platform Engineer",
+      "company": "Synthesia",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/c69aad11-221.webp",
+      "location": "Europe",
       "category": "Data & AI",
       "tags": [],
-      "description": "Start your journey with BCD: Grow, connect, collaborate and celebrate with our global team Data Support Specialist I, CDS Operations (Remote)Full time, Singapore, United Kingdom, Spain, Poland*If you are located in the Warsaw area, you will need to work in-office for 50% of worki...",
-      "url": "https://jobicy.com/jobs/150575-data-support-specialist-i-cds-operations",
+      "description": "Synthesia is the world’s leading AI video platform for business, used by over 90% of the Fortune 100. Founded in 2017, the company is headquartered in London, with offices and teams across Europe and the US. As AI continues to shape the way we live and work, Synthesia develops pr...",
+      "url": "https://jobicy.com/jobs/153242-principal-ml-platform-engineer",
       "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-09-13",
-      "seniority": "Junior",
+      "posted_at": "2026-09-14",
+      "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "0-2 years exp",
-      "city": "Remote"
+      "experience_level": "5+ years exp",
+      "city": "Not Specified"
     },
     {
       "id": "remotive-2091045",
@@ -281,9 +155,9 @@
       "url": "https://remotive.com/remote-jobs/information-technology/tier-iii-service-desk-engineer-2091045",
       "source": "Remotive",
       "posted_at": "2026-09-07",
-      "seniority": "Mid-Level",
+      "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "3-5 years exp",
+      "experience_level": "5+ years exp",
       "city": "Not Specified"
     },
     {
@@ -331,7 +205,7 @@
       "posted_at": "2026-08-26",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "3-5 years exp",
+      "experience_level": "3-5 years",
       "city": "Remote"
     },
     {
@@ -355,7 +229,7 @@
       "posted_at": "2026-08-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "3-5 years exp",
+      "experience_level": "5+ years exp",
       "city": "Remote"
     },
     {
@@ -378,7 +252,7 @@
       "source": "Remotive",
       "posted_at": "2026-08-20",
       "seniority": "Senior",
-      "relocation_support": "Not Specified",
+      "relocation_support": "Relocation Supported",
       "experience_level": "3-5 years exp",
       "city": "Remote"
     },
@@ -402,8 +276,8 @@
       "source": "Remotive",
       "posted_at": "2026-08-19",
       "seniority": "Senior",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "5+ years",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
       "city": "Remote"
     },
     {
@@ -419,8 +293,8 @@
       "source": "Remotive",
       "posted_at": "2026-08-16",
       "seniority": "Senior",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "3-5 years exp",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
       "city": "Remote"
     },
     {
@@ -436,9 +310,9 @@
       "source": "Remotive",
       "posted_at": "2026-08-16",
       "seniority": "Senior",
-      "relocation_support": "Not Specified",
+      "relocation_support": "Relocation Supported",
       "experience_level": "5+ years exp",
-      "city": "None"
+      "city": "Not Specified"
     },
     {
       "id": "jobleads-software-engineer-intern-ship-real-code-with-mentors--wien--e1469be193524be7d817e1a03e8558182",
@@ -503,7 +377,7 @@
       "url": "https://www.jobleads.com/at/job/software-engineer-intern-summer-2027--wien--e9d7f9f952dd896d7acf4e36b50a98307",
       "source": "JobLeads.com",
       "posted_at": "2026-09-14",
-      "seniority": "Junior",
+      "seniority": "Internship / Student",
       "relocation_support": "Relocation Supported",
       "experience_level": "0-2 years exp",
       "city": "Wien"
@@ -521,9 +395,9 @@
       "source": "JobLeads.com",
       "posted_at": "2026-09-14",
       "seniority": "Mid-Level",
-      "relocation_support": "Relocation Supported",
-      "experience_level": "3-5 years exp",
-      "city": "Remote"
+      "relocation_support": "Hybrid",
+      "experience_level": "3-5 years",
+      "city": "Wien"
     },
     {
       "id": "jobleads-distributed-systems-software-engineer-python-go--wien--e42c9b02241a495f6465f8175dd9da481",
@@ -542,7 +416,7 @@
       "seniority": "Mid-Level",
       "relocation_support": "Remote",
       "experience_level": "3-5 years",
-      "city": "Vienna"
+      "city": "Wien"
     },
     {
       "id": "unjobs-1788796805784",
