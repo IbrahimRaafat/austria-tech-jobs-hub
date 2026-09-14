@@ -394,6 +394,87 @@ def fetch_jobleads_jobs():
 
     return jobs
 
+def fetch_thehub_jobs():
+    """
+    Fetches from thehub.io, a European startup job board. Job data is server-rendered
+    into a `window.__NUXT__` state blob rather than exposed via a plain API, so this
+    uses a headless browser to load each role's search page and evaluate that state
+    directly (much cheaper than DOM-scraping cards, since it's already structured JSON).
+
+    thehub.io has no dedicated Austria filter (locations are grouped into EU/Nordic
+    countries/"Other Europe"/Remote), so each dev-focused role is fetched broadly and
+    results are filtered down to Austria-relevant or remote listings afterward, the
+    same pattern used for Jobicy/Remotive/Arbeitnow.
+    """
+    print("[Agent Classifier] Fetching and auditing thehub.io listings...")
+    jobs = []
+    roles = ['fullstackdeveloper', 'backenddeveloper', 'frontenddeveloper', 'devops', 'datascience']
+
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("Error fetching thehub.io: playwright is not installed (pip install playwright && playwright install chromium)")
+        return jobs
+
+    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            try:
+                for role in roles:
+                    url = f'https://thehub.io/jobs/?roles={role}'
+                    try:
+                        page = browser.new_page(user_agent=user_agent)
+                        page.goto(url, timeout=30000, wait_until='networkidle')
+                        state = page.evaluate("() => JSON.stringify(window.__NUXT__.state.jobs.jobs)")
+                        page.close()
+
+                        data = json.loads(state)
+                        for doc in data.get('docs', []):
+                            title = doc.get('title', '')
+                            company = (doc.get('company') or {}).get('name', 'Tech Company')
+                            location_info = doc.get('location') or {}
+                            country = (location_info.get('country') or '').lower()
+                            address = (location_info.get('address') or '')
+                            is_remote = doc.get('isRemote', False)
+
+                            if not (country == 'austria' or 'austria' in address.lower()
+                                    or any(k in address.lower() for k in ['vienna', 'wien', 'graz', 'linz', 'salzburg', 'innsbruck'])
+                                    or is_remote):
+                                continue
+
+                            job_id = doc.get('id')
+                            description = f"{title} at {company}." + (" Remote." if is_remote else f" Located in {address}.")
+
+                            raw_job = {
+                                "id": f"thehub-{job_id}",
+                                "title": title,
+                                "company": company,
+                                "company_logo": "",
+                                "location": "Remote" if is_remote and not address else (address or "Austria"),
+                                "category": categorize_job(title, description),
+                                "tags": extract_tags(title),
+                                "description": description,
+                                "url": f"https://thehub.io/jobs/{job_id}",
+                                "source": "TheHub.io",
+                                "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                            }
+
+                            processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                            if processed:
+                                jobs.append(processed)
+                            else:
+                                print(f"  [REJECTED thehub.io] Title: '{title}' -> Reason: {reason}")
+                    except Exception as e:
+                        print(f"Error fetching thehub.io (role={role}): {e}")
+            finally:
+                browser.close()
+    except Exception as e:
+        print(f"Error launching browser for thehub.io: {e}")
+
+    return jobs
+
 def main():
     print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
 
@@ -403,8 +484,9 @@ def main():
     remotive_jobs = fetch_remotive_jobs()
     jobleads_jobs = fetch_jobleads_jobs()
     unjobs_jobs = fetch_unjobs_jobs()
+    thehub_jobs = fetch_thehub_jobs()
 
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs
     
     seen = set()
     unique_jobs = []
