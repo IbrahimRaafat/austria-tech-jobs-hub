@@ -16,7 +16,11 @@ agent = JobClassifierAgent()
 
 def categorize_job(title, description=""):
     text = (title + " " + description).lower()
-    if any(k in text for k in ["data", "ai", "machine learning", "python", "analytics", "bi", "power bi", "llm", "geospatial", "gis"]):
+    # "ai"/"bi"/"gis" are short enough to false-match inside unrelated substrings
+    # (e.g. "AIT" contains "ai", "logistics" contains "gis") - word-boundary these.
+    data_ai_short_tokens = ["ai", "bi", "gis"]
+    if (any(k in text for k in ["data", "machine learning", "python", "analytics", "power bi", "llm", "geospatial"])
+            or any(re.search(r'\b' + kw + r'\b', text) for kw in data_ai_short_tokens)):
         return "Data & AI"
     elif any(k in text for k in ["frontend", "react", "vue", "angular", "ui/ux", "web"]):
         return "Frontend"
@@ -475,6 +479,115 @@ def fetch_thehub_jobs():
 
     return jobs
 
+def fetch_ait_jobs():
+    """
+    Fetches from jobs.ait.ac.at (AIT Austrian Institute of Technology). The default
+    /Jobs view already lists every category/section (AI, Research Engineering & Expert
+    Advice, Science, Business Development, Lab & Technicians, Management, PhD, Support
+    & Administration, Students, Internship, Unsolicited Application) in one response -
+    no need for separate per-category requests.
+
+    The job list itself is embedded as plain JSON in the static HTML (no browser
+    needed for that part), but this is a mixed English/German feed and each job's real
+    description is only rendered client-side - so for titles that already pass the
+    tech-keyword gate, a headless browser fetches the rendered <main> content to give
+    the language-purity check real body text instead of just a short title.
+    """
+    print("[Agent Classifier] Fetching and auditing jobs.ait.ac.at listings...")
+    jobs = []
+    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+    headers = {'User-Agent': user_agent}
+
+    try:
+        req = urllib.request.Request('https://jobs.ait.ac.at/Jobs', headers=headers)
+        page_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+    except Exception as e:
+        print(f"Error fetching jobs.ait.ac.at: {e}")
+        return jobs
+
+    m = re.search(r'new JobList\(\s*\$\("#jobListPlaceholder"\),\s*\$\("#jobListTemplate"\),\s*(\{.*?\})\s*\);', page_html, re.DOTALL)
+    if not m:
+        print("Error fetching jobs.ait.ac.at: could not locate embedded job list JSON")
+        return jobs
+
+    try:
+        data = json.loads(m.group(1))
+    except Exception as e:
+        print(f"Error parsing jobs.ait.ac.at job list JSON: {e}")
+        return jobs
+
+    candidates = [entry for entry in data.get('Jobs', []) if entry.get('Title') and agent.is_tech_job(entry['Title'])]
+    if not candidates:
+        return jobs
+
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("Error fetching jobs.ait.ac.at details: playwright is not installed (pip install playwright && playwright install chromium)")
+        return jobs
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            try:
+                for entry in candidates:
+                    title = entry['Title'].strip()
+                    job_id = entry.get('Id')
+                    department = (entry.get('SubTitle') or '').strip()
+                    location = (entry.get('Location') or '').strip() or 'Austria'
+                    job_url = f"https://jobs.ait.ac.at/Job/{job_id}"
+
+                    # A weak/empty fetch here silently falls back to title-only text for the
+                    # purity check below, which can misjudge a borderline German posting -
+                    # retry once before giving up, since timeouts on this site are common.
+                    full_text = ""
+                    last_error = None
+                    for attempt in range(2):
+                        try:
+                            page = browser.new_page(user_agent=user_agent)
+                            page.goto(job_url, timeout=25000, wait_until='load')
+                            page.wait_for_timeout(2000)
+                            main_el = page.query_selector('main')
+                            full_text = (main_el.inner_text() if main_el else page.inner_text('body'))
+                            page.close()
+                            last_error = None
+                            break
+                        except Exception as e:
+                            last_error = e
+                    if last_error:
+                        print(f"  Error fetching detail page for '{title}': {last_error}")
+
+                    # Pass the fuller fetched text through for an accurate purity check;
+                    # trim to a short display snippet only after classification below.
+                    description = (full_text[:2000] if full_text else f"{title} at AIT ({department}) in {location}.")
+                    raw_job = {
+                        "id": f"ait-{job_id}",
+                        "title": title,
+                        "company": f"AIT - {department}" if department else "AIT Austrian Institute of Technology",
+                        "company_logo": "",
+                        "location": location,
+                        "category": categorize_job(title, description),
+                        "tags": extract_tags(title),
+                        "description": description,
+                        "url": job_url,
+                        "source": "AIT Austrian Institute of Technology",
+                        "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                    }
+
+                    processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                    if processed:
+                        desc = processed['description']
+                        processed['description'] = desc[:280] + ("..." if len(desc) > 280 else "")
+                        jobs.append(processed)
+                    else:
+                        print(f"  [REJECTED AIT] Title: '{title}' -> Reason: {reason}")
+            finally:
+                browser.close()
+    except Exception as e:
+        print(f"Error launching browser for jobs.ait.ac.at: {e}")
+
+    return jobs
+
 def main():
     print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
 
@@ -485,8 +598,9 @@ def main():
     jobleads_jobs = fetch_jobleads_jobs()
     unjobs_jobs = fetch_unjobs_jobs()
     thehub_jobs = fetch_thehub_jobs()
+    ait_jobs = fetch_ait_jobs()
 
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs + ait_jobs
     
     seen = set()
     unique_jobs = []
