@@ -51,7 +51,9 @@ class JobClassifierAgent:
         'developer', 'engineer', 'engineering', 'data', 'software', 'ai', 'cloud', 'devops', 'backend', 'frontend',
         'fullstack', 'full-stack', 'architect', 'qa', 'sre', 'product owner', 'product manager',
         'tech', 'it', 'python', 'java', 'react', 'node', 'sql', 'sysadmin', 'scrum', 'cybersecurity',
-        'machine learning', 'data science', 'analytics', 'infrastructure', 'platform'
+        'machine learning', 'data science', 'analytics', 'infrastructure', 'platform',
+        'business intelligence', 'geospatial', 'gis', 'ict', 'information systems',
+        'information technology', 'programmer', 'database administrator'
     ]
 
     NON_TECH_TERMS = [

@@ -16,7 +16,7 @@ agent = JobClassifierAgent()
 
 def categorize_job(title, description=""):
     text = (title + " " + description).lower()
-    if any(k in text for k in ["data", "ai", "machine learning", "python", "analytics", "bi", "power bi", "llm"]):
+    if any(k in text for k in ["data", "ai", "machine learning", "python", "analytics", "bi", "power bi", "llm", "geospatial", "gis"]):
         return "Data & AI"
     elif any(k in text for k in ["frontend", "react", "vue", "angular", "ui/ux", "web"]):
         return "Frontend"
@@ -55,62 +55,73 @@ def fetch_karriere_jobs():
         'https://www.karriere.at/jobs/salzburg'
     ]
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
-    
-    for url in urls:
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            html = urllib.request.urlopen(req, timeout=8).read().decode('utf-8')
-            m = re.search(r'window\.VUE_INITIAL_STATE\s*=\s*({.*?});\s*</script>', html, re.DOTALL)
-            if not m:
-                continue
-            data = json.loads(m.group(1))
-            items = data.get('jobsSearchList', {}).get('activeItems', {}).get('items', [])
-            
-            for entry in items:
-                j = entry.get('jobsItem') or {}
-                if not j or not j.get('title'):
-                    continue
-                
-                title = j.get('title', '').strip()
-                company_info = j.get('company') or {}
-                company = company_info.get('name', 'Austria Tech Company')
-                logo = company_info.get('logoUrl', '')
-                if logo and logo.startswith('//'):
-                    logo = 'https:' + logo
-                    
-                location_info = j.get('locations') or []
-                if isinstance(location_info, list):
-                    locations = ", ".join([loc.get('name', '') for loc in location_info if isinstance(loc, dict)])
-                else:
-                    locations = str(location_info)
-                if not locations:
-                    locations = "Austria"
-                    
-                job_url = j.get('link') or ('https://www.karriere.at/jobs/' + str(j.get('id')))
-                teaser = j.get('snippet', '') or j.get('teaser', '')
-                
-                raw_job = {
-                    "id": f"karriere-{j.get('id')}",
-                    "title": title,
-                    "company": company,
-                    "company_logo": logo,
-                    "location": locations,
-                    "category": categorize_job(title, teaser),
-                    "tags": extract_tags(title + " " + teaser),
-                    "description": teaser or f"Tech role at {company} in {locations}.",
-                    "url": job_url,
-                    "source": "Karriere.at",
-                    "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
-                }
+    seen_ids = set()
+    # Karriere.at's page=2 returns ~3 additional distinct listings beyond page 1's 18,
+    # but page=3+ just repeats page 2's content indefinitely, so 2 pages is the full set.
+    max_pages = 2
 
-                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=True)
-                if processed:
-                    jobs.append(processed)
-                else:
-                    print(f"  [REJECTED Karriere.at ID {j.get('id')}] Title: '{title}' -> Reason: {reason}")
-        except Exception as e:
-            print(f"Error fetching Karriere.at ({url}): {e}")
-            
+    for url in urls:
+        for page in range(1, max_pages + 1):
+            page_url = url if page == 1 else f'{url}?page={page}'
+            try:
+                req = urllib.request.Request(page_url, headers=headers)
+                html = urllib.request.urlopen(req, timeout=8).read().decode('utf-8')
+                m = re.search(r'window\.VUE_INITIAL_STATE\s*=\s*({.*?});\s*</script>', html, re.DOTALL)
+                if not m:
+                    continue
+                data = json.loads(m.group(1))
+                items = data.get('jobsSearchList', {}).get('activeItems', {}).get('items', [])
+
+                for entry in items:
+                    j = entry.get('jobsItem') or {}
+                    if not j or not j.get('title'):
+                        continue
+
+                    job_id = j.get('id')
+                    if job_id in seen_ids:
+                        continue
+                    seen_ids.add(job_id)
+
+                    title = j.get('title', '').strip()
+                    company_info = j.get('company') or {}
+                    company = company_info.get('name', 'Austria Tech Company')
+                    logo = company_info.get('logoUrl', '')
+                    if logo and logo.startswith('//'):
+                        logo = 'https:' + logo
+
+                    location_info = j.get('locations') or []
+                    if isinstance(location_info, list):
+                        locations = ", ".join([loc.get('name', '') for loc in location_info if isinstance(loc, dict)])
+                    else:
+                        locations = str(location_info)
+                    if not locations:
+                        locations = "Austria"
+
+                    job_url = j.get('link') or ('https://www.karriere.at/jobs/' + str(job_id))
+                    teaser = j.get('snippet', '') or j.get('teaser', '')
+
+                    raw_job = {
+                        "id": f"karriere-{job_id}",
+                        "title": title,
+                        "company": company,
+                        "company_logo": logo,
+                        "location": locations,
+                        "category": categorize_job(title, teaser),
+                        "tags": extract_tags(title + " " + teaser),
+                        "description": teaser or f"Tech role at {company} in {locations}.",
+                        "url": job_url,
+                        "source": "Karriere.at",
+                        "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+                    }
+
+                    processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=True)
+                    if processed:
+                        jobs.append(processed)
+                    else:
+                        print(f"  [REJECTED Karriere.at ID {job_id}] Title: '{title}' -> Reason: {reason}")
+            except Exception as e:
+                print(f"Error fetching Karriere.at ({page_url}): {e}")
+
     return jobs
 
 def fetch_arbeitnow_jobs():
@@ -162,7 +173,7 @@ def fetch_jobicy_jobs():
             loc = item.get('jobGeo', '').lower()
             title = item.get('jobTitle', '')
             desc = item.get('jobExcerpt', '') or item.get('jobDescription', '')
-            if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'europe', 'anywhere']):
+            if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'salzburg', 'innsbruck', 'europe', 'anywhere', 'worldwide']):
                 raw_job = {
                     "id": f"jobicy-{item.get('id')}",
                     "title": title,
@@ -186,93 +197,103 @@ def fetch_jobicy_jobs():
     return jobs
 
 def fetch_remotive_jobs():
+    """
+    Fetches from Remotive's public jobs API. Note: Remotive's `category` query param
+    was tested and found to be non-functional - every category slug (including a
+    nonexistent one) returns the same fixed job set, so we fetch once and rely on
+    location filtering + the tech-keyword gate instead of requesting multiple
+    "categories" that would just be duplicate calls returning identical data.
+    """
     print("[Agent Classifier] Fetching and auditing Remotive listings...")
     jobs = []
-    urls = [
-        'https://remotive.com/api/remote-jobs?category=software-dev',
-        'https://remotive.com/api/remote-jobs?category=data'
-    ]
+    url = 'https://remotive.com/api/remote-jobs'
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-    
-    for url in urls:
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            res = urllib.request.urlopen(req, timeout=8)
-            data = json.loads(res.read().decode())
-            for item in data.get('jobs', []):
-                loc = item.get('candidate_required_location', '').lower()
-                if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'europe', 'worldwide', 'anywhere']):
-                    title = item.get('title', '')
-                    desc = item.get('description', '')
-                    raw_job = {
-                        "id": f"remotive-{item.get('id')}",
-                        "title": title,
-                        "company": item.get('company_name', 'Tech Company'),
-                        "company_logo": item.get('company_logo_url', ''),
-                        "location": item.get('candidate_required_location', 'Remote (Austria / Europe)'),
-                        "category": categorize_job(title, desc),
-                        "tags": extract_tags(title + " " + " ".join(item.get('tags', []))),
-                        "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
-                        "url": item.get('url'),
-                        "source": "Remotive",
-                        "posted_at": item.get('publication_date', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
-                    }
-                    processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
-                    if processed:
-                        jobs.append(processed)
-        except Exception as e:
-            print(f"Error fetching Remotive ({url}): {e}")
-            
+
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        res = urllib.request.urlopen(req, timeout=8)
+        data = json.loads(res.read().decode())
+        for item in data.get('jobs', []):
+            loc = item.get('candidate_required_location', '').lower()
+            if any(k in loc for k in ['austria', 'vienna', 'wien', 'graz', 'linz', 'europe', 'worldwide', 'anywhere']):
+                title = item.get('title', '')
+                desc = item.get('description', '')
+                raw_job = {
+                    "id": f"remotive-{item.get('id')}",
+                    "title": title,
+                    "company": item.get('company_name', 'Tech Company'),
+                    "company_logo": item.get('company_logo_url', ''),
+                    "location": item.get('candidate_required_location', 'Remote (Austria / Europe)'),
+                    "category": categorize_job(title, desc),
+                    "tags": extract_tags(title + " " + " ".join(item.get('tags', []))),
+                    "description": re.sub(r'<[^>]+>', ' ', desc)[:280] + "...",
+                    "url": item.get('url'),
+                    "source": "Remotive",
+                    "posted_at": item.get('publication_date', '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+                }
+                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                if processed:
+                    jobs.append(processed)
+    except Exception as e:
+        print(f"Error fetching Remotive: {e}")
+
     return jobs
 
 def fetch_unjobs_jobs():
     """
     Fetches Vienna duty-station listings from UNjobs.org (UN/international-organization
     postings in Vienna: IAEA, UNODC, UNIDO, OSCE, OPEC Fund, ICMPD, etc.). Static HTML,
-    just needs a browser User-Agent to avoid a bot-check 403.
+    just needs a browser User-Agent to avoid a bot-check 403. Paginates via
+    /duty_stations/vie/<page> (page 1 has no suffix) until a page returns no listings.
     """
     print("[Agent Classifier] Fetching and auditing UNjobs.org (Vienna duty station) listings...")
     jobs = []
-    url = 'https://unjobs.org/duty_stations/vie'
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+    pattern = re.compile(
+        r'class="jtitle" href="([^"]+)">([^<]+)</a><br>([^<]+)<br>Updated:\s*<time[^>]*datetime="([^"]+)"',
+        re.DOTALL
+    )
+    max_pages = 5
 
-    try:
-        req = urllib.request.Request(url, headers=headers)
-        page_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+    for page in range(1, max_pages + 1):
+        url = 'https://unjobs.org/duty_stations/vie' if page == 1 else f'https://unjobs.org/duty_stations/vie/{page}'
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            page_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+            matches = pattern.findall(page_html)
+            if not matches:
+                break
 
-        pattern = re.compile(
-            r'class="jtitle" href="([^"]+)">([^<]+)</a><br>([^<]+)<br>Updated:\s*<time[^>]*datetime="([^"]+)"',
-            re.DOTALL
-        )
-        for job_url, title, org, updated in pattern.findall(page_html):
-            title = html.unescape(title).strip()
-            org = html.unescape(org).strip()
+            for job_url, title, org, updated in matches:
+                title = html.unescape(title).strip()
+                org = html.unescape(org).strip()
 
-            if not agent.is_tech_job(title):
-                continue
+                if not agent.is_tech_job(title):
+                    continue
 
-            description = f"{title} at {org} in Vienna, Austria."
-            raw_job = {
-                "id": f"unjobs-{job_url.rstrip('/').split('/')[-1]}",
-                "title": title,
-                "company": org,
-                "company_logo": "",
-                "location": "Vienna",
-                "category": categorize_job(title, description),
-                "tags": extract_tags(title),
-                "description": description,
-                "url": job_url,
-                "source": "UNjobs.org",
-                "posted_at": updated[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
-            }
+                description = f"{title} at {org} in Vienna, Austria."
+                raw_job = {
+                    "id": f"unjobs-{job_url.rstrip('/').split('/')[-1]}",
+                    "title": title,
+                    "company": org,
+                    "company_logo": "",
+                    "location": "Vienna",
+                    "category": categorize_job(title, description),
+                    "tags": extract_tags(title),
+                    "description": description,
+                    "url": job_url,
+                    "source": "UNjobs.org",
+                    "posted_at": updated[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+                }
 
-            processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
-            if processed:
-                jobs.append(processed)
-            else:
-                print(f"  [REJECTED UNjobs.org] Title: '{title}' -> Reason: {reason}")
-    except Exception as e:
-        print(f"Error fetching UNjobs.org: {e}")
+                processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+                if processed:
+                    jobs.append(processed)
+                else:
+                    print(f"  [REJECTED UNjobs.org] Title: '{title}' -> Reason: {reason}")
+        except Exception as e:
+            print(f"Error fetching UNjobs.org (page {page}): {e}")
+            break
 
     return jobs
 
@@ -284,8 +305,13 @@ def fetch_jobleads_jobs():
     """
     print("[Agent Classifier] Fetching and auditing JobLeads.com listings...")
     jobs = []
+    search_terms = [
+        'Software Engineer', 'Data Engineer', 'DevOps Engineer',
+        'Frontend Developer', 'Backend Developer'
+    ]
     search_urls = [
-        'https://www.jobleads.com/at/jobs/l/1210/q/Software%20Engineer%20Intern',
+        f'https://www.jobleads.com/at/jobs/q/{urllib.parse.quote(term)}'
+        for term in search_terms
     ]
 
     try:
