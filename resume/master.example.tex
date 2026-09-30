@@ -1,0 +1,103 @@
+%-------------------------------------------------------------------------------
+% Master resume template for the AI resume tailor.
+% Copy to resume/master.tex (gitignored) and replace the placeholder content.
+%
+% Sections wrapped in "% TAILOR:BEGIN <name>" / "% TAILOR:END" are the only parts
+% the AI may rewrite; everything else (header, education, dates) stays untouched.
+% Remove all markers to let it tailor the whole document body instead.
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge \scshape Your Name} \\ \vspace{1pt}
+  \small Vienna, Austria $|$ +43 000 000000 $|$
+  \href{mailto:you@example.com}{you@example.com} $|$
+  \href{https://linkedin.com/in/you}{linkedin.com/in/you} $|$
+  \href{https://github.com/you}{github.com/you}
+\end{center}
+
+% TAILOR:BEGIN summary
+\section{Summary}
+Software engineer with 3 years of experience building Python data pipelines and REST APIs.
+Comfortable across the stack, from PostgreSQL schema design to React front ends.
+% TAILOR:END
+
+% TAILOR:BEGIN experience
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Software Engineer}{Jan 2023 -- Present}
+    {Example GmbH}{Vienna, Austria}
+    \resumeItemListStart
+      \resumeItem{Built an ETL pipeline in Python and Airflow processing 2M records per day.}
+      \resumeItem{Designed REST APIs with FastAPI, reducing average response time by 40\%.}
+      \resumeItem{Containerised services with Docker and deployed them to Kubernetes on AWS.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+% TAILOR:END
+
+% TAILOR:BEGIN projects
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Austria Tech Jobs Hub}{2026}
+    {Python, JavaScript, GitHub Actions}{github.com/you/austria-tech-jobs-hub}
+    \resumeItemListStart
+      \resumeItem{Daily job aggregator with a rule-based language classifier and local LLM metadata enrichment.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+% TAILOR:END
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Example University}{Vienna, Austria}
+    {BSc Computer Science}{2019 -- 2022}
+\resumeSubHeadingListEnd
+
+% TAILOR:BEGIN skills
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages}{: Python, SQL, JavaScript, TypeScript} \\
+    \textbf{Frameworks}{: FastAPI, Django, React, Airflow} \\
+    \textbf{Tools}{: Docker, Kubernetes, AWS, PostgreSQL, Git}
+  }}
+\end{itemize}
+% TAILOR:END
+
+\end{document}

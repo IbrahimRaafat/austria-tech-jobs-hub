@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CVs | Austria Tech Jobs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <span class="flag">🇦🇹</span>
+                <span class="logo-text">Austria<strong>TechJobs</strong></span>
+            </div>
+            <nav class="nav-links">
+                <a href="/">Jobs</a>
+                <a href="/cvs" class="active">My CVs</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="cv-hero">
+            <h1>My CVs</h1>
+            <p class="subtitle">All your AI-tailored resumes and your earlier CVs in one place.</p>
+            <div class="cv-stats" id="cv-stats"></div>
+        </section>
+
+        <section class="cv-master" id="cv-master"></section>
+
+        <div class="search-box cv-search">
+            <div class="input-group">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="cv-search" placeholder="Filter by company, role or file name…">
+            </div>
+        </div>
+
+        <section class="jobs-section">
+            <div class="section-header"><h2 id="tailored-title">Tailored CVs</h2></div>
+            <div class="jobs-grid" id="tailored-list"></div>
+        </section>
+
+        <section class="jobs-section cv-archive-section">
+            <div class="section-header">
+                <h2 id="archive-title">Earlier CVs</h2>
+                <span class="tailor-hint" id="archive-dir"></span>
+            </div>
+            <div class="jobs-grid" id="archive-list"></div>
+        </section>
+    </main>
+
+    <div class="tailor-modal" id="preview-modal" hidden>
+        <div class="tailor-dialog preview-dialog" role="dialog" aria-modal="true" aria-labelledby="preview-title">
+            <button class="tailor-close" id="preview-close" aria-label="Close">×</button>
+            <h2 id="preview-title">Preview</h2>
+            <iframe id="preview-frame" title="CV preview"></iframe>
+        </div>
+    </div>
+
+    <script src="cvs.js"></script>
+</body>
+</html>

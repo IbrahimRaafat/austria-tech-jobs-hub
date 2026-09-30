@@ -67,3 +67,4 @@ An automated daily job aggregator and live web dashboard designed specifically f
 | Live GitHub Pages Website | ✅ Completed |
 | Austrian Minimum Salary Extraction | ⏳ Planned Next |
 | Bookmarks & Saved Jobs | ⏳ Planned Next |
+| AI Resume Tailor (local Ollama / Gemini, LaTeX) | ✅ Completed |

@@ -17,6 +17,10 @@
                 <span class="logo-text">Austria<strong>TechJobs</strong></span>
                 <span class="badge-english">Strictly English Roles</span>
             </div>
+            <nav class="nav-links" id="nav-links" hidden>
+                <a href="/" class="active">Jobs</a>
+                <a href="/cvs">My CVs</a>
+            </nav>
             <div class="meta-status">
                 <span class="pulse-dot"></span>
                 <span id="last-updated">Updating daily at 08:00 AM</span>
@@ -44,6 +48,26 @@
                 <button class="pill" data-category="Frontend">Frontend</button>
                 <button class="pill" data-category="DevOps & Cloud">DevOps & Cloud</button>
             </div>
+        </section>
+
+        <!-- Only shown when served by scripts/resume_server.py (local API available) -->
+        <section class="tailor-panel" id="tailor-panel" hidden>
+            <div class="tailor-panel-head">
+                <div>
+                    <h2>✨ AI Resume Tailor</h2>
+                    <p class="tailor-hint">Use the <strong>Tailor resume</strong> button on any job below, or paste an external posting.</p>
+                </div>
+                <div class="filter-group">
+                    <label for="tailor-provider">Model:</label>
+                    <select id="tailor-provider"></select>
+                </div>
+            </div>
+            <p class="tailor-alert" id="tailor-alert" hidden></p>
+            <form class="tailor-form" id="tailor-form">
+                <input type="url" id="tailor-url" placeholder="https://company.com/careers/job-posting">
+                <textarea id="tailor-text" rows="4" placeholder="…or paste the job description text (works for any site, incl. LinkedIn)"></textarea>
+                <button type="submit" class="apply-btn">Tailor resume</button>
+            </form>
         </section>
 
         <section class="jobs-section">
@@ -100,6 +124,14 @@
             <p>Austria Tech Jobs Aggregator • Automated daily via GitHub Actions with Local AI Agent Language Classifier</p>
         </div>
     </footer>
+
+    <div class="tailor-modal" id="tailor-modal" hidden>
+        <div class="tailor-dialog" role="dialog" aria-modal="true" aria-labelledby="tailor-modal-title">
+            <button class="tailor-close" id="tailor-close" aria-label="Close">×</button>
+            <h2 id="tailor-modal-title">Tailoring resume…</h2>
+            <div id="tailor-modal-body"></div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
