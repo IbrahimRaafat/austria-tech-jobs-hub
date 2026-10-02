@@ -588,6 +588,327 @@ def fetch_ait_jobs():
 
     return jobs
 
+def fetch_prewave_jobs():
+    """
+    Fetches from prewave.jobs.personio.com (Prewave, a Vienna supply-chain-risk
+    startup). Personio job boards expose a public XML feed at /xml with the full
+    job list and rich-text descriptions already embedded (in CDATA), so no
+    browser is needed - a plain HTTP request + regex parse is enough.
+    """
+    print("[Agent Classifier] Fetching and auditing prewave.jobs.personio.com listings...")
+    jobs = []
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+
+    try:
+        req = urllib.request.Request('https://prewave.jobs.personio.com/xml', headers=headers)
+        xml = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+    except Exception as e:
+        print(f"Error fetching prewave.jobs.personio.com: {e}")
+        return jobs
+
+    positions = re.findall(r'<position>.*?</position>', xml, re.DOTALL)
+    for pos in positions:
+        def field(tag):
+            m = re.search(rf'<{tag}>(.*?)</{tag}>', pos, re.DOTALL)
+            return html.unescape(m.group(1).strip()) if m else ''
+
+        title = field('name')
+        if not title or not agent.is_tech_job(title):
+            continue
+
+        job_id = field('id')
+        office = field('office') or 'Vienna'
+        department = field('department')
+
+        desc_values = re.findall(r'<value>\s*<!\[CDATA\[(.*?)\]\]>\s*</value>', pos, re.DOTALL)
+        description_html = " ".join(desc_values)
+        description = html.unescape(re.sub(r'<[^>]+>', ' ', description_html))
+        description = re.sub(r'\s+', ' ', description).strip()
+        if not description:
+            description = f"{title} at Prewave in {office}."
+
+        created_at = field('createdAt')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+
+        raw_job = {
+            "id": f"prewave-{job_id}",
+            "title": title,
+            "company": f"Prewave - {department}" if department else "Prewave",
+            "company_logo": "",
+            "location": office,
+            "category": categorize_job(title, description),
+            "tags": extract_tags(title + " " + description),
+            "description": description[:2000],
+            "url": f"https://prewave.jobs.personio.com/job/{job_id}?language=en",
+            "source": "Prewave (Personio)",
+            "posted_at": created_at
+        }
+
+        processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+        if processed:
+            desc = processed['description']
+            processed['description'] = desc[:280] + ("..." if len(desc) > 280 else "")
+            jobs.append(processed)
+        else:
+            print(f"  [REJECTED Prewave] Title: '{title}' -> Reason: {reason}")
+
+    return jobs
+
+def fetch_greenhouse_board_jobs(board_token, company_name, source_label):
+    """
+    Fetches from a Greenhouse job board (boards-api.greenhouse.io) - shared by any
+    company using Greenhouse, regardless of whether their public careers page is
+    hosted on job-boards.greenhouse.io or job-boards.eu.greenhouse.io, since both
+    are backed by the same public JSON API with full job content available via
+    ?content=true. No browser needed.
+
+    These boards post jobs across multiple countries from one shared board, so
+    (like Jobicy/Remotive/thehub.io) results are fetched in full and filtered
+    down to Austria-based listings afterward.
+    """
+    print(f"[Agent Classifier] Fetching and auditing {source_label} (Greenhouse: {board_token}) listings...")
+    jobs = []
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+
+    try:
+        req = urllib.request.Request(f'https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs?content=true', headers=headers)
+        data = json.loads(urllib.request.urlopen(req, timeout=10).read().decode('utf-8'))
+    except Exception as e:
+        print(f"Error fetching {source_label} (Greenhouse: {board_token}): {e}")
+        return jobs
+
+    for item in data.get('jobs', []):
+        location = (item.get('location') or {}).get('name', '')
+        if 'austria' not in location.lower():
+            continue
+
+        title = item.get('title', '').strip()
+        if not title or not agent.is_tech_job(title):
+            continue
+
+        job_id = item.get('id')
+        departments = item.get('departments') or []
+        department = departments[0].get('name', '') if departments else ''
+
+        content_html = html.unescape(item.get('content', '') or '')
+        description = html.unescape(re.sub(r'<[^>]+>', ' ', content_html))
+        description = re.sub(r'\s+', ' ', description).strip()
+        if not description:
+            description = f"{title} at {company_name} in {location}."
+
+        raw_job = {
+            "id": f"{board_token}-{job_id}",
+            "title": title,
+            "company": f"{company_name} - {department}" if department else company_name,
+            "company_logo": "",
+            "location": location or "Austria",
+            "category": categorize_job(title, description),
+            "tags": extract_tags(title + " " + description),
+            "description": description[:2000],
+            "url": item.get('absolute_url') or f"https://job-boards.greenhouse.io/{board_token}/jobs/{job_id}",
+            "source": f"{source_label} (Greenhouse)",
+            "posted_at": (item.get('first_published') or '')[:10] or datetime.datetime.now().strftime("%Y-%m-%d")
+        }
+
+        processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+        if processed:
+            desc = processed['description']
+            processed['description'] = desc[:280] + ("..." if len(desc) > 280 else "")
+            jobs.append(processed)
+        else:
+            print(f"  [REJECTED {source_label}] Title: '{title}' -> Reason: {reason}")
+
+    return jobs
+
+def fetch_gropyus_jobs():
+    return fetch_greenhouse_board_jobs('gropyus', 'GROPYUS', 'GROPYUS')
+
+def fetch_gostudent_jobs():
+    return fetch_greenhouse_board_jobs('gostudent', 'GoStudent', 'GoStudent')
+
+def fetch_devjobs_jobs():
+    """
+    Fetches from en.devjobs.at, an Austrian dev-focused job board. Search results are
+    server-rendered directly into the HTML (no separate API call), paginated via a
+    &page=N query param, so a plain HTTP request + regex parse is enough (no browser
+    needed). Scoped to the same filters as the site's own UI: based in Vienna
+    ("wien-at"), English-language postings only ("englishOnly=on") - a plain HTTP
+    request with only a generic User-Agent gets rate-limited (HTTP 429), so this also
+    sends Accept / Accept-Language headers like the lifeatcanva.com fetcher does.
+
+    Each job card is an <a href="/job/<id>">, but the site inconsistently renders an
+    extra data-cy attribute before the class attribute on that tag between requests
+    (no cache-buster/session difference observed - just varies), so splitting on a
+    fixed "<a class=..." prefix silently returns zero cards on some fetches. Anchoring
+    on the href itself and slicing up to the next href is stable across both variants.
+
+    Unlike the other sources, this one skips the classifier's is_tech_job title gate and
+    English-purity gate: the search URL itself already scopes results to English-language
+    ("englishOnly=on") IT & Developer postings in Vienna, so every result here is already
+    both English and tech-relevant by construction - re-filtering would just drop real
+    listings (e.g. non-"developer/engineer"-worded titles) for no benefit. Metadata tags
+    are still enriched via the classifier's rule-based extractor for consistency with the
+    other sources.
+    """
+    print("[Agent Classifier] Fetching and auditing en.devjobs.at listings...")
+    jobs = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
+    base_url = 'https://en.devjobs.at'
+    search_url = f'{base_url}/jobs/search?osmState=wien-at&englishOnly=on&sort=relevance'
+    max_pages = 15
+
+    for page in range(1, max_pages + 1):
+        page_url = search_url if page == 1 else f'{search_url}&page={page}'
+        try:
+            req = urllib.request.Request(page_url, headers=headers)
+            page_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+        except Exception as e:
+            print(f"Error fetching en.devjobs.at (page {page}): {e}")
+            break
+
+        link_matches = list(re.finditer(r'href="(/job/[a-f0-9]+)"', page_html))
+        if not link_matches:
+            break
+
+        boundaries = [m.start() for m in link_matches] + [len(page_html)]
+        for i, href_m in enumerate(link_matches):
+            block = page_html[boundaries[i]:boundaries[i + 1]]
+            title_m = re.search(r'<h2[^>]*>(.*?)</h2>', block, re.DOTALL)
+            if not title_m:
+                continue
+
+            title = html.unescape(re.sub(r'<[^>]+>', '', title_m.group(1))).replace('\xa0', ' ').strip()
+            if not title:
+                continue
+
+            job_url = urljoin(base_url, href_m.group(1))
+            job_id = href_m.group(1).rstrip('/').split('/')[-1]
+
+            company_m = re.search(r'<p class="md:break-word[^"]*">([^<]+)</p>', block)
+            company = html.unescape(company_m.group(1)).replace('\xa0', ' ').strip() if company_m else "Tech Company"
+
+            loc_m = re.search(r'<span class="dark:text-dj-mono-dark-400 text-dj-mono-600 truncate text-ellipsis">([^<]+)</span>', block)
+            location = html.unescape(loc_m.group(1)).replace('\xa0', ' ').strip() if loc_m else "Vienna"
+
+            desc_m = re.search(r'<p class="text-dj-mono-500[^"]*line-clamp-2[^"]*">([^<]+)</p>', block)
+            description = html.unescape(desc_m.group(1)).replace('\xa0', ' ').strip() if desc_m else f"{title} at {company} in {location}."
+
+            raw_job = {
+                "id": f"devjobs-{job_id}",
+                "title": title,
+                "company": company,
+                "company_logo": "",
+                "location": location,
+                "category": categorize_job(title, description),
+                "tags": extract_tags(title + " " + description),
+                "description": description,
+                "url": job_url,
+                "source": "DEVjobs.at",
+                "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+            }
+
+            raw_job.update(agent.extract_metadata(title, description))
+            jobs.append(raw_job)
+
+    return jobs
+
+def fetch_indie_jobs():
+    """
+    indie's internship openings (https://www.indie.inc/careers/internships/current-openings/)
+    embed a Greenhouse job board widget (<div id="grnhse_app"> + boards.greenhouse.io/embed/job_board/js?for=indieinterns),
+    same as gropyus/gostudent, so the shared Greenhouse helper covers it directly.
+    """
+    return fetch_greenhouse_board_jobs('indieinterns', 'indie', 'indie (Internships)')
+
+def fetch_canva_jobs():
+    """
+    Fetches from lifeatcanva.com (Canva's careers site), which supports a
+    server-rendered query-string search (?country=Austria&pagesize=100) - both the
+    listing page and each job's full description are plain server-rendered HTML,
+    so no browser is needed.
+    """
+    print("[Agent Classifier] Fetching and auditing lifeatcanva.com listings...")
+    jobs = []
+    # lifeatcanva.com's Cloudflare front-end silently ignores the ?country=Austria
+    # filter (serving the full unfiltered international listing instead) unless the
+    # request looks like a real browser - Accept/Accept-Language are required, a
+    # User-Agent alone is not enough.
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
+    base_url = 'https://www.lifeatcanva.com'
+
+    try:
+        req = urllib.request.Request(
+            f'{base_url}/en/jobs/?orderby=0&pagesize=100&page=1&radius=100&country=Austria',
+            headers=headers
+        )
+        list_html = urllib.request.urlopen(req, timeout=10).read().decode('utf-8', errors='ignore')
+    except Exception as e:
+        print(f"Error fetching lifeatcanva.com: {e}")
+        return jobs
+
+    for block in list_html.split('<div class="card card-job"')[1:]:
+        id_m = re.search(r'data-id="(\d+)"', block)
+        link_m = re.search(r'<a class="stretched-link js-view-job" href="([^"]+)">([^<]*)</a>', block, re.DOTALL)
+        if not id_m or not link_m:
+            continue
+
+        job_id = id_m.group(1)
+        title = html.unescape(link_m.group(2)).strip()
+        if not title or not agent.is_tech_job(title):
+            continue
+
+        job_url = urljoin(base_url, link_m.group(1))
+
+        meta_m = re.search(r'<ul class="list-unstyled job-meta">(.*?)</ul>', block, re.DOTALL)
+        meta_items = re.findall(r'<li>\s*([^<]+?)\s*</li>', meta_m.group(1)) if meta_m else []
+        location = html.unescape(meta_items[0]).strip() if meta_items else 'Austria'
+        department = html.unescape(meta_items[1]).strip() if len(meta_items) > 1 else ''
+
+        description = ""
+        try:
+            detail_req = urllib.request.Request(job_url, headers=headers)
+            detail_html = urllib.request.urlopen(detail_req, timeout=10).read().decode('utf-8', errors='ignore')
+            desc_m = re.search(r'<article class="cms-content">(.*?)</article>', detail_html, re.DOTALL)
+            if desc_m:
+                description = html.unescape(re.sub(r'<[^>]+>', ' ', desc_m.group(1)))
+                description = re.sub(r'\s+', ' ', description).strip()
+        except Exception as e:
+            print(f"  Error fetching detail page for '{title}': {e}")
+
+        if not description:
+            description = f"{title} at Canva in {location}."
+
+        raw_job = {
+            "id": f"canva-{job_id}",
+            "title": title,
+            "company": f"Canva - {department}" if department else "Canva",
+            "company_logo": "",
+            "location": location or "Austria",
+            "category": categorize_job(title, description),
+            "tags": extract_tags(title + " " + description),
+            "description": description[:2000],
+            "url": job_url,
+            "source": "Canva",
+            "posted_at": datetime.datetime.now().strftime("%Y-%m-%d")
+        }
+
+        processed, reason = agent.process_job(raw_job, fetch_detail_if_needed=False)
+        if processed:
+            desc = processed['description']
+            processed['description'] = desc[:280] + ("..." if len(desc) > 280 else "")
+            jobs.append(processed)
+        else:
+            print(f"  [REJECTED Canva] Title: '{title}' -> Reason: {reason}")
+
+    return jobs
+
 def main():
     print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
 
@@ -599,8 +920,14 @@ def main():
     unjobs_jobs = fetch_unjobs_jobs()
     thehub_jobs = fetch_thehub_jobs()
     ait_jobs = fetch_ait_jobs()
+    prewave_jobs = fetch_prewave_jobs()
+    gropyus_jobs = fetch_gropyus_jobs()
+    gostudent_jobs = fetch_gostudent_jobs()
+    canva_jobs = fetch_canva_jobs()
+    indie_jobs = fetch_indie_jobs()
+    devjobs_jobs = fetch_devjobs_jobs()
 
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs + ait_jobs
+    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs + ait_jobs + prewave_jobs + gropyus_jobs + gostudent_jobs + canva_jobs + indie_jobs + devjobs_jobs
     
     seen = set()
     unique_jobs = []
