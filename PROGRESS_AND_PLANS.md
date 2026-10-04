@@ -42,13 +42,18 @@ An automated daily job aggregator and live web dashboard designed specifically f
 
 ## 🎯 2. Next Plans & Roadmap
 
-### 💡 Feature 1: Austrian Salary Transparency
-- **Austrian Minimum Salary Extraction**:
-  - Austrian job postings legally must state a minimum gross salary (e.g. *EUR 2,619.73 gross / month*).
-  - Extract salary numbers and display them as a clear `💰 Salary Range` badge on each card.
+### ✅ Feature 1: Austrian Salary Transparency (done)
+- `scripts/salary.py` parses the legally required gross salary from each job's detail page and normalises it to gross/year (monthly × 14 for EUR). Tests: `python -m unittest tests/test_salary.py`.
+- Cards show a `💰` badge; the board has a salary filter (€40k+ … €80k+) and a "Highest Salary" sort.
 
-### 🔖 Feature 2: Bookmarks & Saved Jobs
-- Add a "⭐ Save Job" button on cards to allow users to bookmark positions in `localStorage`.
+### ✅ Feature 2: Saved Jobs & Application Tracker (done)
+- ☆ on each card saves a job; a status dropdown tracks it through Saved → Applied → Interview → Offer / Rejected.
+- "My Jobs" filter with per-status counts. Stored in `localStorage` with a snapshot of each job, so tracked jobs stay visible after the posting expires.
+- On the local server, cards with a tailored CV show a `📄 Tailored CV · NN%` badge linking to My CVs.
+
+### ✅ Data quality pass (`scripts/enrich.py`, done)
+- Visits every job's detail page once: drops expired postings (HTTP 404/410, unless most of a source fails, which suggests blocking), reads schema.org JobPosting JSON-LD for salary/location, and replaces template descriptions with the posting's own summary.
+- `cities` (multi-valued, from the location field) replaces the old text-guessed `city`, which mislabelled most Vienna jobs.
 
 ### 🔔 Feature 3: Job Alerts (Telegram / Email)
 - Automated daily summary alert sent to Telegram/Email for newly scraped English tech roles in Austria.
@@ -65,6 +70,7 @@ An automated daily job aggregator and live web dashboard designed specifically f
 | Rich Badges (Seniority, Visa, Relocation, Exp) | ✅ Completed |
 | 8:00 AM Daily GitHub Automation | ✅ Completed |
 | Live GitHub Pages Website | ✅ Completed |
-| Austrian Minimum Salary Extraction | ⏳ Planned Next |
-| Bookmarks & Saved Jobs | ⏳ Planned Next |
+| Austrian Minimum Salary Extraction | ✅ Completed |
+| Saved Jobs & Application Tracker | ✅ Completed |
+| Expired-job cleanup, city labels, real descriptions | ✅ Completed |
 | AI Resume Tailor (local Ollama / Gemini, LaTeX) | ✅ Completed |

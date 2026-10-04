@@ -4,9 +4,15 @@ let searchQuery = '';
 let activeLocation = 'All';
 let activeSeniority = 'All';
 let activeRelocation = 'All';
+let activeSalary = 'All';
+let activeSort = 'default';
+let activeTracker = 'All';
+let tracker = {};
+let tailoredByUrl = {};
 let tailorEnabled = false;
 
 document.addEventListener('DOMContentLoaded', () => {
+    tracker = loadTracker();
     loadJobs();
     setupEventListeners();
     initTailor();
@@ -52,6 +58,30 @@ function setupEventListeners() {
         renderJobs();
     });
 
+    document.getElementById('salary-filter').addEventListener('change', (e) => {
+        activeSalary = e.target.value;
+        renderJobs();
+    });
+
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+        activeSort = e.target.value;
+        renderJobs();
+    });
+
+    document.getElementById('tracker-filter').addEventListener('change', (e) => {
+        activeTracker = e.target.value;
+        renderJobs();
+    });
+
+    const container = document.getElementById('jobs-container');
+    container.addEventListener('click', (e) => {
+        const btn = e.target.closest('.save-btn');
+        if (btn) toggleSaved(btn.dataset.jobId);
+    });
+    container.addEventListener('change', (e) => {
+        if (e.target.matches('.track-select')) setTrackStatus(e.target.dataset.jobId, e.target.value);
+    });
+
     document.getElementById('category-pills').addEventListener('click', (e) => {
         const target = e.target.closest('.pill');
         if (!target) return;
@@ -66,7 +96,8 @@ function setupEventListeners() {
 
 function renderJobs() {
     const container = document.getElementById('jobs-container');
-    const filtered = allJobs.filter(job => {
+    updateTrackerCounts();
+    const filtered = jobsForTrackerView().filter(job => {
         if (activeCategory !== 'All' && job.category !== activeCategory) {
             return false;
         }
@@ -79,18 +110,14 @@ function renderJobs() {
             return false;
         }
 
-        if (activeLocation !== 'All') {
-            const jobLoc = (job.location || '').toLowerCase();
-            const jobCity = (job.city || '').toLowerCase();
-            const filterLoc = activeLocation.toLowerCase();
-            
-            if (filterLoc === 'vienna') {
-                if (!jobLoc.includes('vienna') && !jobLoc.includes('wien') && !jobCity.includes('vienna')) return false;
-            } else if (filterLoc === 'remote') {
-                if (!jobLoc.includes('remote') && !jobCity.includes('remote')) return false;
-            } else {
-                if (!jobLoc.includes(filterLoc) && !jobCity.includes(filterLoc)) return false;
-            }
+        if (activeSalary !== 'All') {
+            if (!job.salary) return false;
+            // Austrian ads state the legal minimum; the top of the range is what the job can pay.
+            if (activeSalary !== 'stated' && job.salary.annual_max < Number(activeSalary)) return false;
+        }
+
+        if (activeLocation !== 'All' && !(job.cities || [job.city]).includes(activeLocation)) {
+            return false;
         }
 
         if (searchQuery) {
@@ -111,13 +138,19 @@ function renderJobs() {
         return true;
     });
 
+    if (activeSort === 'salary') {
+        filtered.sort((a, b) => (b.salary?.annual_max ?? -1) - (a.salary?.annual_max ?? -1));
+    }
+
     document.getElementById('jobs-count-title').textContent = `${filtered.length} Tech Jobs Found`;
 
     if (filtered.length === 0) {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-secondary);">
                 <h3>No matching jobs found</h3>
-                <p>Try broadening your search criteria or resetting city/seniority filters.</p>
+                <p>${activeTracker === 'All'
+                    ? 'Try broadening your search criteria or resetting city/seniority filters.'
+                    : 'Use the ☆ on a job card to start tracking it.'}</p>
             </div>
         `;
         return;
@@ -145,8 +178,30 @@ function createJobCardHTML(job) {
         ? `<span class="meta-badge exp-badge">⏳ ${job.experience_level}</span>`
         : '';
 
+    const salaryBadge = job.salary
+        ? `<span class="meta-badge salary-badge" title="${escapeHTML(salaryTooltip(job.salary))}">💰 ${escapeHTML(job.salary.label)}</span>`
+        : '';
+
+    const track = tracker[job.id];
+    const trackOptions = TRACK_STATUSES.map(([value, label]) =>
+        `<option value="${value}" ${track?.status === value ? 'selected' : ''}>${label}</option>`).join('');
+    const trackRow = track
+        ? `<div class="track-row">
+               <select class="track-select" data-job-id="${escapeHTML(job.id)}" aria-label="Application status">
+                   ${trackOptions}<option value="">Stop tracking</option>
+               </select>
+               <span class="track-date">since ${new Date(track.updated).toLocaleDateString()}</span>
+               ${job.expired ? '<span class="meta-badge expired-badge">No longer listed</span>' : ''}
+           </div>`
+        : '';
+
+    const cv = tailoredByUrl[job.url];
+    const cvBadge = cv
+        ? `<a class="meta-badge cv-badge" href="/cvs" title="Open in My CVs">📄 Tailored CV${cv.match_score != null ? ` · ${cv.match_score}%` : ''}</a>`
+        : '';
+
     return `
-        <div class="job-card">
+        <div class="job-card${track ? ' tracked' : ''}">
             <div>
                 <div class="card-top">
                     ${logoHTML}
@@ -154,9 +209,16 @@ function createJobCardHTML(job) {
                         <h3 class="job-title">${job.title}</h3>
                         <div class="company-name">${job.company}</div>
                     </div>
+                    <button type="button" class="save-btn${track ? ' saved' : ''}" data-job-id="${escapeHTML(job.id)}"
+                        aria-pressed="${track ? 'true' : 'false'}" aria-label="${track ? 'Stop tracking' : 'Save'} ${escapeHTML(job.title)}"
+                        title="${track ? 'Stop tracking' : 'Save job'}">${track ? '★' : '☆'}</button>
                 </div>
 
+                ${trackRow}
+
                 <div class="badges-row">
+                    ${cvBadge}
+                    ${salaryBadge}
                     ${seniorityBadge}
                     ${expBadge}
                     ${relocationBadge}
@@ -174,11 +236,104 @@ function createJobCardHTML(job) {
 
             <div class="card-bottom">
                 <span class="source-badge">via ${job.source}</span>
-                ${tailorEnabled ? `<button type="button" class="tailor-btn" data-job-id="${escapeHTML(job.id)}">✨ Tailor resume</button>` : ''}
-                <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="apply-btn">Apply Now ↗</a>
+                ${tailorEnabled && !job.expired ? `<button type="button" class="tailor-btn" data-job-id="${escapeHTML(job.id)}">✨ Tailor resume</button>` : ''}
+                <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="apply-btn">${job.expired ? 'Posting ↗' : 'Apply Now ↗'}</a>
             </div>
         </div>
     `;
+}
+
+function salaryTooltip(salary) {
+    const perMonth = salary.period === 'month'
+        ? ` (${salary.currency === 'EUR' ? '14' : '12'} × monthly pay)`
+        : '';
+    return `Stated in posting: ${salary.raw}${perMonth}. Gross yearly.`;
+}
+
+// ---------------------------------------------------------------------------
+// Saved jobs & application tracker (localStorage, per browser)
+// ---------------------------------------------------------------------------
+
+const TRACKER_KEY = 'jobTracker';
+const TRACK_STATUSES = [
+    ['saved', '⭐ Saved'],
+    ['applied', '📨 Applied'],
+    ['interview', '💬 Interview'],
+    ['offer', '🎉 Offer'],
+    ['rejected', '✖ Rejected'],
+];
+
+function loadTracker() {
+    try {
+        return JSON.parse(localStorage.getItem(TRACKER_KEY)) || {};
+    } catch {
+        return {};
+    }
+}
+
+function saveTracker() {
+    try { localStorage.setItem(TRACKER_KEY, JSON.stringify(tracker)); } catch {}
+}
+
+// Expired postings are dropped from jobs.json, so each entry keeps a copy of the
+// job to stay visible in the tracker after it leaves the board.
+function jobSnapshot(job) {
+    const { id, title, company, company_logo, url, location, cities, city, category, source, salary, seniority } = job;
+    return { id, title, company, company_logo, url, location, cities, city, category, source, salary, seniority, description: '' };
+}
+
+function setTrackStatus(jobId, status) {
+    if (!status) {
+        delete tracker[jobId];
+    } else {
+        const job = allJobs.find(j => j.id === jobId) || tracker[jobId]?.job;
+        if (!job) return;
+        tracker[jobId] = { status, updated: new Date().toISOString(), job: jobSnapshot(job) };
+    }
+    saveTracker();
+    renderJobs();
+}
+
+function toggleSaved(jobId) {
+    const track = tracker[jobId];
+    if (!track) return setTrackStatus(jobId, 'saved');
+    if (track.status !== 'saved' && !confirm(`Stop tracking this job? Its "${track.status}" status will be lost.`)) return;
+    setTrackStatus(jobId, '');
+}
+
+function jobsForTrackerView() {
+    if (activeTracker === 'All') return allJobs;
+    const live = new Set(allJobs.map(j => j.id));
+    const expired = Object.values(tracker)
+        .filter(t => !live.has(t.job.id))
+        .map(t => ({ ...t.job, expired: true }));
+    return [...allJobs, ...expired].filter(job => {
+        const status = tracker[job.id]?.status;
+        return activeTracker === 'tracked' ? Boolean(status) : status === activeTracker;
+    });
+}
+
+function updateTrackerCounts() {
+    const counts = {};
+    for (const t of Object.values(tracker)) counts[t.status] = (counts[t.status] || 0) + 1;
+    const total = Object.keys(tracker).length;
+    for (const option of document.querySelectorAll('#tracker-filter option')) {
+        option.textContent = option.textContent.replace(/ \(\d+\)$/, '');
+        const n = option.value === 'tracked' ? total : counts[option.value];
+        if (option.value !== 'All' && n) option.textContent += ` (${n})`;
+    }
+}
+
+async function loadTailoredCVs() {
+    try {
+        const data = await (await fetch('/api/cvs', { cache: 'no-store' })).json();
+        tailoredByUrl = {};
+        for (const run of data.tailored || []) {
+            // Newest run wins when a job was tailored more than once.
+            if (run.url && (!tailoredByUrl[run.url] || run.created > tailoredByUrl[run.url].created)) tailoredByUrl[run.url] = run;
+        }
+        renderJobs();
+    } catch {}
 }
 
 // ---------------------------------------------------------------------------
@@ -248,6 +403,7 @@ async function initTailor() {
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.hidden = true; });
 
     renderJobs(); // re-render cards with the Tailor button
+    loadTailoredCVs();
 }
 
 async function startTailor(params, title) {
@@ -293,6 +449,7 @@ async function pollTailorTask(taskId) {
         + (task.status === 'done' ? renderTailorResult(task.result) : '');
 
     if (task.status === 'running') setTimeout(() => pollTailorTask(taskId), 1500);
+    if (task.status === 'done') loadTailoredCVs();
 }
 
 function renderTailorResult(result) {

@@ -79,24 +79,26 @@ class JobClassifierAgent:
             req = urllib.request.Request(url, headers=self.headers)
             with urllib.request.urlopen(req, timeout=10) as resp:
                 raw_html = resp.read().decode('utf-8', errors='ignore')
-            
-            clean = re.sub(r'<script[^>]*>.*?</script>', ' ', raw_html, flags=re.DOTALL)
-            clean = re.sub(r'<style[^>]*>.*?</style>', ' ', clean, flags=re.DOTALL)
-            clean = re.sub(r'<header[^>]*>.*?</header>', ' ', clean, flags=re.DOTALL)
-            clean = re.sub(r'<footer[^>]*>.*?</footer>', ' ', clean, flags=re.DOTALL)
-            clean = re.sub(r'<nav[^>]*>.*?</nav>', ' ', clean, flags=re.DOTALL)
-
-            text = re.sub(r'<[^>]+>', ' ', clean)
-            text = html.unescape(text)
-
-            text_lower = text.lower()
-            for phrase in self.SITE_NAV_PHRASES:
-                text_lower = text_lower.replace(phrase, ' ')
-
-            text = ' '.join(text_lower.split())
-            return text
+            return self.clean_html(raw_html)
         except Exception:
             return ""
+
+    def clean_html(self, raw_html):
+        """Lowercased visible text of a page, minus scripts/styles/nav/site boilerplate."""
+        clean = re.sub(r'<script[^>]*>.*?</script>', ' ', raw_html, flags=re.DOTALL)
+        clean = re.sub(r'<style[^>]*>.*?</style>', ' ', clean, flags=re.DOTALL)
+        clean = re.sub(r'<header[^>]*>.*?</header>', ' ', clean, flags=re.DOTALL)
+        clean = re.sub(r'<footer[^>]*>.*?</footer>', ' ', clean, flags=re.DOTALL)
+        clean = re.sub(r'<nav[^>]*>.*?</nav>', ' ', clean, flags=re.DOTALL)
+
+        text = re.sub(r'<[^>]+>', ' ', clean)
+        text = html.unescape(text)
+
+        text_lower = text.lower()
+        for phrase in self.SITE_NAV_PHRASES:
+            text_lower = text_lower.replace(phrase, ' ')
+
+        return ' '.join(text_lower.split())
 
     def _ollama_is_running(self):
         """Cheap one-time check so we don't retry a dead local server for every job."""

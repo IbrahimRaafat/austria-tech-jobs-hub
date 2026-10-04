@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 sys.path.insert(0, os.path.dirname(__file__))
 
 from agent_classifier import JobClassifierAgent
+from enrich import enrich_jobs
 
 agent = JobClassifierAgent()
 
@@ -938,6 +939,8 @@ def main():
             unique_jobs.append(job)
             
     print(f"Collected {len(unique_jobs)} strictly 100% English Tech jobs in Austria.")
+
+    unique_jobs = enrich_jobs(unique_jobs)
     
     out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(out_dir, exist_ok=True)
