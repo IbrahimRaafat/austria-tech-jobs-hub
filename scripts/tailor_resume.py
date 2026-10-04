@@ -487,13 +487,32 @@ def _compile_in_overleaf(tex_path, resource_dir, unicode_engine):
             pass
 
 
+_DRIVER_OPTIONS = {'pdftex', 'dvips', 'dvipdfm', 'dvipdfmx', 'xetex', 'luatex'}
+_DRIVER_PACKAGE_RE = re.compile(r'\\usepackage\[([^\]]*)\]\{(hyperref|graphicx|color|xcolor)\}')
+
+
+def drop_driver_options(tex):
+    """Removes hard-coded engine drivers like \\usepackage[pdftex]{hyperref}: these packages
+    detect the engine themselves, and a pdftex option makes XeTeX engines (tectonic,
+    xelatex) halt with "Wrong driver option"."""
+    def fix(m):
+        opts = [o for o in m.group(1).split(',') if o.strip() not in _DRIVER_OPTIONS]
+        return f"\\usepackage{'[' + ','.join(opts) + ']' if opts else ''}{{{m.group(2)}}}"
+    return _DRIVER_PACKAGE_RE.sub(fix, tex)
+
+
 def compile_pdf(tex_path, resource_dir):
     """Compiles with a local engine if installed, else the self-hosted Overleaf container.
     Returns (pdf_path or None, message)."""
     out_dir = os.path.dirname(tex_path)
     name = os.path.basename(tex_path)
     with open(tex_path, encoding='utf-8') as f:
-        needs_unicode_engine = re.search(r'\\usepackage(\[[^\]]*\])?\{fontspec\}', f.read()) is not None
+        tex = f.read()
+    needs_unicode_engine = re.search(r'\\usepackage(\[[^\]]*\])?\{fontspec\}', tex) is not None
+    portable = drop_driver_options(tex)
+    if portable != tex:  # tex_path is always a working copy, never the master/archive original
+        with open(tex_path, 'w', encoding='utf-8') as f:
+            f.write(portable)
 
     env = dict(os.environ)
     env['TEXINPUTS'] = resource_dir + os.pathsep + env.get('TEXINPUTS', '')  # custom .cls/.sty/images next to master.tex
@@ -512,7 +531,9 @@ def compile_pdf(tex_path, resource_dir):
         pdf = os.path.splitext(tex_path)[0] + '.pdf'
         if proc.returncode == 0 and os.path.exists(pdf):
             return pdf, f"Compiled with {exe}"
-        return None, f"{exe} failed: {_latex_errors(proc.stdout + proc.stderr)}"
+        log_path = os.path.splitext(tex_path)[0] + '.log'
+        log = open(log_path, encoding='utf-8', errors='ignore').read() if os.path.exists(log_path) else ''
+        return None, f"{exe} failed: {_latex_errors(log + proc.stdout + proc.stderr)}"
 
     if overleaf_container_running():
         return _compile_in_overleaf(tex_path, resource_dir, needs_unicode_engine)
