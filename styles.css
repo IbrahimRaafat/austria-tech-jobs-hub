@@ -331,6 +331,77 @@ body {
     border: 1px solid #10b98140;
 }
 
+.salary-badge {
+    background-color: #f59e0b20;
+    color: #fbbf24;
+    border: 1px solid #f59e0b40;
+    text-transform: none;
+}
+
+.cv-badge {
+    background-color: #38bdf820;
+    color: var(--accent);
+    border: 1px solid #38bdf840;
+    text-transform: none;
+    text-decoration: none;
+}
+
+.expired-badge {
+    background-color: #ef444420;
+    color: #f87171;
+    border: 1px solid #ef444440;
+}
+
+.save-btn {
+    margin-left: auto;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.save-btn:hover,
+.save-btn.saved {
+    color: #fbbf24;
+    border-color: #f59e0b80;
+}
+
+.job-card.tracked {
+    border-color: #f59e0b60;
+}
+
+.track-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.track-select {
+    background-color: var(--card-bg);
+    border: 1px solid #f59e0b60;
+    color: var(--text-primary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.track-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
 .exp-badge {
     background-color: #8b5cf620;
     color: #a78bfa;

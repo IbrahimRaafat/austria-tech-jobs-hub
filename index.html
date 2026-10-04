@@ -76,6 +76,19 @@
                 
                 <div class="filters-row">
                     <div class="filter-group">
+                        <label for="tracker-filter">My Jobs:</label>
+                        <select id="tracker-filter">
+                            <option value="All">All Jobs</option>
+                            <option value="tracked">All Tracked</option>
+                            <option value="saved">⭐ Saved</option>
+                            <option value="applied">📨 Applied</option>
+                            <option value="interview">💬 Interview</option>
+                            <option value="offer">🎉 Offer</option>
+                            <option value="rejected">✖ Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
                         <label for="location-filter">City / Region:</label>
                         <select id="location-filter">
                             <option value="All">All Locations (Austria)</option>
@@ -108,6 +121,27 @@
                             <option value="Visa Sponsorship">Visa Sponsorship Available</option>
                             <option value="Relocation Supported">Relocation Supported</option>
                             <option value="EU Work Permit Required">EU Work Permit Required</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="salary-filter">Salary (gross/yr):</label>
+                        <select id="salary-filter">
+                            <option value="All">Any Salary</option>
+                            <option value="stated">Salary Stated</option>
+                            <option value="40000">€40k+</option>
+                            <option value="50000">€50k+</option>
+                            <option value="60000">€60k+</option>
+                            <option value="70000">€70k+</option>
+                            <option value="80000">€80k+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort-select">Sort:</label>
+                        <select id="sort-select">
+                            <option value="default">Default</option>
+                            <option value="salary">Highest Salary</option>
                         </select>
                     </div>
                 </div>
