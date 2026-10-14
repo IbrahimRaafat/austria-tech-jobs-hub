@@ -59,35 +59,62 @@ An automated daily job aggregator and live web dashboard designed specifically f
 - `scripts/send_alerts.py` runs after the daily scrape and messages jobs that are new since the previous run, filtered by the `ALERT_FILTERS` repo variable. Setup: README → "Daily Telegram alerts". Email is still open.
 
 ### ✅ Feature 4: Master Thesis Opportunities in Austria (`theses.html`, done)
-- Dedicated portal (`theses.html` & `theses.js`) aggregating funded Master's thesis positions across Austrian research centres and universities.
-- Initial source: **AIT Austrian Institute of Technology** (`https://jobs.ait.ac.at/Jobs?jobProfiles=Studierende`).
-- Rich data extraction: parses research groups, durations (e.g. 6 months), weekly workload (e.g. 20h/week), collective agreement stipends (e.g. €1,379.60/month), research field categorization, technical tags, and language (English / German).
+- Dedicated portal (`theses.html` & `theses.js`) aggregating funded Master's thesis positions across Austrian research centres, universities, and industry R&D labs.
+- **8 Active Sources Aggregated (56 live opportunities)**:
+  - **TU Wien (Faculty of Informatics & ACIN/Telecommunications)**: Visual computing, 3D/NeRF, LLM DSL synthesis, Robotic Systems Lab (RSL), complex dynamical control (29 topics).
+  - **AIT Austrian Institute of Technology**: 5G/6G wireless, SDR, bi-static drone sensing, physical AI world models, biosensors (6 topics).
+  - **Infineon Technologies Austria (Villach, Graz, Vienna)**: Battery modeling, GaN HEMTs, AI failure root-cause analysis, analog chip test coverage (5 topics).
+  - **SBA Research (Vienna)**: Hardware Trojan detection, web application fuzzing, privacy-preserving ML, digital identity cryptography, RISC-V IoT firmware (5 topics).
+  - **TU Graz (ISDS / HCC & ISEC)**: CPU microarchitectural side-channels, federated learning, explainable AI, post-quantum zero-knowledge proofs (4 topics).
+  - **JOANNEUM RESEARCH (Graz / Weiz / Klagenfurt)**: Satellite AI navigation, industrial robot-human workcells, connected vehicle sensor fusion (3 topics).
+  - **Dynatrace Research Lab (Linz / Vienna)**: LLM cloud observability, distributed tracing causality graphs, JKU LIT lab run-time profiling (3 topics).
+  - **Silicon Austria Labs (SAL - Villach, Graz, Linz)**: Brillouin-active photonic integrated circuits (PICs), optical waveguiding, sensor systems (1 topic).
+- Rich data extraction: parses research groups, durations (e.g. 6 months), weekly workload (e.g. 20h/week), collective agreement stipends (e.g. €1,379.60/month, €1,500–€2,000/month at Infineon, €1,000 TU Wien stipends), research field categorization, technical tags, and language (English / German).
 - Custom **Thesis Tracker** in `localStorage`: tracks applications from *Saved* → *Contacted Supervisor* → *Interview* → *Offered* / *Declined*.
-- Scraper: `scripts/fetch_theses.py` with unit tests `tests/test_fetch_theses.py`.
-- **Roadmap for expanding Austrian opportunities**:
-  - TU Wien Informatics / Automation thesis listings
-  - TU Graz student thesis & project boards
-  - Silicon Austria Labs (SAL - Linz, Graz, Villach)
-  - Joanneum Research (Graz)
-  - Industrial tech thesis partnerships (Infineon Austria, Dynatrace student labs, SBA Research)
+- Scraper: `scripts/fetch_theses.py` with 48 unit tests in `tests/test_fetch_theses.py`.
 
-### ✅ Reliability (done)
+### ✅ Reliability & Security Hardening (done)
 - `first_seen` per job (🆕 badge, "Newest" sort), smarter cross-source dedupe, per-source counts with warnings when a source drops to 0, one crashing source no longer kills the run, unit tests run in CI before scraping.
-- Scraped text is HTML-escaped and links restricted to http(s) on the board (was an XSS hole).
+- Scraped text is HTML-escaped and links restricted to http(s) on the board (prevents XSS vulnerabilities across the localhost resume server).
+
+---
+
+## 🚀 3. Next Roadmap: Personalized & Turnkey Career Hub (Planned)
+*Complete architectural plan documented in [`personalized_hub_plan.md`](./personalized_hub_plan.md).*
+
+### 📋 Milestone 1: Unified Profile Schema & Setup Wizard
+- Centralize all user preferences into `config/profile.json` (skills, target roles, preferred Austrian cities, minimum salary, thesis topics, notification channels).
+- Interactive setup script: `python scripts/configure.py` (interviews the user and auto-extracts skills from their master resume).
+
+### 📋 Milestone 2: Automated Match Scoring & "🎯 For You" Feed
+- Fast deterministic rule engine (`scripts/match_scorer.py`) evaluating skill overlap, seniority alignment, and location fit.
+- Computes `0–100% Match Scores` with visual breakdowns (`🎯 92% Match: Matched Python, Docker · Gap: Kubernetes`).
+- Adds a "🎯 For You" tab on both Jobs and Master Theses dashboards.
+
+### 📋 Milestone 3: Executive Daily Briefing & Multichannel Alerts
+- AI-generated morning digest (3 concise highlights delivered to phone every morning at 08:00 AM).
+- Support for **Discord Webhooks** (zero-bot setup, rich embed cards) alongside Telegram.
+
+### 📋 Milestone 4: Portable Application Tracker (Cross-Device Sync)
+- Export / Import tracker backup (JSON & CSV).
+- Optional lightweight cloud sync (GitHub Private Gist or Supabase) syncing phone browsers with local desktop.
+
+### 📋 Milestone 5: 1-Click Fork Template
+- GitHub *"Use this template"* button with automated onboarding Action issue.
 
 ---
 
 ## 📊 Summary Status
 | Feature | Status |
 | :--- | :--- |
-| English Tech Scraper | ✅ Completed |
-| Full HTML Body Agent Classifier | ✅ Completed |
-| 100% English Language Purity Filter | ✅ Completed |
-| City / Seniority / Visa Filters | ✅ Completed |
-| Rich Badges (Seniority, Visa, Relocation, Exp) | ✅ Completed |
-| 8:00 AM Daily GitHub Automation | ✅ Completed |
-| Live GitHub Pages Website | ✅ Completed |
-| Austrian Minimum Salary Extraction | ✅ Completed |
-| Saved Jobs & Application Tracker | ✅ Completed |
-| Expired-job cleanup, city labels, real descriptions | ✅ Completed |
-| AI Resume Tailor (local Ollama / Gemini, LaTeX) | ✅ Completed |
+| English Tech Scraper (14 job sources) | ✅ Completed |
+| Master Theses Portal & Scraper (8 institutions, 56 topics) | ✅ Completed |
+| Full HTML Body Agent Classifier & Purity Filter | ✅ Completed |
+| City / Seniority / Visa / Salary Filters | ✅ Completed |
+| Rich Badges (Seniority, Visa, Relocation, Exp, Stipends) | ✅ Completed |
+| Daily 08:00 AM GitHub Action Automation | ✅ Completed |
+| Telegram Daily New-Job Alerts | ✅ Completed |
+| Saved Jobs & Thesis Application Trackers | ✅ Completed |
+| AI Resume Tailor (local Ollama / Gemini, LaTeX, PDF) | ✅ Completed |
+| Full Test Suite (48 unit tests) | ✅ Passing |
+| Personalized Career Hub & Setup Wizard | 📋 Planned (Milestones 1–5) |

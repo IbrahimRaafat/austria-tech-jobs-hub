@@ -65,11 +65,11 @@ Your board is now live at `https://<your-username>.github.io/<repo-name>/` and r
 **Preview it locally** without the tailor: open `index.html` through any static server (for example `python -m http.server`), or use the tailor server from Part 2.
 
 ### Master Thesis Opportunities (`theses.html`)
-In addition to full-time jobs, the hub includes a dedicated page for **Master's Thesis Opportunities in Austria** (`theses.html`). It aggregates funded thesis topics, research projects, and university/institute collaborations (starting with AIT Austrian Institute of Technology, with plans for TU Wien, TU Graz, and industry partners):
-- **Rich metadata**: Research group, monthly gross stipend (e.g. €1,379.60/mo), duration (e.g. 6 months), workload (e.g. 20h/week), and tags.
-- **Search & Filters**: Topic categories (AI, Cybersecurity, Mobility, Biotech), city, paid/funded only, and language (English / German).
-- **Thesis Tracker**: Save and monitor supervisor contacts (`Saved` → `Contacted Supervisor` → `Interview` → `Offered`).
-- **Scraper command**: `python scripts/fetch_theses.py` (runs daily via GitHub Actions).
+In addition to full-time jobs, the hub includes a dedicated page for **Master's Thesis Opportunities in Austria** (`theses.html`). It aggregates funded thesis topics, research projects, and university/institute collaborations across **8 major Austrian institutions** (TU Wien, AIT, Infineon Austria, SBA Research, TU Graz, JOANNEUM RESEARCH, Dynatrace Research Lab, and Silicon Austria Labs):
+- **Rich metadata**: Research group, monthly gross stipend (e.g. €1,379.60/mo at AIT, €1,500–€2,000 at Infineon, €1,000 TU Wien stipends), duration (e.g. 6 months), workload (e.g. 20h/week), and technical tags.
+- **Search & Filters**: Topic categories (AI & Data Science, Cybersecurity & Networks, Mobility & Autonomous Systems, Health & Biotech, Robotics & Hardware, Software & Systems), city (Vienna, Graz, Linz, Villach, Klagenfurt), paid/funded only, and language (English / German).
+- **Thesis Tracker**: Save and monitor supervisor contacts (`Saved` → `Contacted Supervisor` → `Interview` → `Offered` / `Declined`).
+- **Scraper command**: `python scripts/fetch_theses.py` (aggregates 56+ live opportunities and runs daily via GitHub Actions).
 
 ### Optional: daily Telegram alerts for new jobs
 After each daily run, the workflow can message you the jobs that are new since the previous run.
