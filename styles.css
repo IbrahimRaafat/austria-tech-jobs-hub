@@ -723,3 +723,47 @@ ul.tailor-steps { list-style: none; padding: 0; display: grid; gap: 6px; }
     border-radius: 8px;
     background: #fff;
 }
+
+/* ---------- Master Theses Page Styles ---------- */
+.thesis-badge {
+    background-color: #a855f720;
+    color: #c084fc;
+    border: 1px solid #a855f740;
+    text-transform: none;
+}
+
+.duration-badge {
+    background-color: #06b6d420;
+    color: #22d3ee;
+    border: 1px solid #06b6d440;
+    text-transform: none;
+}
+
+.workload-badge {
+    background-color: #64748b20;
+    color: #94a3b8;
+    border: 1px solid #64748b40;
+    text-transform: none;
+}
+
+.lang-badge {
+    background-color: #38bdf815;
+    color: var(--accent);
+    border: 1px solid #38bdf830;
+    text-transform: none;
+}
+
+.paid-badge {
+    background-color: #10b98120;
+    color: #34d399;
+    border: 1px solid #10b98140;
+    text-transform: none;
+}
+
+.thesis-research-group {
+    font-size: 13px;
+    color: var(--accent);
+    margin-top: 2px;
+    font-weight: 500;
+}
+

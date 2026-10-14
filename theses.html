@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Thesis Opportunities in Austria | Austria Tech Jobs Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <span class="flag">🇦🇹</span>
+                <span class="logo-text">Austria<strong>TechJobs</strong></span>
+                <span class="badge-english" style="background: #a855f725; color: #c084fc; border-color: #a855f750;">Master's Theses</span>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Jobs</a>
+                <a href="theses.html" class="active">Master Theses</a>
+                <a href="/cvs" id="nav-cvs" hidden>My CVs</a>
+            </nav>
+            <div class="meta-status">
+                <span class="pulse-dot"></span>
+                <span id="last-updated">Updating daily</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section">
+            <h1>Master Thesis Opportunities in Austria</h1>
+            <p class="subtitle">Funded Master's thesis positions, research projects, and university/institute collaborations across Austria (AIT, research centres, and industry partners).</p>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" placeholder="Search by topic, research area, or technologies (e.g. AI, 5G, Sensing, Cybersecurity, Vision)...">
+                </div>
+            </div>
+
+            <div class="filter-pills" id="category-pills">
+                <button class="pill active" data-category="All">All Topics (<span id="count-all">0</span>)</button>
+                <button class="pill" data-category="AI & Data Science">AI & Data Science</button>
+                <button class="pill" data-category="Cybersecurity & Networks">Cybersecurity & Networks</button>
+                <button class="pill" data-category="Mobility & Autonomous Systems">Mobility & Autonomous Systems</button>
+                <button class="pill" data-category="Health & Biotech">Health & Biotech</button>
+                <button class="pill" data-category="Robotics & Hardware">Robotics & Hardware</button>
+            </div>
+        </section>
+
+        <!-- Local tailor panel (only shown when served by scripts/resume_server.py) -->
+        <section class="tailor-panel" id="tailor-panel" hidden>
+            <div class="tailor-panel-head">
+                <div>
+                    <h2>✨ AI CV Tailor for Theses</h2>
+                    <p class="tailor-hint">Use the <strong>Tailor CV</strong> button on any thesis to tailor your resume specifically to the research topic and supervisor requirements.</p>
+                </div>
+                <div class="filter-group">
+                    <label for="tailor-provider">AI engine:</label>
+                    <select id="tailor-provider"></select>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-section">
+            <div class="section-header">
+                <div class="results-count">
+                    Showing <strong id="visible-count">0</strong> of <span id="total-count">0</span> thesis opportunities
+                </div>
+                <div class="filter-dropdowns">
+                    <div class="filter-group">
+                        <label for="city-filter">City:</label>
+                        <select id="city-filter">
+                            <option value="All">All Cities</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="paid-filter">Compensation:</label>
+                        <select id="paid-filter">
+                            <option value="All">All</option>
+                            <option value="paid">Paid / Funded Only</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="lang-filter">Language:</label>
+                        <select id="lang-filter">
+                            <option value="All">All Languages</option>
+                            <option value="English">English</option>
+                            <option value="German">German</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort-select">Sort:</label>
+                        <select id="sort-select">
+                            <option value="default">Default</option>
+                            <option value="newest">Newest</option>
+                            <option value="title">Title (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group tracker-toggle">
+                        <button type="button" class="pill tracker-pill" id="my-theses-toggle">
+                            ⭐ My Theses (<span id="tracker-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Theses Tracker sub-bar -->
+            <div class="tracker-bar" id="tracker-bar" hidden>
+                <div class="tracker-bar-head">
+                    <strong>My Thesis Applications</strong>
+                    <span class="tailor-hint">Status stored in your browser</span>
+                </div>
+                <div class="tracker-pills" id="tracker-status-pills">
+                    <button class="pill active" data-status="all">All (<span id="cnt-st-all">0</span>)</button>
+                    <button class="pill" data-status="saved">Saved (<span id="cnt-st-saved">0</span>)</button>
+                    <button class="pill" data-status="contacted">Contacted (<span id="cnt-st-contacted">0</span>)</button>
+                    <button class="pill" data-status="interview">Interview (<span id="cnt-st-interview">0</span>)</button>
+                    <button class="pill" data-status="offer">Offered (<span id="cnt-st-offer">0</span>)</button>
+                    <button class="pill" data-status="declined">Declined (<span id="cnt-st-declined">0</span>)</button>
+                </div>
+            </div>
+
+            <div class="jobs-grid" id="theses-container">
+                <!-- Thesis cards rendered by theses.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>Austria Tech Jobs & Thesis Hub · Open source aggregator for students and researchers.</p>
+            <div class="footer-links">
+                <a href="index.html">Tech Jobs</a>
+                <a href="theses.html">Master Theses</a>
+                <a href="https://github.com/ibrahimraafat/austria-tech-jobs-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://jobs.ait.ac.at/Jobs?jobProfiles=Studierende" target="_blank" rel="noopener noreferrer">AIT Student Jobs</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tailor Progress / Result Modal -->
+    <div class="tailor-modal" id="tailor-modal" hidden>
+        <div class="tailor-dialog" role="dialog" aria-modal="true" aria-labelledby="tailor-modal-title">
+            <button class="tailor-close" id="tailor-modal-close" aria-label="Close">×</button>
+            <h2 id="tailor-modal-title">✨ Tailoring CV for Thesis</h2>
+            <div id="tailor-modal-body"></div>
+        </div>
+    </div>
+
+    <script src="theses.js"></script>
+</body>
+</html>

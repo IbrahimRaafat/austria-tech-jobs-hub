@@ -24,7 +24,8 @@ import tailor_resume  # noqa: E402
 import cv_library  # noqa: E402
 
 STATIC_FILES = {'/': 'index.html', '/index.html': 'index.html', '/app.js': 'app.js', '/styles.css': 'styles.css',
-                '/cvs': 'cvs.html', '/cvs.html': 'cvs.html', '/cvs.js': 'cvs.js'}
+                '/cvs': 'cvs.html', '/cvs.html': 'cvs.html', '/cvs.js': 'cvs.js',
+                '/theses': 'theses.html', '/theses.html': 'theses.html', '/theses.js': 'theses.js'}
 TASKS = {}
 TASKS_LOCK = threading.Lock()
 

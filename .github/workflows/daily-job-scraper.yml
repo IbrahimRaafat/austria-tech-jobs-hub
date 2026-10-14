@@ -33,16 +33,17 @@ jobs:
       - name: Keep previous jobs for new-job alerts
         run: cp data/jobs.json "$RUNNER_TEMP/previous_jobs.json" || true
 
-      - name: Run Job Scraper
+      - name: Run Job & Thesis Scrapers
         run: |
           python scripts/fetch_jobs.py
+          python scripts/fetch_theses.py
 
-      - name: Commit and Push Updated Jobs Data
+      - name: Commit and Push Updated Jobs & Theses Data
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/jobs.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update English tech jobs data [$(date -u +'%Y-%m-%d %H:%M UTC')]" && git push)
+          git add data/jobs.json data/theses.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update English tech jobs and master theses data [$(date -u +'%Y-%m-%d %H:%M UTC')]" && git push)
 
       # After the data push, so a Telegram problem never blocks the board update.
       - name: Send Telegram alerts for new jobs

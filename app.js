@@ -408,7 +408,8 @@ async function initTailor() {
 
     tailorEnabled = true;
     document.getElementById('tailor-panel').hidden = false;
-    document.getElementById('nav-links').hidden = false;
+    const cvsNav = document.getElementById('nav-cvs');
+    if (cvsNav) cvsNav.hidden = false;
 
     const select = document.getElementById('tailor-provider');
     const { local, cloud } = status.providers;

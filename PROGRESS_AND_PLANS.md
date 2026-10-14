@@ -58,6 +58,19 @@ An automated daily job aggregator and live web dashboard designed specifically f
 ### ✅ Feature 3: Job Alerts (Telegram, done)
 - `scripts/send_alerts.py` runs after the daily scrape and messages jobs that are new since the previous run, filtered by the `ALERT_FILTERS` repo variable. Setup: README → "Daily Telegram alerts". Email is still open.
 
+### ✅ Feature 4: Master Thesis Opportunities in Austria (`theses.html`, done)
+- Dedicated portal (`theses.html` & `theses.js`) aggregating funded Master's thesis positions across Austrian research centres and universities.
+- Initial source: **AIT Austrian Institute of Technology** (`https://jobs.ait.ac.at/Jobs?jobProfiles=Studierende`).
+- Rich data extraction: parses research groups, durations (e.g. 6 months), weekly workload (e.g. 20h/week), collective agreement stipends (e.g. €1,379.60/month), research field categorization, technical tags, and language (English / German).
+- Custom **Thesis Tracker** in `localStorage`: tracks applications from *Saved* → *Contacted Supervisor* → *Interview* → *Offered* / *Declined*.
+- Scraper: `scripts/fetch_theses.py` with unit tests `tests/test_fetch_theses.py`.
+- **Roadmap for expanding Austrian opportunities**:
+  - TU Wien Informatics / Automation thesis listings
+  - TU Graz student thesis & project boards
+  - Silicon Austria Labs (SAL - Linz, Graz, Villach)
+  - Joanneum Research (Graz)
+  - Industrial tech thesis partnerships (Infineon Austria, Dynatrace student labs, SBA Research)
+
 ### ✅ Reliability (done)
 - `first_seen` per job (🆕 badge, "Newest" sort), smarter cross-source dedupe, per-source counts with warnings when a source drops to 0, one crashing source no longer kills the run, unit tests run in CI before scraping.
 - Scraped text is HTML-escaped and links restricted to http(s) on the board (was an XSS hole).
