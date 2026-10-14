@@ -5,6 +5,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from fetch_theses import (
     clean_str,
+    normalize_city,
     categorize_thesis,
     detect_language,
     extract_thesis_tags,
@@ -17,6 +18,12 @@ class TestFetchTheses(unittest.TestCase):
     def test_clean_str(self):
         raw = "  Master Thesis \u201cBi-Static Sensing\u201d &amp; \xa0UAVs  "
         self.assertEqual(clean_str(raw), 'Master Thesis "Bi-Static Sensing" & UAVs')
+
+    def test_normalize_city(self):
+        self.assertEqual(normalize_city("Wien"), "Vienna")
+        self.assertEqual(normalize_city("vienna"), "Vienna")
+        self.assertEqual(normalize_city("Graz"), "Graz")
+        self.assertEqual(normalize_city(""), "Vienna")
 
     def test_categorize_thesis(self):
         cat_cyber = categorize_thesis("Master Thesis 'Bi-Static Sensing of UAVs'", "wireless 5G/6G communication and sensing")

@@ -58,6 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheses();
     initFilters();
     initTailor();
+
+    document.addEventListener('error', (e) => {
+        if (e.target && e.target.matches && e.target.matches('img.company-logo')) {
+            const initial = e.target.dataset.initial || 'AUT';
+            const fallback = document.createElement('div');
+            fallback.className = 'company-logo';
+            fallback.textContent = initial;
+            e.target.replaceWith(fallback);
+        }
+    }, true);
 });
 
 async function initTheses() {
@@ -342,10 +352,10 @@ function resetFilters() {
 
 function createThesisCardHTML(t, tracked) {
     const e = escapeHTML;
-    const initial = 'AIT';
+    const initial = e((t.institution || 'AUT').replace(/[^a-zA-Z]/g, '').slice(0, 3).toUpperCase() || 'AUT');
     const logoURL = safeURL(t.institution_logo);
     const logoHTML = logoURL
-        ? `<img class="company-logo" src="${e(logoURL)}" alt="${e(t.institution)}" onerror="this.onerror=null; this.outerHTML='<div class=\\'company-logo\\'>${initial}</div>';">`
+        ? `<img class="company-logo" src="${e(logoURL)}" alt="${e(t.institution)}" data-initial="${initial}">`
         : `<div class="company-logo">${initial}</div>`;
 
     const tagsHTML = (t.tags || []).map(tag => `<span class="tag">${e(tag)}</span>`).join('');
