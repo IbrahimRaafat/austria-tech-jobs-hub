@@ -55,8 +55,12 @@ An automated daily job aggregator and live web dashboard designed specifically f
 - Visits every job's detail page once: drops expired postings (HTTP 404/410, unless most of a source fails, which suggests blocking), reads schema.org JobPosting JSON-LD for salary/location, and replaces template descriptions with the posting's own summary.
 - `cities` (multi-valued, from the location field) replaces the old text-guessed `city`, which mislabelled most Vienna jobs.
 
-### 🔔 Feature 3: Job Alerts (Telegram / Email)
-- Automated daily summary alert sent to Telegram/Email for newly scraped English tech roles in Austria.
+### ✅ Feature 3: Job Alerts (Telegram, done)
+- `scripts/send_alerts.py` runs after the daily scrape and messages jobs that are new since the previous run, filtered by the `ALERT_FILTERS` repo variable. Setup: README → "Daily Telegram alerts". Email is still open.
+
+### ✅ Reliability (done)
+- `first_seen` per job (🆕 badge, "Newest" sort), smarter cross-source dedupe, per-source counts with warnings when a source drops to 0, one crashing source no longer kills the run, unit tests run in CI before scraping.
+- Scraped text is HTML-escaped and links restricted to http(s) on the board (was an XSS hole).
 
 ---
 

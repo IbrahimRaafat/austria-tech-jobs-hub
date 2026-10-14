@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from agent_classifier import JobClassifierAgent
 from enrich import enrich_jobs
+from job_store import dedupe, emit_warnings, load_previous, source_report, stamp_first_seen
 
 agent = JobClassifierAgent()
 
@@ -910,41 +911,52 @@ def fetch_canva_jobs():
 
     return jobs
 
+SOURCES = [
+    ("Karriere.at", fetch_karriere_jobs),
+    ("Arbeitnow", fetch_arbeitnow_jobs),
+    ("Jobicy", fetch_jobicy_jobs),
+    ("Remotive", fetch_remotive_jobs),
+    ("JobLeads", fetch_jobleads_jobs),
+    ("UNjobs", fetch_unjobs_jobs),
+    ("The Hub", fetch_thehub_jobs),
+    ("AIT", fetch_ait_jobs),
+    ("Prewave", fetch_prewave_jobs),
+    ("GROPYUS", fetch_gropyus_jobs),
+    ("GoStudent", fetch_gostudent_jobs),
+    ("Canva", fetch_canva_jobs),
+    ("indie", fetch_indie_jobs),
+    ("DEVjobs.at", fetch_devjobs_jobs),
+]
+
 def main():
     print("=== Custom Local Agent Job Aggregator & Purity Filter ===")
 
-    karriere_jobs = fetch_karriere_jobs()
-    arbeitnow_jobs = fetch_arbeitnow_jobs()
-    jobicy_jobs = fetch_jobicy_jobs()
-    remotive_jobs = fetch_remotive_jobs()
-    jobleads_jobs = fetch_jobleads_jobs()
-    unjobs_jobs = fetch_unjobs_jobs()
-    thehub_jobs = fetch_thehub_jobs()
-    ait_jobs = fetch_ait_jobs()
-    prewave_jobs = fetch_prewave_jobs()
-    gropyus_jobs = fetch_gropyus_jobs()
-    gostudent_jobs = fetch_gostudent_jobs()
-    canva_jobs = fetch_canva_jobs()
-    indie_jobs = fetch_indie_jobs()
-    devjobs_jobs = fetch_devjobs_jobs()
+    out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+    out_path = os.path.join(out_dir, "jobs.json")
+    previous = load_previous(out_path)
 
-    all_jobs = karriere_jobs + arbeitnow_jobs + jobicy_jobs + remotive_jobs + jobleads_jobs + unjobs_jobs + thehub_jobs + ait_jobs + prewave_jobs + gropyus_jobs + gostudent_jobs + canva_jobs + indie_jobs + devjobs_jobs
-    
-    seen = set()
-    unique_jobs = []
-    for job in all_jobs:
-        key = (job['title'].lower().strip(), job['company'].lower().strip())
-        if key not in seen:
-            seen.add(key)
-            unique_jobs.append(job)
-            
-    print(f"Collected {len(unique_jobs)} strictly 100% English Tech jobs in Austria.")
+    all_jobs = []
+    warnings = []
+    for name, fetch in SOURCES:
+        # One broken site must not cost the whole daily update.
+        try:
+            all_jobs += fetch()
+        except Exception as e:
+            warnings.append(f"{name} scraper crashed: {type(e).__name__}: {e}")
+
+    unique_jobs = dedupe(all_jobs)
+    print(f"Collected {len(unique_jobs)} strictly 100% English Tech jobs in Austria "
+          f"({len(all_jobs) - len(unique_jobs)} cross-source duplicates removed).")
 
     unique_jobs = enrich_jobs(unique_jobs)
-    
-    out_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+    today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    stamp_first_seen(unique_jobs, previous, today)
+    print(f"[First seen] {sum(1 for j in unique_jobs if j['first_seen'] == today)} new today.")
+
+    warnings += source_report(unique_jobs, previous)
+    emit_warnings(warnings)
+
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "jobs.json")
     
     meta_output = {
         "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),

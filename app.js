@@ -11,6 +11,16 @@ let tracker = {};
 let tailoredByUrl = {};
 let tailorEnabled = false;
 
+// Broken company logos fall back to the company's initial.
+document.addEventListener('error', (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement) || !img.matches('.company-logo')) return;
+    const fallback = document.createElement('div');
+    fallback.className = 'company-logo';
+    fallback.textContent = img.dataset.initial || 'T';
+    img.replaceWith(fallback);
+}, true);
+
 document.addEventListener('DOMContentLoaded', () => {
     tracker = loadTracker();
     loadJobs();
@@ -140,9 +150,13 @@ function renderJobs() {
 
     if (activeSort === 'salary') {
         filtered.sort((a, b) => (b.salary?.annual_max ?? -1) - (a.salary?.annual_max ?? -1));
+    } else if (activeSort === 'newest') {
+        filtered.sort((a, b) => (b.first_seen || '').localeCompare(a.first_seen || ''));
     }
 
-    document.getElementById('jobs-count-title').textContent = `${filtered.length} Tech Jobs Found`;
+    const newCount = filtered.filter(isNewJob).length;
+    document.getElementById('jobs-count-title').textContent =
+        `${filtered.length} Tech Jobs Found${newCount ? ` · ${newCount} new` : ''}`;
 
     if (filtered.length === 0) {
         container.innerHTML = `
@@ -160,23 +174,31 @@ function renderJobs() {
 }
 
 function createJobCardHTML(job) {
-    const logoHTML = job.company_logo 
-        ? `<img class="company-logo" src="${job.company_logo}" alt="${job.company}" onerror="this.onerror=null; this.outerHTML='<div class=\\'company-logo\\'>${job.company ? job.company[0] : 'T'}</div>';">`
-        : `<div class="company-logo">${job.company ? job.company[0] : 'T'}</div>`;
+    // Every job field comes from third-party sites: escape it all. On localhost this page
+    // shares an origin with the tailor/CV APIs, so injected script could act on them.
+    const e = escapeHTML;
+    const initial = e((job.company || 'T')[0]);
+    const logoURL = safeURL(job.company_logo);
+    const logoHTML = logoURL
+        ? `<img class="company-logo" src="${e(logoURL)}" alt="${e(job.company)}" data-initial="${initial}">`
+        : `<div class="company-logo">${initial}</div>`;
 
-    const tagsHTML = (job.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('');
+    const tagsHTML = (job.tags || []).map(tag => `<span class="tag">${e(tag)}</span>`).join('');
 
-    const seniorityBadge = job.seniority 
-        ? `<span class="meta-badge seniority-badge">${job.seniority}</span>` 
+    const seniorityBadge = job.seniority
+        ? `<span class="meta-badge seniority-badge">${e(job.seniority)}</span>`
         : '';
-        
+
     const relocationBadge = (job.relocation_support && job.relocation_support !== 'Not Specified')
-        ? `<span class="meta-badge relocation-badge">✈️ ${job.relocation_support}</span>` 
+        ? `<span class="meta-badge relocation-badge">✈️ ${e(job.relocation_support)}</span>`
         : '';
 
     const expBadge = job.experience_level
-        ? `<span class="meta-badge exp-badge">⏳ ${job.experience_level}</span>`
+        ? `<span class="meta-badge exp-badge">⏳ ${e(job.experience_level)}</span>`
         : '';
+
+    const newBadge = isNewJob(job) ? '<span class="meta-badge new-badge">🆕 New</span>' : '';
+    const age = job.first_seen ? `<span class="detail-item" title="First seen ${e(job.first_seen)}">🕒 ${ageLabel(job.first_seen)}</span>` : '';
 
     const salaryBadge = job.salary
         ? `<span class="meta-badge salary-badge" title="${escapeHTML(salaryTooltip(job.salary))}">💰 ${escapeHTML(job.salary.label)}</span>`
@@ -197,7 +219,7 @@ function createJobCardHTML(job) {
 
     const cv = tailoredByUrl[job.url];
     const cvBadge = cv
-        ? `<a class="meta-badge cv-badge" href="/cvs" title="Open in My CVs">📄 Tailored CV${cv.match_score != null ? ` · ${cv.match_score}%` : ''}</a>`
+        ? `<a class="meta-badge cv-badge" href="/cvs" title="Open in My CVs">📄 Tailored CV${cv.match_score != null ? ` · ${e(cv.match_score)}%` : ''}</a>`
         : '';
 
     return `
@@ -206,8 +228,8 @@ function createJobCardHTML(job) {
                 <div class="card-top">
                     ${logoHTML}
                     <div class="job-meta">
-                        <h3 class="job-title">${job.title}</h3>
-                        <div class="company-name">${job.company}</div>
+                        <h3 class="job-title">${e(job.title)}</h3>
+                        <div class="company-name">${e(job.company)}</div>
                     </div>
                     <button type="button" class="save-btn${track ? ' saved' : ''}" data-job-id="${escapeHTML(job.id)}"
                         aria-pressed="${track ? 'true' : 'false'}" aria-label="${track ? 'Stop tracking' : 'Save'} ${escapeHTML(job.title)}"
@@ -217,6 +239,7 @@ function createJobCardHTML(job) {
                 ${trackRow}
 
                 <div class="badges-row">
+                    ${newBadge}
                     ${cvBadge}
                     ${salaryBadge}
                     ${seniorityBadge}
@@ -225,22 +248,43 @@ function createJobCardHTML(job) {
                 </div>
 
                 <div class="details-row">
-                    <span class="detail-item">📍 ${job.location}</span>
-                    <span class="detail-item">📂 ${job.category}</span>
+                    <span class="detail-item">📍 ${e(job.location)}</span>
+                    <span class="detail-item">📂 ${e(job.category)}</span>
+                    ${age}
                 </div>
 
                 ${tagsHTML ? `<div class="tags-row">${tagsHTML}</div>` : ''}
 
-                <p class="description-text">${job.description}</p>
+                <p class="description-text">${e(job.description)}</p>
             </div>
 
             <div class="card-bottom">
-                <span class="source-badge">via ${job.source}</span>
+                <span class="source-badge">via ${e(job.source)}</span>
                 ${tailorEnabled && !job.expired ? `<button type="button" class="tailor-btn" data-job-id="${escapeHTML(job.id)}">✨ Tailor resume</button>` : ''}
-                <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="apply-btn">${job.expired ? 'Posting ↗' : 'Apply Now ↗'}</a>
+                <a href="${e(safeURL(job.url) || '#')}" target="_blank" rel="noopener noreferrer" class="apply-btn">${job.expired ? 'Posting ↗' : 'Apply Now ↗'}</a>
             </div>
         </div>
     `;
+}
+
+// Whole days since a YYYY-MM-DD date, in the viewer's local calendar.
+function daysSince(isoDate) {
+    const [y, m, d] = isoDate.split('-').map(Number);
+    const then = new Date(y, m - 1, d);
+    const now = new Date();
+    return Math.round((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - then) / 86400000);
+}
+
+// "New" = first scraped in the latest daily run or the one before it.
+function isNewJob(job) {
+    return Boolean(job.first_seen) && !job.expired && daysSince(job.first_seen) <= 1;
+}
+
+function ageLabel(isoDate) {
+    const days = daysSince(isoDate);
+    if (days <= 0) return 'Today';
+    if (days === 1) return 'Yesterday';
+    return `${days} days ago`;
 }
 
 function salaryTooltip(salary) {
@@ -344,6 +388,11 @@ const STEP_ICONS = { pending: '○', running: '◌', done: '●', skipped: '–'
 
 function escapeHTML(value) {
     return String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// Only http(s) links from scraped data; blocks javascript:/data: URLs. Returns '' otherwise.
+function safeURL(url) {
+    return /^https?:\/\//i.test(String(url ?? '').trim()) ? String(url).trim() : '';
 }
 
 async function initTailor() {
@@ -472,7 +521,7 @@ function renderTailorResult(result) {
     return `
         <div class="tailor-result">
             <div class="score-row">
-                <div class="score score-${scoreClass}">${a.match_score}<small>/100</small></div>
+                <div class="score score-${scoreClass}">${escapeHTML(a.match_score)}<small>/100</small></div>
                 <p>${escapeHTML(a.summary)}</p>
             </div>
             <div class="tailor-links">${links}</div>
@@ -480,7 +529,7 @@ function renderTailorResult(result) {
                 <div><h3>Matched</h3>${list(a.matched)}</div>
                 <div><h3>Gaps</h3>${list(a.gaps)}</div>
             </div>
-            <h3>Fact-check: <span class="verdict verdict-${fc.verdict}">${fc.verdict.toUpperCase()}</span>${fc.revised ? ' <span class="tailor-hint">(after one revision)</span>' : ''}</h3>
+            <h3>Fact-check: <span class="verdict verdict-${escapeHTML(fc.verdict)}">${escapeHTML(String(fc.verdict).toUpperCase())}</span>${fc.revised ? ' <span class="tailor-hint">(after one revision)</span>' : ''}</h3>
             ${issues}
             ${result.warnings.length ? `<h3>Warnings</h3>${list(result.warnings)}` : ''}
             <p class="tailor-hint">${escapeHTML(result.model)} · PDF: ${escapeHTML(result.pdf)} · saved to <code>${escapeHTML(result.output_dir)}</code> · <a href="/cvs">All my CVs →</a></p>

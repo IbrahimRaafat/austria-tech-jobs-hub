@@ -95,7 +95,7 @@ function tailoredCard(t) {
         <div class="job-card cv-card">
             <div>
                 <div class="card-top">
-                    <div class="cv-score score-${scoreClass}">${t.match_score ?? '–'}</div>
+                    <div class="cv-score score-${scoreClass}">${escapeHTML(t.match_score ?? '–')}</div>
                     <div class="job-meta">
                         <h3 class="job-title">${escapeHTML(t.title)}</h3>
                         <div class="company-name">${escapeHTML(t.company)}</div>
@@ -103,7 +103,7 @@ function tailoredCard(t) {
                 </div>
                 <div class="badges-row">
                     <span class="meta-badge exp-badge">${formatDate(t.created)}</span>
-                    ${t.verdict ? `<span class="meta-badge verdict-badge verdict-${t.verdict}">fact-check ${escapeHTML(t.verdict)}</span>` : ''}
+                    ${t.verdict ? `<span class="meta-badge verdict-badge verdict-${escapeHTML(t.verdict)}">fact-check ${escapeHTML(t.verdict)}</span>` : ''}
                 </div>
                 ${t.gaps.length ? `<p class="description-text"><strong>Gaps:</strong> ${t.gaps.map(escapeHTML).join('; ')}</p>` : ''}
                 <p class="tailor-hint">${escapeHTML(t.model)}</p>
@@ -113,7 +113,7 @@ function tailoredCard(t) {
                 ${f.resume_tex ? `<a class="tailor-link" href="${f.resume_tex}?download=1">.tex ⤓</a>` : ''}
                 ${f.cover_letter ? `<a class="tailor-link" href="${f.cover_letter}" target="_blank">Cover letter</a>` : ''}
                 ${f.report ? `<a class="tailor-link" href="${f.report}" target="_blank">Report</a>` : ''}
-                ${t.url ? `<a class="tailor-link" href="${escapeHTML(t.url)}" target="_blank" rel="noopener noreferrer">Job ↗</a>` : ''}
+                ${/^https?:\/\//i.test(t.url || '') ? `<a class="tailor-link" href="${escapeHTML(t.url)}" target="_blank" rel="noopener noreferrer">Job ↗</a>` : ''}
                 <button type="button" class="tailor-link cv-delete" data-action="delete" data-id="${escapeHTML(t.id)}" data-title="${escapeHTML(title)}">Delete</button>
             </div>
         </div>`;

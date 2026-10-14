@@ -27,7 +27,7 @@ Anyone can fork this repo and run both for themselves. **The repo contains no on
 | Component | Runs on | Who can see it |
 |---|---|---|
 | Source code and `data/jobs.json` (public job listings) | Your GitHub repo | Public |
-| Daily scraper (`scripts/fetch_jobs.py`) | GitHub Actions, 06:00 UTC | Public logs |
+| Daily scraper (`scripts/fetch_jobs.py`) and optional Telegram alerts (`scripts/send_alerts.py`) | GitHub Actions, 06:00 UTC | Public logs. Your Telegram token and chat ID stay in repo secrets. |
 | Job board website (`index.html`) | GitHub Pages | Public. The tailor UI is hidden there. |
 | Tailor app, **My CVs** dashboard, APIs (`scripts/resume_server.py`) | Your computer, `http://localhost:8765` | Only you. It binds to 127.0.0.1 and rejects requests from other sites. |
 | Your master resume, tailored CVs, PDFs, API key | Your computer (`resume/`, `.env`) | Only you. These paths are gitignored. |
@@ -63,6 +63,21 @@ The tailor itself only uses the Python standard library. There are no pip packag
 Your board is now live at `https://<your-username>.github.io/<repo-name>/` and refreshes every day at 06:00 UTC. The fork starts with the original repo's `data/jobs.json` (public job listings only). Your first workflow run replaces it.
 
 **Preview it locally** without the tailor: open `index.html` through any static server (for example `python -m http.server`), or use the tailor server from Part 2.
+
+### Optional: daily Telegram alerts for new jobs
+After each daily run, the workflow can message you the jobs that are new since the previous run.
+
+1. In Telegram, talk to [@BotFather](https://t.me/BotFather), send `/newbot`, and copy the **bot token**.
+2. Send any message to your new bot, then open `https://api.telegram.org/bot<TOKEN>/getUpdates` in a browser and copy `"chat":{"id": ...}`. That number is your **chat ID**.
+3. In your repo, open **Settings → Secrets and variables → Actions**:
+   - **Secrets** tab: add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
+   - **Variables** tab (optional): add `ALERT_FILTERS` to limit what you get, for example:
+     ```json
+     {"cities": ["Vienna", "Remote"], "min_salary": 50000, "seniority": ["Junior", "Mid-Level"], "keywords": ["python", "data"]}
+     ```
+     Every key is optional. Other keys: `categories`, `exclude_keywords`, and `include_no_salary` (keep jobs that state no salary when `min_salary` is set). Cities are the board's regions: Vienna, Graz, Linz, Salzburg, Innsbruck, Carinthia, Remote, Austria (Other).
+
+Without the secrets the alert step just prints the message in the workflow log. Test your filters locally with `python scripts/send_alerts.py --previous <older jobs.json> --dry-run`.
 
 ---
 
