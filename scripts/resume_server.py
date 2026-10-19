@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from llm_client import REPO_ROOT, provider_status  # noqa: E402
 import tailor_resume  # noqa: E402
 import cv_library  # noqa: E402
+import overleaf_sync  # noqa: E402
 
 STATIC_FILES = {'/': 'index.html', '/index.html': 'index.html', '/app.js': 'app.js', '/styles.css': 'styles.css',
                 '/cvs': 'cvs.html', '/cvs.html': 'cvs.html', '/cvs.js': 'cvs.js',
@@ -114,6 +115,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/cvs':
             return self._send_json(cv_library.library())
 
+        if path == '/api/overleaf/status':
+            return self._send_json(overleaf_sync.status())
+
         if path.startswith('/archive/'):
             parts = path.split('/')  # ['', 'archive', slug, 'source' | 'pdf']
             if len(parts) == 4:
@@ -142,7 +146,7 @@ class Handler(BaseHTTPRequestHandler):
         if not self._host_ok():
             return self.send_error(403)
         route = urlparse(self.path).path
-        if route not in ('/api/tailor', '/api/cvs/compile', '/api/cvs/delete'):
+        if route not in ('/api/tailor', '/api/cvs/compile', '/api/cvs/delete', '/api/overleaf/sync'):
             return self.send_error(404)
         # Requiring JSON forces a CORS preflight, so other websites cannot trigger actions
         if not (self.headers.get('Content-Type') or '').startswith('application/json'):
@@ -152,6 +156,14 @@ class Handler(BaseHTTPRequestHandler):
             params = json.loads(self.rfile.read(min(length, 200_000)) or b'{}')
         except (ValueError, json.JSONDecodeError):
             return self._send_json({'error': 'invalid JSON body'}, 400)
+
+        if route == '/api/overleaf/sync':
+            action = params.get('action', 'pull')
+            if action == 'push':
+                ok, msg = overleaf_sync.push_to_overleaf()
+            else:
+                ok, msg = overleaf_sync.pull_from_overleaf()
+            return self._send_json({'success': ok, 'message': msg}, 200 if ok else 422)
 
         if route == '/api/cvs/compile':
             compile_fn = cv_library.compile_tailored if params.get('kind') == 'tailored' else cv_library.compile_archive

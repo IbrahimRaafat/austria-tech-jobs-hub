@@ -63,8 +63,12 @@ function render() {
                 <h3 class="job-title">${escapeHTML(master.path)}</h3>
                 <p class="description-text">The source of truth every tailored CV is generated from. Updated ${formatDate(master.modified)}.</p>
             </div>
-            <div class="cv-actions">${pdfButton(master.pdf_url, 'archive', master.id, 'Master resume')}
-                <a class="tailor-link" href="${master.source_url}" target="_blank">.tex ↗</a></div>
+            <div class="cv-actions">
+                ${pdfButton(master.pdf_url, 'archive', master.id, 'Master resume')}
+                <a class="tailor-link" href="${master.source_url}" target="_blank">.tex ↗</a>
+                <a class="tailor-link" href="http://localhost:80" target="_blank" title="Open local Overleaf web UI">Overleaf ↗</a>
+                <button type="button" class="tailor-link" data-action="overleaf-sync" title="Sync with Overleaf container">Sync Overleaf ⟳</button>
+            </div>
         </div>` : `<p class="tailor-alert">No master resume at <code>${escapeHTML(master.path)}</code>.</p>`;
 
     const tailoredShown = tailored.filter(t => matches(t.title, t.company, t.id));
@@ -180,5 +184,20 @@ async function onAction(e) {
         }
         await postJSON('/api/cvs/delete', { id });
         loadLibrary();
+    }
+
+    if (action === 'overleaf-sync') {
+        btn.disabled = true;
+        btn.textContent = 'Syncing…';
+        btn.parentElement.querySelector('.cv-inline-error')?.remove();
+        const { ok, data } = await postJSON('/api/overleaf/sync', { action: 'pull' });
+        btn.disabled = false;
+        btn.textContent = 'Sync Overleaf ⟳';
+        if (ok) {
+            await loadLibrary();
+            alert(data.message || 'Synced successfully from Overleaf!');
+        } else {
+            btn.insertAdjacentHTML('afterend', `<p class="tailor-error cv-inline-error">${escapeHTML(data.message || 'Sync failed. Make sure Docker and Overleaf are running.')}</p>`);
+        }
     }
 }
