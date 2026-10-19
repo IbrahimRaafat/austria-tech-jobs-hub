@@ -18,7 +18,10 @@ import re
 import sys
 import urllib.request
 import ssl
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 OUTPUT_PATH = os.path.join(DATA_DIR, "theses.json")
@@ -637,6 +640,9 @@ def load_previous_theses(path):
 
 def main():
     print("=== Austrian Master Thesis Opportunities Aggregator ===")
+    if BeautifulSoup is None:
+        print("ERROR: beautifulsoup4 is not installed. Please run: pip install -r requirements.txt")
+        return
     os.makedirs(DATA_DIR, exist_ok=True)
     previous = load_previous_theses(OUTPUT_PATH)
     prev_by_id = {t.get('id'): t for t in previous}
