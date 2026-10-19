@@ -9,7 +9,8 @@ from fetch_theses import (
     categorize_thesis,
     detect_language,
     extract_thesis_tags,
-    parse_duration_and_workload
+    parse_duration_and_workload,
+    fetch_dynatrace_theses
 )
 
 
@@ -66,6 +67,14 @@ class TestFetchTheses(unittest.TestCase):
         self.assertIn("6 months", dur)
         self.assertEqual(work, "20 hrs/week")
         self.assertIn("1027,40", comp)
+
+    def test_fetch_dynatrace_theses(self):
+        theses = fetch_dynatrace_theses()
+        self.assertGreaterEqual(len(theses), 3)
+        for t in theses:
+            self.assertTrue(t['url'].startswith('https://www.dynatrace.com/'))
+            self.assertNotIn('careers.dynatrace.com/students-graduates/', t['url'])
+            self.assertEqual(t['source'], 'Dynatrace Research Lab')
 
 
 if __name__ == '__main__':

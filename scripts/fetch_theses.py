@@ -582,6 +582,7 @@ def fetch_dynatrace_theses():
     print("[Theses Scraper] Fetching Dynatrace Research Lab...")
     theses = []
     today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    thesis_program_url = "https://www.dynatrace.com/careers/early-careers/#thesis"
 
     topics = [
         ("Master Thesis: Large Language Models and Retrieval-Augmented Generation for Cloud Observability", "Dynatrace Co-Innovation Lab (with JKU Linz)", "Linz", ["AI", "LLM", "Cloud", "Python"]),
@@ -591,7 +592,7 @@ def fetch_dynatrace_theses():
 
     for title, group, loc, tags in topics:
         theses.append({
-            "id": f"dynatrace-{hash(title) % 1000000}",
+            "id": f"dynatrace-{abs(hash(title)) % 1000000}",
             "title": title,
             "degree_level": "Master's Thesis",
             "institution": "Dynatrace Research Lab",
@@ -606,12 +607,62 @@ def fetch_dynatrace_theses():
             "category": categorize_thesis(title),
             "tags": tags,
             "language": "English",
-            "description": f"Master's thesis project at Dynatrace in {loc} in partnership with Austrian university labs (JKU Linz LIT Open Innovation Center / TU Wien). Focus: {title}.",
-            "url": "https://careers.dynatrace.com/students-graduates/",
+            "description": f"Master's thesis project at Dynatrace in {loc} in partnership with Austrian university labs (JKU Linz LIT Open Innovation Center / TU Wien). Focus: {title}. Apply via the Dynatrace Thesis Program.",
+            "url": thesis_program_url,
             "source": "Dynatrace Research Lab",
             "posted_at": today,
             "first_seen": today
         })
+
+    # Also query Dynatrace Coveo Careers Search API for any active thesis/student listings in Austria
+    try:
+        coveo_url = "https://www.dynatrace.com/api/coveo/search/"
+        payload = {
+            "q": "thesis",
+            "aq": "@country==(\"Austria\")",
+            "numberOfResults": 10
+        }
+        req = urllib.request.Request(
+            coveo_url,
+            data=json.dumps(payload).encode('utf-8'),
+            headers={
+                'User-Agent': HEADERS['User-Agent'],
+                'Content-Type': 'application/json'
+            }
+        )
+        with urllib.request.urlopen(req, timeout=10, context=SSL_CTX) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            for r in data.get('results', []):
+                t_title = clean_str(r.get('title', ''))
+                t_url = r.get('clickUri') or r.get('uri') or thesis_program_url
+                raw = r.get('raw', {})
+                loc_list = raw.get('office_locations') or []
+                loc = loc_list[0] if loc_list else (raw.get('city') or 'Austria')
+                if any(k in t_title.lower() for k in ['thesis', 'masterarbeit', 'diplomarbeit']):
+                    theses.append({
+                        "id": f"dynatrace-{abs(hash(t_title)) % 1000000}",
+                        "title": t_title,
+                        "degree_level": "Master's Thesis",
+                        "institution": "Dynatrace",
+                        "institution_logo": "https://assets.dynatrace.com/global/logos/dynatrace-logo.svg",
+                        "department": "Engineering & Research",
+                        "research_group": "Dynatrace R&D",
+                        "location": normalize_city(loc),
+                        "duration": "6 months",
+                        "workload": "Paid Student Employment",
+                        "compensation": "Paid",
+                        "is_paid": True,
+                        "category": categorize_thesis(t_title),
+                        "tags": extract_thesis_tags(t_title),
+                        "language": detect_language(t_title),
+                        "description": r.get('excerpt') or f"Student thesis opening at Dynatrace in {loc}.",
+                        "url": t_url,
+                        "source": "Dynatrace Research Lab",
+                        "posted_at": today,
+                        "first_seen": today
+                    })
+    except Exception as e:
+        print(f"  Note: Dynatrace Coveo live search fallback: {e}")
 
     print(f"  -> Extracted {len(theses)} Dynatrace theses")
     return theses
