@@ -29,11 +29,19 @@ function formatDate(iso) {
     return new Date(iso).toLocaleDateString([], { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
+let overleafStatus = null;
+
 async function loadLibrary() {
     try {
-        const response = await fetch('/api/cvs', { cache: 'no-store' });
-        if (!response.ok) throw new Error(response.statusText);
-        library = await response.json();
+        const [cvRes, overleafRes] = await Promise.all([
+            fetch('/api/cvs', { cache: 'no-store' }),
+            fetch('/api/overleaf/status', { cache: 'no-store' }).catch(() => null)
+        ]);
+        if (!cvRes.ok) throw new Error(cvRes.statusText);
+        library = await cvRes.json();
+        if (overleafRes && overleafRes.ok) {
+            overleafStatus = await overleafRes.json();
+        }
         render();
     } catch {
         document.querySelector('main').innerHTML = `<p class="tailor-error">The CV dashboard needs the local server. Run <code>python scripts/resume_server.py</code> and open <a href="http://localhost:8765/cvs">localhost:8765/cvs</a>.</p>`;
@@ -56,17 +64,27 @@ function render() {
         [library.latex_engine ? '✓' : '✕', library.latex_engine ? `PDF via ${escapeHTML(library.latex_engine)}` : 'no LaTeX engine'],
     ].map(([value, label]) => `<div class="cv-stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
 
+    const isOverleafRunning = Boolean(overleafStatus?.overleaf_running);
+    const overleafBadge = isOverleafRunning
+        ? `<span class="meta-badge new-badge" title="Overleaf container is running">Overleaf: Active</span>`
+        : `<span class="meta-badge salary-badge" title="Overleaf container is stopped">Overleaf: Stopped</span>`;
+
     document.getElementById('cv-master').innerHTML = master.exists ? `
         <div class="job-card cv-card cv-master-card">
             <div>
-                <span class="meta-badge seniority-badge">Master resume</span>
+                <div class="badges-row">
+                    <span class="meta-badge seniority-badge">Master resume</span>
+                    ${overleafBadge}
+                    ${overleafStatus?.hardlinked ? `<span class="meta-badge cv-badge" title="Hardlinked to Desktop/CV/main.tex">Desktop Synced 🔗</span>` : ''}
+                </div>
                 <h3 class="job-title">${escapeHTML(master.path)}</h3>
                 <p class="description-text">The source of truth every tailored CV is generated from. Updated ${formatDate(master.modified)}.</p>
+                ${!isOverleafRunning ? `<p class="tailor-hint" style="color: #b45309; margin-top: 6px;">💡 <strong>Overleaf is currently stopped.</strong> To open Overleaf on port 80, launch Docker Desktop and run <code>bin/up -d</code> in <code>Desktop/CV/overleaf-toolkit</code> (or run <code>start_all.bat</code>).</p>` : ''}
             </div>
             <div class="cv-actions">
                 ${pdfButton(master.pdf_url, 'archive', master.id, 'Master resume')}
                 <a class="tailor-link" href="${master.source_url}" target="_blank">.tex ↗</a>
-                <a class="tailor-link" href="http://localhost:80" target="_blank" title="Open local Overleaf web UI">Overleaf ↗</a>
+                <a class="tailor-link" href="${isOverleafRunning ? 'http://localhost:80' : 'javascript:void(0)'}" ${isOverleafRunning ? 'target="_blank"' : 'data-action="overleaf-warn"'} title="Open local Overleaf web UI">Overleaf ↗</a>
                 <button type="button" class="tailor-link" data-action="overleaf-sync" title="Sync with Overleaf container">Sync Overleaf ⟳</button>
             </div>
         </div>` : `<p class="tailor-alert">No master resume at <code>${escapeHTML(master.path)}</code>.</p>`;
@@ -160,6 +178,11 @@ async function onAction(e) {
     const { action, id, kind, title, url } = btn.dataset;
 
     if (action === 'preview') return openPreview(url, title);
+
+    if (action === 'overleaf-warn') {
+        alert("Overleaf is currently not running!\n\n1. Open Docker Desktop on Windows.\n2. In terminal, run 'bin/up -d' in Desktop/CV/overleaf-toolkit (or double-click 'start_all.bat').\n3. Once running, click 'Overleaf ↗' to edit your CV.");
+        return;
+    }
 
     if (action === 'compile') {
         btn.parentElement.querySelector('.cv-inline-error')?.remove();
