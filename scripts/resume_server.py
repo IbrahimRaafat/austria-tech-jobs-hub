@@ -65,7 +65,7 @@ class Handler(BaseHTTPRequestHandler):
     def _host_ok(self):
         # Blocks DNS-rebinding attacks from websites open in your browser
         host = (self.headers.get('Host') or '').rsplit(':', 1)[0]
-        return host in ('localhost', '127.0.0.1', '[::1]')
+        return host in ('localhost', '127.0.0.1', '[::1]', 'hub', 'jobs-hub', '0.0.0.0')
 
     def _send_json(self, data, code=200):
         body = json.dumps(data, ensure_ascii=False).encode('utf-8')
@@ -193,17 +193,18 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     parser = argparse.ArgumentParser(description="Serve the jobs dashboard locally with the AI resume tailor.")
+    parser.add_argument('--host', default=os.environ.get('TAILOR_HOST', '127.0.0.1'))
     parser.add_argument('--port', type=int, default=int(os.environ.get('TAILOR_PORT', 8765)))
     args = parser.parse_args()
 
     status = provider_status()
-    print(f"Resume tailor running at http://localhost:{args.port}  (your CVs: http://localhost:{args.port}/cvs)")
+    print(f"Resume tailor running at http://{args.host}:{args.port}  (your CVs: http://localhost:{args.port}/cvs)")
     print(f"  local : {status['local']['label']} - {'available' if status['local']['available'] else 'not running (ollama serve)'}")
     print(f"  cloud : {status['cloud']['label']} - {'available' if status['cloud']['available'] else 'no GEMINI_API_KEY'}")
     if not os.path.exists(tailor_resume.DEFAULT_RESUME):
         print(f"  WARNING: no master resume at {os.path.relpath(tailor_resume.DEFAULT_RESUME, REPO_ROOT)} "
               "(copy resume/master.example.tex)")
-    ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()
+    ThreadingHTTPServer((args.host, args.port), Handler).serve_forever()
 
 
 if __name__ == '__main__':

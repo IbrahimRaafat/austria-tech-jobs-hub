@@ -1,0 +1,95 @@
+services:
+  # ---------------------------------------------------------------------------
+  # 1. Austria Tech Jobs Hub & AI Resume Tailor
+  # ---------------------------------------------------------------------------
+  hub:
+    build: .
+    container_name: austria-jobs-hub
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    volumes:
+      - .:/app
+      - "${USERPROFILE:-~}/Desktop/CV:/root/Desktop/CV"
+    environment:
+      - TAILOR_HOST=0.0.0.0
+      - TAILOR_PORT=8765
+      - RESUME_PATH=/app/resume/master.tex
+      - CV_ARCHIVE_DIR=/root/Desktop/CV
+      - OVERLEAF_CONTAINER=sharelatex
+    env_file:
+      - path: .env
+        required: false
+    depends_on:
+      sharelatex:
+        condition: service_started
+    networks:
+      - hub-overleaf-net
+
+  # ---------------------------------------------------------------------------
+  # 2. Local Overleaf Community Edition (LaTeX Editor)
+  # ---------------------------------------------------------------------------
+  sharelatex:
+    image: sharelatex/sharelatex:latest
+    container_name: sharelatex
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - "${USERPROFILE:-~}/Desktop/CV/overleaf-toolkit/data/overleaf:/var/lib/overleaf"
+    environment:
+      - SHARELATEX_APP_NAME=Overleaf Local
+      - SHARELATEX_SITE_URL=http://localhost
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MONGO_URL=mongodb://mongo:27017/sharelatex
+      - EMAIL_CONFIRMATION_DISABLED=true
+      - ENABLED_LINKED_FILE_TYPES=project_file,project_output_file
+      - ENABLE_CONVERSIONS=true
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - hub-overleaf-net
+
+  # ---------------------------------------------------------------------------
+  # 3. Overleaf Database (MongoDB)
+  # ---------------------------------------------------------------------------
+  mongo:
+    image: mongo:8.0
+    container_name: mongo
+    restart: always
+    volumes:
+      - "${USERPROFILE:-~}/Desktop/CV/overleaf-toolkit/data/mongo:/data/db"
+    command: ["--replSet", "overleaf"]
+    expose:
+      - "27017"
+    healthcheck:
+      test: echo 'db.stats().ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - hub-overleaf-net
+
+  # ---------------------------------------------------------------------------
+  # 4. Overleaf Cache & Pub/Sub (Redis)
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7.4
+    container_name: redis
+    restart: always
+    volumes:
+      - "${USERPROFILE:-~}/Desktop/CV/overleaf-toolkit/data/redis:/data"
+    command: ["redis-server", "--appendonly", "yes"]
+    expose:
+      - "6379"
+    networks:
+      - hub-overleaf-net
+
+networks:
+  hub-overleaf-net:
+    name: hub-overleaf-network
+    driver: bridge

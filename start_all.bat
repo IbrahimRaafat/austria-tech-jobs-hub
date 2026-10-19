@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 echo ========================================================
-echo   Starting Austria Tech Jobs Hub + Overleaf Services
+echo   Starting Austria Tech Jobs Hub + Overleaf in Docker
 echo ========================================================
 
 :: 1. Check & start Docker Desktop
@@ -17,7 +17,7 @@ if %errorlevel% neq 0 (
     timeout /t 4 /nobreak >nul
     docker info >nul 2>&1
     if %errorlevel% neq 0 (
-        echo ...still starting Docker...
+        echo ...waiting for Docker engine...
         goto wait_docker
     )
     echo Docker engine is now ready!
@@ -25,25 +25,25 @@ if %errorlevel% neq 0 (
     echo Docker engine is already running.
 )
 
-:: 2. Start Overleaf Toolkit container
-set "OVERLEAF_DIR=%USERPROFILE%\Desktop\CV\overleaf-toolkit"
-if exist "!OVERLEAF_DIR!\config\overleaf.rc" (
-    echo [2/3] Starting Overleaf container in background...
-    pushd "!OVERLEAF_DIR!"
-    if exist "C:\Program Files\Git\bin\bash.exe" (
-        "C:\Program Files\Git\bin\bash.exe" -c "bin/up -d"
-    ) else (
-        docker compose -f lib/docker-compose.base.yml -f config/docker-compose.override.yml up -d
-    )
-    popd
-    echo Overleaf is running at http://localhost:80
-) else (
-    echo [2/3] Overleaf Toolkit not found at !OVERLEAF_DIR!. Skipping.
-)
+:: 2. Launch unified Docker Compose stack
+echo [2/3] Starting all services via Docker Compose...
+cd /d "%~dp0"
+docker compose up -d
 
-:: 3. Start local Austria Tech Jobs Hub server
-echo [3/3] Starting Austria Tech Jobs Hub on http://localhost:8765 ...
-start http://localhost:8765
-python "%~dp0scripts\resume_server.py"
+if %errorlevel% equ 0 (
+    echo.
+    echo ========================================================
+    echo   All services are up and running!
+    echo   - Austria Tech Jobs Hub : http://localhost:8765
+    echo   - Overleaf LaTeX Editor : http://localhost:80
+    echo ========================================================
+    echo.
+    start http://localhost:8765
+) else (
+    echo.
+    echo [Fallback] Docker compose encountered an issue. Starting local Python server directly...
+    start http://localhost:8765
+    python "%~dp0scripts\resume_server.py"
+)
 
 pause

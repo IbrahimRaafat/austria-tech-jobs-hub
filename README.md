@@ -153,12 +153,25 @@ The tailor uses the first of these it finds:
 3. **Neither:** you still get `resume.tex`, which you can upload to [overleaf.com](https://www.overleaf.com).
 
 ### Step 5: Run it
+
+**Option A: Unified Docker Compose (Recommended — Runs Jobs Hub + Local Overleaf together)**
+Make sure Docker Desktop is open, then run:
+```bash
+docker compose up -d
+```
+*(Or double-click `start_all.bat` on Windows)*.
+This starts everything in one command:
+- **Austria Tech Jobs & Tailor Hub**: http://localhost:8765
+- **Local Overleaf Community Edition**: http://localhost:80
+- **MongoDB & Redis**: connected automatically for Overleaf persistence
+
+**Option B: Standalone Python Server**
 ```bash
 python scripts/resume_server.py
 ```
 - **Job board with Tailor buttons:** http://localhost:8765. Click **✨ Tailor resume** on any job, or paste an external job URL or description into the panel at the top. This works for LinkedIn and other sites that block scrapers.
 - **My CVs dashboard:** http://localhost:8765/cvs. It shows:
-  - your **master resume**
+  - your **master resume** (with instant Overleaf sync)
   - every **tailored CV**, with match score, fact-check status, gaps, PDF preview, `.tex`, cover letter, report, a link to the job, and a delete button
   - your **earlier CVs** from a folder of your choice (`CV_ARCHIVE_DIR`, default `~/Desktop/CV`). Build any old `.tex` to PDF with one click. That folder is only read, never modified.
 
