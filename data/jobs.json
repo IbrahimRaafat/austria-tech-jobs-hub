@@ -1,68 +1,100 @@
 {
-  "updated_at": "2026-11-02T14:29:51.031690+00:00",
-  "total_count": 38,
+  "updated_at": "2026-11-03T13:28:24.853503+00:00",
+  "total_count": 41,
   "jobs": [
     {
-      "id": "karriere-10035994",
-      "title": "(Junior) Frontend Developer with UI/UX Focus m/f/x",
+      "id": "karriere-10035993",
+      "title": "Full Stack Developer m/f/x",
       "company": "BOC Products & Services AG",
       "company_logo": "https://kcdn.at/company/5003/1714283/logo-boc-products---services-ag.companysquare.gif",
       "location": "Wien",
-      "category": "Frontend",
-      "tags": [],
-      "description": "We are an established, internationally successful B2B software manufacturer with over 300 employees from 40 different nations. Internationality and diversity are integral parts of our culture.",
-      "url": "https://www.karriere.at/jobs/10035994",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-02",
-      "seniority": "Junior",
-      "relocation_support": "Not Specified",
-      "experience_level": "0-2 years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 2600,
-        "max": 2600,
-        "currency": "EUR",
-        "period": "month",
-        "annual_min": 36400,
-        "annual_max": 36400,
-        "raw": "EUR 2,600 per month",
-        "label": "€36.4k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-02"
-    },
-    {
-      "id": "karriere-10034778",
-      "title": "Digital Commerce Developer | Shopify (m/f/d)",
-      "company": "Holzkern - Time for Nature GmbH",
-      "company_logo": "https://kcdn.at/company/120709/3801599/holzkern-logo-redesign-cv-final_logo-nebeneinander.companysquare.jpg",
-      "location": "Wien 21. Bezirk (Floridsdorf)",
       "category": "Software Engineering",
       "tags": [],
-      "description": "We are looking for a Digital Commerce Developer with a strong focus on Shopify to join our Website & E-Commerce team. We are intentionally keeping the seniority level open.",
-      "url": "https://www.karriere.at/jobs/10034778",
+      "description": "We are an established, internationally successful B2B software manufacturer with over 300 employees from 40 different nations. Internationality and diversity are integral parts of our culture.",
+      "url": "https://www.karriere.at/jobs/10035993",
       "source": "Karriere.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
       "city": "Vienna",
       "salary": {
-        "min": 2600,
-        "max": 2600,
+        "min": 3400,
+        "max": 3400,
         "currency": "EUR",
         "period": "month",
-        "annual_min": 36400,
-        "annual_max": 36400,
-        "raw": "EUR 2,600 per month",
-        "label": "€36.4k+ /yr"
+        "annual_min": 47600,
+        "annual_max": 47600,
+        "raw": "EUR 3,400 per month",
+        "label": "€47.6k+ /yr"
       },
       "cities": [
         "Vienna"
       ],
-      "first_seen": "2026-11-02"
+      "first_seen": "2026-11-03"
+    },
+    {
+      "id": "karriere-10037229",
+      "title": "Senior Frontend Engineer (f/m/d)",
+      "company": "Formunauts GmbH",
+      "company_logo": "https://kcdn.at/company/114254/3835946/formunauts_logo_cmyk_formunauts-visual_type_claim-wide_duotone--5-.companysquare.png",
+      "location": "Wien 1. Bezirk (Innere Stadt)",
+      "category": "Frontend",
+      "tags": [],
+      "description": "We are Formunauts - a fast-growing Impact company with a clear mission: We support more than 100 charities in Europe and Latin America in achieving their goals.",
+      "url": "https://www.karriere.at/jobs/10037229",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-03",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Vienna",
+      "salary": {
+        "min": 56000,
+        "max": 56000,
+        "currency": "EUR",
+        "period": "year",
+        "annual_min": 56000,
+        "annual_max": 56000,
+        "raw": "EUR 56,000 per year",
+        "label": "€56k+ /yr"
+      },
+      "cities": [
+        "Vienna"
+      ],
+      "first_seen": "2026-11-03"
+    },
+    {
+      "id": "karriere-10035875",
+      "title": "Head of Data & AI (m/w/d)",
+      "company": "karriere.at",
+      "company_logo": "https://kcdn.at/company/136/4011931/logo-karrierepage.companysquare.png",
+      "location": "Wien 2. Bezirk (Leopoldstadt), Linz",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Together with hokify and jobs.at, karriere.at is part of norika, House of Digital Recruiting. Together, we pool our expertise and commitment to the Austrian job market.",
+      "url": "https://www.karriere.at/jobs/10035875",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-03",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Vienna",
+      "salary": {
+        "min": 90000,
+        "max": 115000,
+        "currency": "EUR",
+        "period": "year",
+        "annual_min": 90000,
+        "annual_max": 115000,
+        "raw": "EUR 90,000 - 115,000 per year",
+        "label": "€90k–115k /yr"
+      },
+      "cities": [
+        "Vienna",
+        "Linz"
+      ],
+      "first_seen": "2026-11-03"
     },
     {
       "id": "karriere-10037173",
@@ -75,7 +107,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -106,7 +138,7 @@
       "description": "You don't just enjoy writing code -- you want to see it used on live deals ? You thrive in a fast-paced, dynamic environment where finance meets technology ? Working alongside colleagues from more than 25 countries on cross-border M&A transactions across Europe is something that...",
       "url": "https://www.karriere.at/jobs/10037729",
       "source": "Karriere.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -137,7 +169,7 @@
       "description": "We are Formunauts - a fast-growing SaaS company with a clear mission: We support more than 100 charities in Europe and Latin America in achieving their goals.",
       "url": "https://www.karriere.at/jobs/10037254",
       "source": "Karriere.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -158,37 +190,6 @@
       "first_seen": "2026-11-02"
     },
     {
-      "id": "karriere-10037275",
-      "title": "Product Owner / Lead - Devops Team (f/m/d)",
-      "company": "Hitachi Rail Austria GmbH",
-      "company_logo": "https://kcdn.at/company/14372/3959719/cs_01_01.companysquare.jpg",
-      "location": "Wien",
-      "category": "DevOps & Cloud",
-      "tags": [],
-      "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
-      "url": "https://www.karriere.at/jobs/10037275",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-02",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "2+ years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 70000,
-        "max": 70000,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 70000,
-        "annual_max": 70000,
-        "raw": "EUR 70,000 per year",
-        "label": "€70k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-10-28"
-    },
-    {
       "id": "karriere-10032045",
       "title": "Senior DevOps Engineer (f/m/d)",
       "company": "Raiffeisen Digital Bank AG",
@@ -199,7 +200,7 @@
       "description": "We are a dynamic and forward-thinking financial institution committed to excellence and innovation. As part of the RBI Group, we operate with the highest standards of regulatory compliance and technological advancement.",
       "url": "https://www.karriere.at/jobs/10032045",
       "source": "Karriere.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -220,53 +221,145 @@
       "first_seen": "2026-10-14"
     },
     {
-      "id": "arbeitnow-remote-sr-product-manager-revenue-management-1-year-contract-186132",
-      "title": "Remote Sr. Product Manager - Revenue Management - 1 year contract (m/f/d)",
-      "company": "Roompricegenie",
-      "company_logo": "",
-      "location": "Remote Germany",
-      "category": "Data & AI",
-      "tags": [
-        "Product & Engineering"
-      ],
-      "description": "  About RoomPriceGenie  ✨🧞‍♂️  Founded in 2017, RoomPriceGenie is dedicated to helping hoteliers around the globe achieve optimal pricing. 🌍 We understand that many small hotels face challenges with digitalization, making their operations increasingly complex and often resulting ...",
-      "url": "https://www.arbeitnow.com/jobs/companies/roompricegenie/remote-sr-product-manager-revenue-management-1-year-contract-186132",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-02",
+      "id": "karriere-10037275",
+      "title": "Product Owner / Lead - Devops Team (f/m/d)",
+      "company": "Hitachi Rail Austria GmbH",
+      "company_logo": "https://kcdn.at/company/14372/3959719/cs_01_01.companysquare.jpg",
+      "location": "Wien",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
+      "url": "https://www.karriere.at/jobs/10037275",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "1+ years exp",
-      "city": "Remote",
+      "experience_level": "2+ years exp",
+      "city": "Vienna",
       "salary": {
-        "min": 100000,
-        "max": 120000,
+        "min": 70000,
+        "max": 70000,
         "currency": "EUR",
         "period": "year",
-        "annual_min": 100000,
-        "annual_max": 120000,
-        "raw": "EUR 100,000 - 120,000 per year",
-        "label": "€100k–120k /yr"
+        "annual_min": 70000,
+        "annual_max": 70000,
+        "raw": "EUR 70,000 per year",
+        "label": "€70k+ /yr"
       },
+      "cities": [
+        "Vienna"
+      ],
+      "first_seen": "2026-10-28"
+    },
+    {
+      "id": "arbeitnow-remote-staff-ai-software-engineer-302654",
+      "title": "Staff AI Software Engineer",
+      "company": "Matchmatch",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Software Development"
+      ],
+      "description": "  Role   We are looking for a software engineer to own the creation, design, and maintenance of agentic systems within the company. The role will require the candidate to apply the latest advancements in AI to build a fully agentic user experience on top of the company’s 3D visua...",
+      "url": "https://www.arbeitnow.com/jobs/companies/matchmatch/remote-staff-ai-software-engineer-302654",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-03",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-02"
+      "first_seen": "2026-11-03"
     },
     {
-      "id": "arbeitnow-ai-research-engineer-agentic-reinforcement-learning-100-remote-worldwide-united-kindom-336655",
-      "title": "AI Research Engineer (Agentic Reinforcement Learning) - 100% Remote Worldwide",
-      "company": "Tether Operations Limited",
+      "id": "arbeitnow-solution-architect-france-406389",
+      "title": "Solution Architect",
+      "company": "2501",
+      "company_logo": "",
+      "location": "France remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering"
+      ],
+      "description": " About 2501  2501 builds autonomous AI agents that operate directly in the shell to complete real production tasks - not just synthetic evals. We treat LLMs as pluggable brains, mixing open‑source and flagship models to get the best result. By fusing their output with observabili...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/2501/solution-architect-france-406389",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-03",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-03"
+    },
+    {
+      "id": "arbeitnow-remote-ai-cad-cam-iot-engineer-tinkerer-cnc-junior-mid-senior-zurich-124576",
+      "title": "AI  CAD CAM  IoT Engineer / Tinkerer CNC - Junior/Mid/Senior",
+      "company": "Imnoo AG",
       "company_logo": "",
       "location": "Remote job",
       "category": "Data & AI",
       "tags": [
-        "Engineering",
+        "Software Department",
         "Remote"
       ],
-      "description": "   Join Tether and Shape the Future of Digital Finance    At Tether, we’re not just building products, we’re pioneering a global financial revolution. Our cutting-edge solutions empower businesses—from exchanges and wallets to payment processors and ATMs—to seamlessly integrate r...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/tether-operations-limited/ai-research-engineer-agentic-reinforcement-learning-100-remote-worldwide-united-kindom-336655",
+      "description": " For over 10 years at Imnoo at Imnoo, we are bridging the gap between applied artificial intelligence and heavy industrial machinery.     We aren't just riding the recent AI wave, we have been deeply rooted in machine learning and statistical analysis for 10 years, delivering rea...",
+      "url": "https://www.arbeitnow.ch/jobs/companies/imnoo-ag/remote-ai-cad-cam-iot-engineer-tinkerer-cnc-junior-mid-senior-zurich-124576",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
+      "seniority": "Junior",
+      "relocation_support": "Not Specified",
+      "experience_level": "10+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-03"
+    },
+    {
+      "id": "arbeitnow-machine-learning-computer-graphics-engineer-remote-part-full-time-junior-mid-senior-zurich-312397",
+      "title": "Machine Learning / Computer Graphics Engineer (remote part/full time) - Junior/Mid/Senior",
+      "company": "Imnoo AG",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Software Department",
+        "Remote"
+      ],
+      "description": "  Geometry with consequences.  Deep learning on 3D CAD data where correctness translates into steel and aluminum, not pixels.   The ultimate tinkerer's playground.  Physical machines, shop floors, and modern cloud architectures all in one stack.   Tangible impact.  Your work feed...",
+      "url": "https://www.arbeitnow.ch/jobs/companies/imnoo-ag/machine-learning-computer-graphics-engineer-remote-part-full-time-junior-mid-senior-zurich-312397",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-03",
+      "seniority": "Junior",
+      "relocation_support": "Not Specified",
+      "experience_level": "0-2 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-03"
+    },
+    {
+      "id": "arbeitnow-remote-security-engineer-platforms-zurich-143558",
+      "title": "Security Engineer - Platforms",
+      "company": "Exeon Analytics",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Support & Engineering",
+        "Remote"
+      ],
+      "description": "   80-100% | as soon as possible | Germany or Switzerland       About Exeon   Exeon is a Swiss cyber security company based in Zurich. Since 2016, we have been protecting critical infrastructures, financial institutions and enterprises whose operations fully rely on IT through AI...",
+      "url": "https://www.arbeitnow.ch/jobs/companies/exeon-analytics/remote-security-engineer-platforms-zurich-143558",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-03",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -274,31 +367,31 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-02"
+      "first_seen": "2026-11-03"
     },
     {
-      "id": "arbeitnow-remote-ai-engineer-london-34491",
-      "title": "AI Engineer",
-      "company": "AnywhereNow",
+      "id": "arbeitnow-remote-senior-frontend-developer-zurich-193922",
+      "title": "Senior Frontend Developer",
+      "company": "Exeon Analytics",
       "company_logo": "",
       "location": "Remote job",
       "category": "Data & AI",
       "tags": [
-        "Product Development",
+        "Development",
         "Remote"
       ],
-      "description": " Founded in 2010 in the Netherlands,  AnywhereNow  is a global leader in Enterprise Dialogue Management, with a vision to ensure every employee and customer feels heard, understood, and valued.    Today, our team of approximately 240 employees spans 22 countries, supporting more ...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/anywherenow/remote-ai-engineer-london-34491",
+      "description": "   80-100% | as soon as possible | Germany or Switzerland       About Exeon   Exeon is a Swiss cyber security company based in Zurich. Since 2016, we have been protecting critical infrastructures, financial institutions and enterprises whose operations fully rely on IT through AI...",
+      "url": "https://www.arbeitnow.ch/jobs/companies/exeon-analytics/remote-senior-frontend-developer-zurich-193922",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-02",
-      "seniority": "Lead / Manager",
+      "posted_at": "2026-11-03",
+      "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
+      "experience_level": "5+ years exp",
       "city": "Remote",
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-02"
+      "first_seen": "2026-11-03"
     },
     {
       "id": "arbeitnow-remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
@@ -314,7 +407,7 @@
       "description": "   About Deepdesk       Deepdesk, part of AnywhereNow, powers AI Assistants and Virtual Agents for enterprise contact centres, helping brands such as Achmea, Vodafone and DHL boost productivity today while scaling for the future of customer experience. As part of AnywhereNow, a g...",
       "url": "https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-senior-full-stack-developer-deepdesk-rotterdam-346552",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -447,16 +540,6 @@
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
-      "salary": {
-        "min": 5000,
-        "max": 5000,
-        "currency": "USD",
-        "period": "month",
-        "annual_min": 60000,
-        "annual_max": 60000,
-        "raw": "$5000",
-        "label": "$60k+ /yr"
-      },
       "cities": [
         "Remote"
       ],
@@ -543,37 +626,6 @@
       "first_seen": "2026-10-31"
     },
     {
-      "id": "unjobs-1792068487236",
-      "title": "Guidance and Standards Nuclear Security Officer (Tech Lead), Vienna",
-      "company": "IAEA - International Atomic Energy Agency",
-      "company_logo": "",
-      "location": "Vienna",
-      "category": "Software Engineering",
-      "tags": [],
-      "description": "Guidance and Standards Nuclear Security Officer (Tech Lead), Vienna at IAEA - International Atomic Energy Agency in Vienna, Austria.",
-      "url": "https://unjobs.org/vacancies/1792068487236",
-      "source": "UNjobs.org",
-      "posted_at": "2026-10-15",
-      "seniority": "Lead / Manager",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 86027,
-        "max": 86027,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 86027,
-        "annual_max": 86027,
-        "raw": "$86027",
-        "label": "$86k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-10-20"
-    },
-    {
       "id": "ait-272680",
       "title": "Data Steward (f/m/d) - AIT Research Acceleration Platform for Energy Conversion and Storage Materials",
       "company": "AIT - CENTER FOR ENERGY",
@@ -584,7 +636,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -615,7 +667,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -646,7 +698,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -677,7 +729,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -708,7 +760,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272796",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -739,7 +791,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -770,7 +822,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we are dedicated to make substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our goals, we rely on ...",
       "url": "https://jobs.ait.ac.at/Job/268343",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -801,7 +853,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -832,7 +884,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we have set ourselves the goal of making substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our go...",
       "url": "https://jobs.ait.ac.at/Job/269432",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -863,7 +915,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -1120,30 +1172,30 @@
       "first_seen": "2026-05-21"
     },
     {
-      "id": "devjobs-37e95ebedaa95f4ee87b5e55961925d9",
+      "id": "devjobs-3460134ae389ff0afa50cf0875219b9e",
       "title": "Current searches",
       "company": "Tech Company",
       "company_logo": "",
       "location": "Vienna",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Your role in the team You thrive on turning decades of legacy complexity into clean, modern data architecture. You feel at home navigating undocumented mainframes, tangled schemas, and ambiguous specs — and you know how to translate that chaos into a clear technical path forward.",
-      "url": "https://en.devjobs.at/job/37e95ebedaa95f4ee87b5e55961925d9",
+      "description": "Your role in the team As a Data Engineer, you’ll play a key role in building modern, scalable, and high-performance data solutions on Google Cloud Platform (GCP).",
+      "url": "https://en.devjobs.at/job/3460134ae389ff0afa50cf0875219b9e",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-02",
+      "posted_at": "2026-11-03",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
       "salary": {
-        "min": 75000,
-        "max": 95000,
+        "min": 53802,
+        "max": 53802,
         "currency": "EUR",
         "period": "year",
-        "annual_min": 75000,
-        "annual_max": 95000,
-        "raw": "EUR 75,000 - 95,000 per year",
-        "label": "€75k–95k /yr"
+        "annual_min": 53802,
+        "annual_max": 53802,
+        "raw": "EUR 53,802 per year",
+        "label": "€53.8k+ /yr"
       },
       "cities": [
         "Vienna"
