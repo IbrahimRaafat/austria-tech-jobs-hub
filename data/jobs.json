@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-05T14:01:48.018968+00:00",
-  "total_count": 37,
+  "updated_at": "2026-11-06T13:37:15.598542+00:00",
+  "total_count": 33,
   "jobs": [
     {
       "id": "karriere-10037173",
@@ -13,7 +13,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -44,7 +44,7 @@
       "description": "You don't just enjoy writing code -- you want to see it used on live deals ? You thrive in a fast-paced, dynamic environment where finance meets technology ? Working alongside colleagues from more than 25 countries on cross-border M&A transactions across Europe is something that...",
       "url": "https://www.karriere.at/jobs/10037729",
       "source": "Karriere.at",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -75,7 +75,7 @@
       "description": "We are Formunauts - a fast-growing SaaS company with a clear mission: We support more than 100 charities in Europe and Latin America in achieving their goals.",
       "url": "https://www.karriere.at/jobs/10037254",
       "source": "Karriere.at",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -96,37 +96,6 @@
       "first_seen": "2026-11-02"
     },
     {
-      "id": "karriere-10032045",
-      "title": "Senior DevOps Engineer (f/m/d)",
-      "company": "Raiffeisen Digital Bank AG",
-      "company_logo": "https://kcdn.at/company/18280/3763340/quadrat_298x92.companysquare.jpg",
-      "location": "Wien",
-      "category": "DevOps & Cloud",
-      "tags": [],
-      "description": "We are a dynamic and forward-thinking financial institution committed to excellence and innovation. As part of the RBI Group, we operate with the highest standards of regulatory compliance and technological advancement.",
-      "url": "https://www.karriere.at/jobs/10032045",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-05",
-      "seniority": "Junior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 75000,
-        "max": 75000,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 75000,
-        "annual_max": 75000,
-        "raw": "EUR 75,000 per year",
-        "label": "€75k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-10-14"
-    },
-    {
       "id": "karriere-10037275",
       "title": "Product Owner / Lead - Devops Team (f/m/d)",
       "company": "Hitachi Rail Austria GmbH",
@@ -137,7 +106,7 @@
       "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
       "url": "https://www.karriere.at/jobs/10037275",
       "source": "Karriere.at",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -158,42 +127,19 @@
       "first_seen": "2026-10-28"
     },
     {
-      "id": "arbeitnow-remote-ai-process-forward-deployed-engineer-32726",
-      "title": "AI Process Forward Deployed Engineer",
-      "company": "Camunda",
+      "id": "arbeitnow-remote-senior-backend-engineer-ai-engineering-chat-363501",
+      "title": "Senior Backend Engineer, AI Engineering: Chat",
+      "company": "gitlab",
       "company_logo": "",
       "location": "Remote",
       "category": "Data & AI",
       "tags": [
-        "Field Operations"
+        "AI Engineering"
       ],
-      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
-      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-ai-process-forward-deployed-engineer-32726",
+      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transfo...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-senior-backend-engineer-ai-engineering-chat-363501",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-05"
-    },
-    {
-      "id": "arbeitnow-remote-senior-software-engineer-search-ai-82663",
-      "title": "Senior Software Engineer, Search & AI",
-      "company": "Muckrack",
-      "company_logo": "",
-      "location": "Remote (Bulgaria, Canada, Ireland, United States)",
-      "category": "Data & AI",
-      "tags": [
-        "Engineering - Software Engineering"
-      ],
-      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Muck Rack is trusted by thousands of organizations around the world to understand how their brands show up across news, social media and AI-generated answers.&lt;/p&gt;\n&lt;p&gt;Our AI-powered platform connects the entire PR wor...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/muckrack/remote-senior-software-engineer-search-ai-82663",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -201,68 +147,22 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-05"
+      "first_seen": "2026-11-06"
     },
     {
-      "id": "arbeitnow-remote-mobile-service-engineer-south-england-250141",
-      "title": "Mobile Service Engineer – South England",
-      "company": "Hozah",
+      "id": "arbeitnow-remote-engineering-manager-switchboard-35546",
+      "title": "Engineering Manager, Switchboard",
+      "company": "gitlab",
       "company_logo": "",
       "location": "Remote",
-      "category": "Software Engineering",
-      "tags": [
-        "Operations"
-      ],
-      "description": " Hozah is a tech-led, award-winning company driving change in the parking industry and reimagining urban mobility. Our mission is simple but powerful: to transform parking into a seamless, automated experience, paving the way for smarter, more sustainable cities. With recognition...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/hozah/remote-mobile-service-engineer-south-england-250141",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-05"
-    },
-    {
-      "id": "arbeitnow-remote-field-service-engineer-south-england-456190",
-      "title": "Field Service Engineer – South England",
-      "company": "Hozah",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Software Engineering",
-      "tags": [
-        "Operations"
-      ],
-      "description": " Hozah is a tech-led, award-winning company driving change in the parking industry and reimagining urban mobility. Our mission is simple but powerful: to transform parking into a seamless, automated experience, paving the way for smarter, more sustainable cities. With recognition...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/hozah/remote-field-service-engineer-south-england-456190",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-05"
-    },
-    {
-      "id": "arbeitnow-remote-manager-developer-advocacy-emea-355044",
-      "title": "Manager, Developer Advocacy (EMEA)",
-      "company": "Temporal Technologies",
-      "company_logo": "",
-      "location": "United Kingdom (Remote)",
       "category": "Data & AI",
       "tags": [
-        "Developer Relations"
+        "Platforms Engineering"
       ],
-      "description": "  About the Role   We’re looking for someone to run Developer Advocacy in EMEA. You’ll get to shape how developers across the region first find Temporal, and you’ll also see it through to the other end, helping our biggest customers build serious systems on it.  You’ll manage a t...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/temporal-technologies/remote-manager-developer-advocacy-emea-355044",
+      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transfo...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-engineering-manager-switchboard-35546",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -270,117 +170,54 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-05"
+      "first_seen": "2026-11-06"
     },
     {
-      "id": "arbeitnow-remote-qa-tester-299386",
-      "title": "QA Tester",
-      "company": "Plentific",
+      "id": "arbeitnow-remote-mobile-quality-engineer-139365",
+      "title": "Mobile Quality Engineer",
+      "company": "Lendable",
       "company_logo": "",
-      "location": "remote",
+      "location": "UK Remote",
       "category": "Data & AI",
       "tags": [
-        "Engineering - Active Housing"
+        "Engineering & Product"
       ],
-      "description": " About Us   We're hiring a QA Tester to help us ship reliable software, faster. You'll test new features and releases across our web and mobile products, find and document defects, and help build out our automated test coverage. The role is open to candidates from around 1 to 3 y...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/plentific/remote-qa-tester-299386",
+      "description": " About Lendable  Lendable is on a mission to build the world's best technology to help people get credit and save money.   We're building one of the world’s leading fintech companies and are off to a strong start:      One of the UK’s most exciting unicorns with a team of over 80...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/lendable/remote-mobile-quality-engineer-139365",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Mid-Level",
+      "posted_at": "2026-11-06",
+      "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-05"
+      "first_seen": "2026-11-06"
     },
     {
-      "id": "arbeitnow-remote-senior-staff-software-engineer-sap-connectors-462420",
-      "title": "Senior Staff Software Engineer - SAP Connectors",
-      "company": "Fivetran",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Engineering Department"
-      ],
-      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;From Fivetran’s founding until now, our mission has remained the same: to make access to data as simple and reliable as electricity. With Fivetran, customer data arrives in their warehouses, canonical and ready to query, with no...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/fivetran/remote-senior-staff-software-engineer-sap-connectors-462420",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "salary": {
-        "min": 131912,
-        "max": 164890,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 131912,
-        "annual_max": 164890,
-        "raw": "€131.912 — €164.890 eur",
-        "label": "€131.9k–164.9k /yr"
-      },
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-04"
-    },
-    {
-      "id": "arbeitnow-power-platform-and-azure-devops-expert-remote-from-eu-amsterdam-110494",
-      "title": "Power Platform and Azure DevOps Expert - remote from EU",
-      "company": "AlmavivA de Belgique",
+      "id": "arbeitnow-remote-solutions-engineer-pre-sales-france-paris-282209",
+      "title": "Solutions Engineer (Pre-Sales) France",
+      "company": "Aikido Security",
       "company_logo": "",
       "location": "Remote job",
-      "category": "Data & AI",
-      "tags": [
-        "Remote"
-      ],
-      "description": " This is an experienced architect-level position. The appointed resource will be expected to serve as the Power Platform administrator, administering and supporting approximately 100 Power Platform environments. A significant part of the role will involve establishing guidelines ...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/almaviva-de-belgique/power-platform-and-azure-devops-expert-remote-from-eu-amsterdam-110494",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-04"
-    },
-    {
-      "id": "jobicy-159117",
-      "title": "DevOps Engineer, Blockchain Infra (Fully Remote)",
-      "company": "Binance",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2025/06/bc822f38-221.jpg",
-      "location": "Europe,  UAE",
       "category": "DevOps & Cloud",
-      "tags": [],
-      "description": "Binance is a leading global blockchain ecosystem behind the world’s largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for our industry-leading security, user fund transparency, trading engine speed, dee...",
-      "url": "https://jobicy.com/jobs/159117-devops-engineer-blockchain-infra-fully-remote-2",
-      "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-11-05",
-      "seniority": "Lead / Manager",
+      "tags": [
+        "Sales",
+        "Remote"
+      ],
+      "description": "  🌍 We’re making security suck less for developers.   Security tools haven’t kept up with how software is built today. They interrupt teams, slow releases, and turn security into a bottleneck instead of a capability. We built Aikido to change that. Aikido builds developer-first s...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/aikido-security/remote-solutions-engineer-pre-sales-france-paris-282209",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-06",
+      "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
-      "salary": {
-        "min": 150000,
-        "max": 150000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 150000,
-        "annual_max": 150000,
-        "raw": "$150,000",
-        "label": "$150k+ /yr"
-      },
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-05"
+      "first_seen": "2026-11-06"
     },
     {
       "id": "remotive-2091165",
@@ -443,16 +280,6 @@
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
       "city": "Remote",
-      "salary": {
-        "min": 3500,
-        "max": 5000,
-        "currency": "USD",
-        "period": "month",
-        "annual_min": 42000,
-        "annual_max": 60000,
-        "raw": "$3.5k–$5k",
-        "label": "$42k–60k /yr"
-      },
       "cities": [
         "Remote"
       ],
@@ -474,16 +301,6 @@
       "relocation_support": "Not Specified",
       "experience_level": "10+ years exp",
       "city": "Remote",
-      "salary": {
-        "min": 3500,
-        "max": 5000,
-        "currency": "USD",
-        "period": "month",
-        "annual_min": 42000,
-        "annual_max": 60000,
-        "raw": "$3.5k–$5k",
-        "label": "$42k–60k /yr"
-      },
       "cities": [
         "Remote"
       ],
@@ -591,35 +408,77 @@
       "first_seen": "2026-10-31"
     },
     {
-      "id": "unjobs-1792068487236",
-      "title": "Guidance and Standards Nuclear Security Officer (Tech Lead), Vienna",
-      "company": "IAEA - International Atomic Energy Agency",
+      "id": "thehub-6ae924a9c4428ab1da3a794d",
+      "title": "Senior Frontend Engineer",
+      "company": "Carla",
       "company_logo": "",
-      "location": "Vienna",
+      "location": "Remote",
+      "category": "Frontend",
+      "tags": [],
+      "description": "Carla, we believe that more people should be able to drive electric vehicles. Therefore, we have set out to build the safest, most convenient and transparent way to sell and buy electric cars online.",
+      "url": "https://thehub.io/jobs/6ae924a9c4428ab1da3a794d",
+      "source": "TheHub.io",
+      "posted_at": "2026-11-06",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-06"
+    },
+    {
+      "id": "thehub-6abc5258b6e7a316d032195a",
+      "title": "Principal Engineer, Technical Assessment",
+      "company": "Proxify",
+      "company_logo": "",
+      "location": "Remote",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Guidance and Standards Nuclear Security Officer (Tech Lead), Vienna at IAEA - International Atomic Energy Agency in Vienna, Austria.",
-      "url": "https://unjobs.org/vacancies/1792068487236",
-      "source": "UNjobs.org",
-      "posted_at": "2026-10-15",
-      "seniority": "Lead / Manager",
+      "description": "Tomorrow’s software engineers deserve more than yesterday’s interviews. Proxify is Europe's largest network of vetted software developers. Companies come to us when they need an engineer who can contribute from week one.",
+      "url": "https://thehub.io/jobs/6abc5258b6e7a316d032195a",
+      "source": "TheHub.io",
+      "posted_at": "2026-11-06",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-06"
+    },
+    {
+      "id": "ait-273301",
+      "title": "PhD Thesis “Drug-Host-Microbiome Interaction and Microbiome Engineering”",
+      "company": "AIT - CENTER FOR HEALTH & BIORESOURCES",
+      "company_logo": "",
+      "location": "Vienna",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
+      "url": "https://jobs.ait.ac.at/Job/273301",
+      "source": "AIT Austrian Institute of Technology",
+      "posted_at": "2026-11-06",
+      "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
       "salary": {
-        "min": 86027,
-        "max": 86027,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 86027,
-        "annual_max": 86027,
-        "raw": "$86027",
-        "label": "$86k+ /yr"
+        "min": 2832,
+        "max": 2832,
+        "currency": "EUR",
+        "period": "month",
+        "annual_min": 39649,
+        "annual_max": 39649,
+        "raw": "eur 2.832,10",
+        "label": "€39.6k+ /yr"
       },
       "cities": [
         "Vienna"
       ],
-      "first_seen": "2026-11-04"
+      "first_seen": "2026-11-06"
     },
     {
       "id": "ait-270413",
@@ -632,7 +491,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -663,7 +522,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -694,7 +553,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -725,7 +584,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -756,7 +615,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -787,7 +646,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272796",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -818,7 +677,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -849,7 +708,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we are dedicated to make substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our goals, we rely on ...",
       "url": "https://jobs.ait.ac.at/Job/268343",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -880,7 +739,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -911,7 +770,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we have set ourselves the goal of making substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our go...",
       "url": "https://jobs.ait.ac.at/Job/269432",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -1074,30 +933,30 @@
       "first_seen": "2025-10-06"
     },
     {
-      "id": "devjobs-a2aea7444aa9eb9a3409cd8a47909153",
+      "id": "devjobs-1bfdd7e0ca7eb9136955b7c9fb9425dc",
       "title": "Current searches",
       "company": "Tech Company",
       "company_logo": "",
       "location": "Vienna",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Your role in the team We are looking for an experienced Senior Software Architect to join the Architecture sub-chapter within Patient Insights Software Applications (PIxSW), where we design digital health and Software as a Medical Device (SaMD) products spanning mobile apps,...",
-      "url": "https://en.devjobs.at/job/a2aea7444aa9eb9a3409cd8a47909153",
+      "description": "Your role in the team At SQUER, we help established companies become AI-native engineering organizations. As Distinguished Engineer, AI-Native Engineering, you set the technical direction for that work, and you build the proof yourself.",
+      "url": "https://en.devjobs.at/job/1bfdd7e0ca7eb9136955b7c9fb9425dc",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-05",
+      "posted_at": "2026-11-06",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
       "salary": {
-        "min": 3843,
-        "max": 3843,
+        "min": 75000,
+        "max": 95000,
         "currency": "EUR",
-        "period": "month",
-        "annual_min": 53802,
-        "annual_max": 53802,
-        "raw": "EUR 3,843 per month",
-        "label": "€53.8k+ /yr"
+        "period": "year",
+        "annual_min": 75000,
+        "annual_max": 95000,
+        "raw": "EUR 75,000 - 95,000 per year",
+        "label": "€75k–95k /yr"
       },
       "cities": [
         "Vienna"
