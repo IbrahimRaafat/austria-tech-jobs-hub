@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07T12:19:13.789772+00:00",
-  "total_count": 36,
+  "updated_at": "2026-11-08T12:39:06.358439+00:00",
+  "total_count": 44,
   "jobs": [
     {
       "id": "karriere-10037281",
@@ -13,7 +13,7 @@
       "description": "With its multicultural team of diverse backgrounds, Hitachi Rail in Austria supports domestic and international rail operators with technologies and expertise in the field of signaling technology.",
       "url": "https://www.karriere.at/jobs/10037281",
       "source": "Karriere.at",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "3+ years exp",
@@ -44,7 +44,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -75,7 +75,7 @@
       "description": "As our AI & Automation Specialist (f/m/d) , you will work closely with our CEO and CMO to fundamentally improve how we work through AI, automation, and technology.",
       "url": "https://www.karriere.at/jobs/10033357",
       "source": "Karriere.at",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "1+ years exp",
@@ -96,37 +96,6 @@
       "first_seen": "2026-11-07"
     },
     {
-      "id": "karriere-10037729",
-      "title": "AI & Automation Engineer (f/m/x)",
-      "company": "MP Corporate Finance GmbH",
-      "company_logo": "https://kcdn.at/company/23941/3796670/untitled-design--2-.companysquare.png",
-      "location": "Wien",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "You don't just enjoy writing code -- you want to see it used on live deals ? You thrive in a fast-paced, dynamic environment where finance meets technology ? Working alongside colleagues from more than 25 countries on cross-border M&A transactions across Europe is something that...",
-      "url": "https://www.karriere.at/jobs/10037729",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 3143,
-        "max": 3143,
-        "currency": "EUR",
-        "period": "month",
-        "annual_min": 44002,
-        "annual_max": 44002,
-        "raw": "EUR 3,143 per month",
-        "label": "€44k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-02"
-    },
-    {
       "id": "karriere-10037254",
       "title": "Senior Backend Engineer (f/m/d) with Social Impact",
       "company": "Formunauts GmbH",
@@ -137,10 +106,10 @@
       "description": "We are Formunauts - a fast-growing SaaS company with a clear mission: We support more than 100 charities in Europe and Latin America in achieving their goals.",
       "url": "https://www.karriere.at/jobs/10037254",
       "source": "Karriere.at",
-      "posted_at": "2026-11-07",
-      "seniority": "Junior",
+      "posted_at": "2026-11-08",
+      "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "0-2 years exp",
+      "experience_level": "5+ years exp",
       "city": "Vienna",
       "salary": {
         "min": 4000,
@@ -168,7 +137,7 @@
       "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
       "url": "https://www.karriere.at/jobs/10037275",
       "source": "Karriere.at",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -189,198 +158,383 @@
       "first_seen": "2026-10-28"
     },
     {
-      "id": "arbeitnow-remote-senior-design-engineer-deel-395604",
-      "title": "Senior Design Engineer | Deel",
-      "company": "Hirehire",
+      "id": "arbeitnow-remote-developer-advocate-germany-439959",
+      "title": "Developer Advocate (Germany)",
+      "company": "Adapty.io",
       "company_logo": "",
       "location": "Remote",
       "category": "Data & AI",
       "tags": [
-        "Product Design"
+        "Adapty"
       ],
-      "description": "  Role:  Senior Design Engineer   Company:   Deel    Location:  United Kingdom, Israel, Portugal, Spain, Czech Republic, Poland, France, Switzerland, Hungary, Ireland, Sweden, Germany or Estonia   Job Type:  Full-time    About Deel  Deel is the all-in-one payroll and HR platform ...",
-      "url": "https://www.arbeitnow.com/jobs/companies/hirehire/remote-senior-design-engineer-deel-395604",
+      "description": " More than 30,000 subscription apps run on Adapty: $5B in revenue tracked, 4B users served, 80B API calls a month. That's one of the richest datasets in the app economy. Our mission is simple: make apps rich.  We are a team of 210+ passionate, product-driven people who love solvi...",
+      "url": "https://www.arbeitnow.com/jobs/companies/adaptyio/remote-developer-advocate-germany-439959",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-senior-forward-deployed-engineer-canada-170128",
-      "title": "Senior Forward Deployed Engineer - Canada",
-      "company": "Camunda",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Sales"
-      ],
-      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
-      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-senior-forward-deployed-engineer-canada-170128",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-senior-sales-engineer-north-america-441824",
-      "title": "Senior Sales Engineer - North America",
-      "company": "Camunda",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Sales"
-      ],
-      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
-      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-senior-sales-engineer-north-america-441824",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-senior-sales-engineer-dach-223556",
-      "title": "Senior Sales Engineer - DACH",
-      "company": "Camunda",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Sales"
-      ],
-      "description": " Camunda is  the enterprise platform for agentic orchestration , enabling organizations to coordinate  AI agents, people, and systems  across complex, end-to-end business processes. With built-in governance, auditability, and human oversight, Camunda gives enterprises the control...",
-      "url": "https://www.arbeitnow.com/jobs/companies/camunda/remote-senior-sales-engineer-dach-223556",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-senior-partner-solutions-architect-pan-emea-gsi-458815",
-      "title": "Senior Partner Solutions Architect (Pan-EMEA GSI)",
-      "company": "Datadog",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Channels & Alliances"
-      ],
-      "description": "&lt;p&gt;&lt;strong&gt;The Team:&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;We are Datadog&#39;s in-house product experts. The technical solutions team enables Datadog&#39;s worldwide growth by educating potential clients and ensuring that existing customers are happy and successful. We s...",
-      "url": "https://www.arbeitnow.com/jobs/companies/datadog/remote-senior-partner-solutions-architect-pan-emea-gsi-458815",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-middle-senior-staff-site-reliability-engineer-k8s-1859",
-      "title": "Middle/Senior/Staff Site Reliability Engineer (K8s)",
-      "company": "Npv",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "PulsePoint"
-      ],
-      "description": "  tl;dr: Middle/Senior/Staff SRE; post-acquisition profitable US health/adtech; 10M+ rps k8s production infra; platform engineering; remote, ~up to 210k USD base, we can talk higher figures and EU/UK/US employment       PulsePoint  is a leading player in the US healthcare adverti...",
-      "url": "https://www.arbeitnow.com/jobs/companies/npv/remote-middle-senior-staff-site-reliability-engineer-k8s-1859",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "salary": {
-        "min": 100000,
-        "max": 210000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 100000,
-        "annual_max": 210000,
-        "raw": "USD 100,000 - 210,000 per year",
-        "label": "$100k–210k /yr"
-      },
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-senior-solutions-architect-german-speaking-290951",
-      "title": "Senior Solutions Architect (German speaking)",
-      "company": "Sanity",
-      "company_logo": "",
-      "location": "Remote in Germany",
-      "category": "Data & AI",
-      "tags": [
-        "Customer Solutions"
-      ],
-      "description": " At     Sanity.io  , we’re building the future of AI-powered Content Operations. Our AI Content Operating System gives teams the freedom to model, create, and automate content the way their business works, accelerating digital development and supercharging content operations effi...",
-      "url": "https://www.arbeitnow.com/jobs/companies/sanity/remote-senior-solutions-architect-german-speaking-290951",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-07"
-    },
-    {
-      "id": "arbeitnow-remote-sales-account-executive-cybersecurity-montrouge-127371",
-      "title": "Sales Account Executive - Cybersecurity",
-      "company": "Crowdsec",
-      "company_logo": "",
-      "location": "Remote job",
-      "category": "DevOps & Cloud",
-      "tags": [
-        "Remote"
-      ],
-      "description": " Passionate about Cybersecurity, open-source or network effect products? Interested in Sales?   Join CrowdSec to build a safer internet for everyone.      What we do    We aim to deter opportunistic and organized cybercrime through an Internet-scale, real-time security network. T...",
-      "url": "https://www.arbeitnow.fr/jobs/companies/crowdsec/remote-sales-account-executive-cybersecurity-montrouge-127371",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
-      "seniority": "Internship / Student",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-07"
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-senior-forward-deployed-platform-engineer-berlin-228990",
+      "title": "Senior Forward Deployed Platform Engineer (m/w/d)",
+      "company": "Recare Deutschland GmbH",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering",
+        "Remote"
+      ],
+      "description": " As one of the leading German HealthTech companies, we are reshaping discharge management – technology-driven, patient-centered, and free from bureaucracy. In addition to our market-leading SaaS platform, we develop AI solutions that radically simplify processes in hospitals and ...",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-forward-deployed-platform-engineer-berlin-228990",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-ios-engineer-creative-app-27267",
+      "title": "iOS Engineer - Creative App",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-ios-engineer-creative-app-27267",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-android-engineer-creative-app-434278",
+      "title": "Android Engineer - Creative App",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-android-engineer-creative-app-434278",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-mobile-engineer-elevenmusic-25044",
+      "title": "Mobile Engineer - ElevenMusic",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-mobile-engineer-elevenmusic-25044",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-productions-417254",
+      "title": "Full-Stack Engineer - Productions",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-productions-417254",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-elevencreative-enterprise-233049",
+      "title": "Full-Stack Engineer - ElevenCreative Enterprise",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-elevencreative-enterprise-233049",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-ads-engine-93467",
+      "title": "Full-Stack Engineer - Ads Engine",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-ads-engine-93467",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-backend-leaning-creative-agents-223892",
+      "title": "Full-Stack Engineer (Backend Leaning) - Creative Agents",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-backend-leaning-creative-agents-223892",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-product-manager-elevencreative-self-serve-87326",
+      "title": "Product Manager (ElevenCreative Self-Serve)",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-product-manager-elevencreative-self-serve-87326",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Lead / Manager",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-backend-leaning-payments-engineering-222551",
+      "title": "Full-Stack Engineer (Backend Leaning) - Payments Engineering",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-backend-leaning-payments-engineering-222551",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "salary": {
+        "min": 75000,
+        "max": 100000,
+        "currency": "EUR",
+        "period": "year",
+        "annual_min": 75000,
+        "annual_max": 100000,
+        "raw": "75.000 - 100.000 €",
+        "label": "€75k–100k /yr"
+      },
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-backend-leaning-platform-engineering-280315",
+      "title": "Full-Stack Engineer (Backend Leaning) - Platform Engineering",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-backend-leaning-platform-engineering-280315",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-developer-experience-engineer-333360",
+      "title": "Developer Experience Engineer",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Growth"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-developer-experience-engineer-333360",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-full-stack-engineer-frontend-leaning-studio-486011",
+      "title": "Full-Stack Engineer (Frontend Leaning) - Studio",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-frontend-leaning-studio-486011",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-people-partner-engineering-product-114970",
+      "title": "People Partner Engineering & Product",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Operations"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-people-partner-engineering-product-114970",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
+    },
+    {
+      "id": "arbeitnow-remote-it-engineer-248150",
+      "title": "IT Engineer",
+      "company": "ElevenLabs",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering & Product"
+      ],
+      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
+      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-it-engineer-248150",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-08",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
     },
     {
       "id": "arbeitnow-remote-senior-staff-platform-engineer-382004",
@@ -395,7 +549,7 @@
       "description": " At Duna, we see the company as the second product we're building and are continually working to create a transparent, ambitious culture. We want this to be the place where you do your best work.    Our mission is to redefine identity for the global economy. We're backed by world...",
       "url": "https://www.arbeitnow.nl/jobs/companies/duna/remote-senior-staff-platform-engineer-382004",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -404,6 +558,27 @@
         "Remote"
       ],
       "first_seen": "2026-11-07"
+    },
+    {
+      "id": "remotive-2091045",
+      "title": "Tier III Service Desk Engineer",
+      "company": "Unio Digital",
+      "company_logo": "https://remotive.com/job/2091045/logo",
+      "location": "Worldwide",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": " Unió Digital is an Arizona-based managed service provider (MSP) delivering Managed IT Services, Low Voltage Cabling, Access Control, Video Surveillance, and Intrusion Services. We believe technology should be intuitive, not intimidating. \n   \n We are looking for an experienced T...",
+      "url": "https://remotive.com/remote-jobs/information-technology/tier-iii-service-desk-engineer-2091045",
+      "source": "Remotive",
+      "posted_at": "2026-11-07",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-08"
     },
     {
       "id": "remotive-2091165",
@@ -593,7 +768,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273301",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -624,7 +799,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -655,7 +830,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -686,7 +861,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -717,7 +892,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -748,7 +923,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -779,7 +954,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272796",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -810,7 +985,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -841,7 +1016,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we are dedicated to make substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our goals, we rely on ...",
       "url": "https://jobs.ait.ac.at/Job/268343",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -872,7 +1047,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -903,7 +1078,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAs Austria's largest research and technology organisation for applied research, we have set ourselves the goal of making substantial contributions to solving the major challenges of our time, climate change and digitalisation. To achieve our go...",
       "url": "https://jobs.ait.ac.at/Job/269432",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -1035,31 +1210,21 @@
       "first_seen": "2025-10-06"
     },
     {
-      "id": "devjobs-3460134ae389ff0afa50cf0875219b9e",
+      "id": "devjobs-2e20f65f3ace1303ef1ee7747a6602e8",
       "title": "Current searches",
       "company": "Tech Company",
       "company_logo": "",
       "location": "Vienna",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Your role in the team As a Data Engineer, you’ll play a key role in building modern, scalable, and high-performance data solutions on Google Cloud Platform (GCP).",
-      "url": "https://en.devjobs.at/job/3460134ae389ff0afa50cf0875219b9e",
+      "description": "Your role in the team Design, build, and maintain scalable backend services and APIs in Go that power our web and mobile applications. Improve system performance, monitoring, and developer experience across the stack.",
+      "url": "https://en.devjobs.at/job/2e20f65f3ace1303ef1ee7747a6602e8",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-07",
+      "posted_at": "2026-11-08",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
-      "salary": {
-        "min": 53802,
-        "max": 53802,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 53802,
-        "annual_max": 53802,
-        "raw": "EUR 53,802 per year",
-        "label": "€53.8k+ /yr"
-      },
       "cities": [
         "Vienna"
       ],
