@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-13T13:48:23.903402+00:00",
-  "total_count": 34,
+  "updated_at": "2026-11-14T12:52:40.210381+00:00",
+  "total_count": 35,
   "jobs": [
     {
       "id": "karriere-10035993",
@@ -13,7 +13,7 @@
       "description": "We are an established, internationally successful B2B software manufacturer with over 300 employees from 40 different nations. Internationality and diversity are integral parts of our culture.",
       "url": "https://www.karriere.at/jobs/10035993",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -34,37 +34,6 @@
       "first_seen": "2026-11-13"
     },
     {
-      "id": "karriere-10035994",
-      "title": "(Junior) Frontend Developer with UI/UX Focus m/f/x",
-      "company": "BOC Products & Services AG",
-      "company_logo": "https://kcdn.at/company/5003/1714283/logo-boc-products---services-ag.companysquare.gif",
-      "location": "Wien",
-      "category": "Frontend",
-      "tags": [],
-      "description": "We are an established, internationally successful B2B software manufacturer with over 300 employees from 40 different nations. Internationality and diversity are integral parts of our culture.",
-      "url": "https://www.karriere.at/jobs/10035994",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-13",
-      "seniority": "Junior",
-      "relocation_support": "Not Specified",
-      "experience_level": "0-2 years exp",
-      "city": "Vienna",
-      "salary": {
-        "min": 2600,
-        "max": 2600,
-        "currency": "EUR",
-        "period": "month",
-        "annual_min": 36400,
-        "annual_max": 36400,
-        "raw": "EUR 2,600 per month",
-        "label": "€36.4k+ /yr"
-      },
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-12"
-    },
-    {
       "id": "karriere-10038618",
       "title": "Cloud Data Platform Engineer (m/w/d)",
       "company": "karriere.at",
@@ -75,7 +44,7 @@
       "description": "Together with hokify and jobs.at, karriere.at is part of norika, House of Digital Recruiting. Together, we pool our expertise and commitment to the Austrian job market.",
       "url": "https://www.karriere.at/jobs/10038618",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -107,7 +76,7 @@
       "description": "We are looking for a motivated Data Engineer to join our Data Engineering team. In this role, you will build reliable data models, pipelines, and data products that help teams across smaXtec make better decisions and run operational use cases with high-quality data.",
       "url": "https://www.karriere.at/jobs/10038403",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -138,7 +107,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -169,7 +138,7 @@
       "description": "You don't just enjoy writing code -- you want to see it used on live deals ? You thrive in a fast-paced, dynamic environment where finance meets technology ? Working alongside colleagues from more than 25 countries on cross-border M&A transactions across Europe is something that...",
       "url": "https://www.karriere.at/jobs/10037729",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -200,7 +169,7 @@
       "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
       "url": "https://www.karriere.at/jobs/10037275",
       "source": "Karriere.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -221,9 +190,42 @@
       "first_seen": "2026-10-28"
     },
     {
-      "id": "arbeitnow-remote-senior-product-manager-insurance-berlin-135350",
-      "title": "Senior Product Manager (Insurance)",
-      "company": "TechBiz Global GmbH",
+      "id": "arbeitnow-remote-technical-program-manager-software-197537",
+      "title": "Technical Program Manager, Software",
+      "company": "Swarmaero",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Aircraft"
+      ],
+      "description": " Swarm Aero is redefining air power, building the largest swarming UAV and the most versatile swarming aircraft network in the world. The company is moving quickly to launch the first aircraft designed specifically for swarming, as well as the Command &amp; Control software to mo...",
+      "url": "https://www.arbeitnow.com/jobs/companies/swarmaero/remote-technical-program-manager-software-197537",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-14",
+      "seniority": "Lead / Manager",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "salary": {
+        "min": 175000,
+        "max": 200000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 175000,
+        "annual_max": 200000,
+        "raw": "USD 175,000 - 200,000 per year",
+        "label": "$175k–200k /yr"
+      },
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-14"
+    },
+    {
+      "id": "arbeitnow-remote-senior-ai-product-designer-berlin-84714",
+      "title": "Senior AI Product Designer  (m/w/d)",
+      "company": "Recare Deutschland GmbH",
       "company_logo": "",
       "location": "Remote job",
       "category": "Data & AI",
@@ -231,10 +233,10 @@
         "Product",
         "Remote"
       ],
-      "description": "   At TechBiz Global, we are providing recruitment service to our TOP clients from our portfolio. We are currently seeking an     Senior Product Manager    specialist  to join one of our      clients     ' teams. If you're looking for an exciting opportunity to grow in a innovati...",
-      "url": "https://www.arbeitnow.com/jobs/companies/techbiz-global-gmbh/remote-senior-product-manager-insurance-berlin-135350",
+      "description": "  About Recare    As one of the leading German HealthTech companies, we are reshaping discharge management – technology-driven, patient-centered, and free from bureaucracy. In addition to our market-leading SaaS platform, we develop AI solutions that radically simplify processes ...",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-senior-ai-product-designer-berlin-84714",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -242,167 +244,153 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-13"
+      "first_seen": "2026-11-14"
     },
     {
-      "id": "arbeitnow-remote-principal-infrastructure-engineer-14603",
-      "title": "Principal Infrastructure Engineer",
-      "company": "Sezzle",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "DV-Development"
-      ],
-      "description": "&lt;p&gt;&lt;strong&gt;About Sezzle:&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;With a mission to financially empower the next generation, Sezzle is revolutionizing the shopping experience beyond payments, blending cutting-edge tech with seamless, interest-free installment plans that make...",
-      "url": "https://www.arbeitnow.fr/jobs/companies/sezzle/remote-principal-infrastructure-engineer-14603",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-13",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "salary": {
-        "min": 12500,
-        "max": 20800,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 12500,
-        "annual_max": 20800,
-        "raw": "$12,500 - $20,800 usd",
-        "label": "$12.5k–20.8k /yr"
-      },
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-13"
-    },
-    {
-      "id": "arbeitnow-remote-senior-cloud-engineer-utrecht-183144",
-      "title": "Senior Cloud Engineer",
-      "company": "Luscii",
+      "id": "arbeitnow-remote-software-engineer-computer-use-integrations-berlin-434731",
+      "title": "Software Engineer (Computer Use & Integrations) (m/w/d)",
+      "company": "Recare Deutschland GmbH",
       "company_logo": "",
       "location": "Remote job",
       "category": "Data & AI",
       "tags": [
-        "Software Development",
+        "Engineering",
         "Remote"
       ],
-      "description": " At Luscii, we're creating space for care by developing and improving digital healthcare applications that make a real difference in people's lives through several applications. From Luscii Thuismeten, which helps healthcare professionals monitor patients remotely, to OMRON Conne...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/luscii/remote-senior-cloud-engineer-utrecht-183144",
+      "description": "  Software Engineer – Backend (Computer Use &amp; Integrations) (m/w/d)   Remote job     About Recare   As one of the leading German HealthTech companies, we are reshaping discharge management – technology-driven, patient-centered, and free from bureaucracy. In addition to our ma...",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-software-engineer-computer-use-integrations-berlin-434731",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-13",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Remote",
-      "salary": {
-        "min": 5600,
-        "max": 6600,
-        "currency": "EUR",
-        "period": "month",
-        "annual_min": 78400,
-        "annual_max": 92400,
-        "raw": "EUR 5,600 - 6,600 per month",
-        "label": "€78.4k–92.4k /yr"
-      },
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-13"
-    },
-    {
-      "id": "jobicy-161755",
-      "title": "Detection & Response Engineer",
-      "company": "Nebius",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/06/d90c0566-221.webp",
-      "location": "Europe",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "About Nebius: Nebius is leading a new era in cloud infrastructure for the global AI economy. We are building a full-stack AI cloud platform that supports developers and enterprises from data and model training through to production deployment, without the cost and complexity of b...",
-      "url": "https://jobicy.com/jobs/161755-detection-response-engineer-2",
-      "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
-      "salary": {
-        "min": 170000,
-        "max": 170000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 170000,
-        "annual_max": 170000,
-        "raw": "$170,000",
-        "label": "$170k+ /yr"
-      },
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-13"
+      "first_seen": "2026-11-14"
     },
     {
-      "id": "jobicy-161753",
-      "title": "Staff Forward Deployed Engineer, EMEA",
-      "company": "GitLab",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2020/12/WRILS-201207055737-109952.jpg",
-      "location": "Austria,  France,  Germany,  Ireland,  Netherlands,  Spain,  UK",
-      "category": "Software Engineering",
-      "tags": [],
-      "description": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and m...",
-      "url": "https://jobicy.com/jobs/161753-staff-forward-deployed-engineer-emea",
-      "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-11-13",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Austria (Other)",
-      "salary": {
-        "min": 190000,
-        "max": 190000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 190000,
-        "annual_max": 190000,
-        "raw": "$190,000",
-        "label": "$190k+ /yr"
-      },
-      "cities": [
-        "Austria (Other)"
-      ],
-      "first_seen": "2026-11-13"
-    },
-    {
-      "id": "jobicy-161750",
-      "title": "Enterprise Sales Executive, AI Solutions",
-      "company": "Toptal",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2025/08/346ce7fb-221.png",
-      "location": "LATAM,  Canada,  Europe",
+      "id": "arbeitnow-remote-lead-security-engineer-berlin-229517",
+      "title": "Lead Security Engineer (m/w/d)",
+      "company": "Recare Deutschland GmbH",
+      "company_logo": "",
+      "location": "Remote job",
       "category": "Data & AI",
-      "tags": [],
-      "description": "About Toptal Toptal is a global network of top talent in business, design, and technology that enables companies to scale their teams, on-demand. With $200+ million in annual revenue and team members based around the globe, Toptal is the world’s largest fully remote workforce. We...",
-      "url": "https://jobicy.com/jobs/161750-enterprise-sales-executive-ai-solutions-2",
-      "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-11-13",
-      "seniority": "Mid-Level",
+      "tags": [
+        "Engineering",
+        "Remote"
+      ],
+      "description": "  Lead Security Engineer (m/w/d)      About Recare   As one of the leading German HealthTech companies, we are reshaping discharge management – technology-driven, patient-centered, and free from bureaucracy. In addition to our market-leading SaaS platform, we develop AI solutions...",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-lead-security-engineer-berlin-229517",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-14",
+      "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Remote",
-      "salary": {
-        "min": 250000,
-        "max": 250000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 250000,
-        "annual_max": 250000,
-        "raw": "$250k",
-        "label": "$250k+ /yr"
-      },
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-14"
+    },
+    {
+      "id": "arbeitnow-remote-tech-lead-medical-coding-agents-berlin-279658",
+      "title": "Tech Lead (Medical Coding Agents) (m/w/d)",
+      "company": "Recare Deutschland GmbH",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering",
+        "Remote"
+      ],
+      "description": "  About Recare     As one of the leading German HealthTech companies, we are reshaping discharge management: technology-driven, patient-centered and free from bureaucracy. In addition to our market-leading SaaS platform, we develop AI solutions that radically simplify processes i...",
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-tech-lead-medical-coding-agents-berlin-279658",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-14",
+      "seniority": "Lead / Manager",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-14"
+    },
+    {
+      "id": "arbeitnow-remote-staff-forward-deployed-engineer-emea-244241",
+      "title": "Staff Forward Deployed Engineer, EMEA",
+      "company": "gitlab",
+      "company_logo": "",
+      "location": "Remote",
+      "category": "Data & AI",
+      "tags": [
+        "Customer Experience"
+      ],
+      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transfo...",
+      "url": "https://www.arbeitnow.com/jobs/companies/gitlab/remote-staff-forward-deployed-engineer-emea-244241",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-14",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Remote",
       "cities": [
         "Remote"
       ],
       "first_seen": "2026-11-13"
+    },
+    {
+      "id": "arbeitnow-remote-senior-software-engineer-appsec-175070",
+      "title": "Senior Software Engineer (AppSec)",
+      "company": "Triggerdev",
+      "company_logo": "",
+      "location": "Remote or Hybrid UK",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering"
+      ],
+      "description": " About us   Trigger.dev  is the platform for running reliable AI agents and workflows. Developers use it to build, deploy, and scale production systems with built-in tools for orchestration, scheduling, monitoring, and debugging.  Our Cloud product is a managed service where we d...",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/triggerdev/remote-senior-software-engineer-appsec-175070",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-14",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-14"
+    },
+    {
+      "id": "remotive-2091137",
+      "title": "Senior Data Engineer",
+      "company": "Lemon.io",
+      "company_logo": "https://remotive.com/job/2091137/logo",
+      "location": "LATAM, Europe, USA, Canada, APAC",
+      "category": "Data & AI",
+      "tags": [
+        "Python",
+        "SQL",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js"
+      ],
+      "description": "  Lemon.io  helps companies in the US and Europe hire experienced engineers, from funded startups to teams like Klarna, Retool, and Pinterest. We’ve been doing this since 2015, and more than 1,500 companies have hired engineers through us. \n   \n New roles for Senior React Full-st...",
+      "url": "https://remotive.com/remote-jobs/data/senior-data-engineer-2091137",
+      "source": "Remotive",
+      "posted_at": "2026-11-11",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-14"
     },
     {
       "id": "remotive-2091136",
@@ -610,7 +598,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272796",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -641,7 +629,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273301",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -672,7 +660,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -703,7 +691,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -734,7 +722,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -765,7 +753,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -796,7 +784,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -827,7 +815,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -858,7 +846,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -1021,7 +1009,7 @@
       "description": "Your role in the team Develop high-quality software that solves challenging problems in analog IC design automation. Design and implement algorithms for layout generation, optimization, search, and automation.",
       "url": "https://en.devjobs.at/job/b9b5dd35b3858f0eb07bcfc5317ffafb",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-13",
+      "posted_at": "2026-11-14",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
