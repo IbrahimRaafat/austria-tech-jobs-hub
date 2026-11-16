@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-15T13:21:54.060247+00:00",
-  "total_count": 58,
+  "updated_at": "2026-11-16T14:32:25.093585+00:00",
+  "total_count": 57,
   "theses": [
     {
       "id": "ait-thesis-269966",
@@ -27,7 +27,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Master Thesis \"Characterizing features of Driving Dynamics on a Motorcycle Probe Vehicle\" \", \"description\" : \"\", \"datePosted\" : \"2026-07-23\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Master Thesis \"Characterizing features of Driving Dynamics on a Motorcycle Probe Vehicle\" Navigate to content Accesskey [1] Go to main menu Accessk...",
       "url": "https://jobs.ait.ac.at/Job/269966",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -56,7 +56,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Master's Theses \"Machine Learning and Artificial Intelligence for Cyber Security\"\", \"description\" : \"\", \"datePosted\" : \"2026-10-22\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Master's Theses \"Machine Learning and Artificial Intelligence for Cyber Security\" Navigate to content Accesskey [1] Go to main menu Accesskey [2] Go to sear...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -80,7 +80,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Master Thesis \"Development of Ni-Alloy Electrocatalysts for Electrocatalytic CO2 Reduction\"\", \"description\" : \"\", \"datePosted\" : \"2026-10-19\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Master Thesis \"Development of Ni-Alloy Electrocatalysts for Electrocatalytic CO2 Reduction\" Navigate to content Accesskey [1] Go to main menu Acce...",
       "url": "https://jobs.ait.ac.at/Job/273045",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -109,7 +109,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Master Thesis \"Bi-Static Sensing of UAVs\"\", \"description\" : \"\", \"datePosted\" : \"2026-07-09\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Master Thesis \"Bi-Static Sensing of UAVs\" Navigate to content Accesskey [1] Go to main menu Accesskey [2] Go to search Accesskey [3] AIT Logo Menü ein (oder ausklappen) Search DEEN DEEN https://ww...",
       "url": "https://jobs.ait.ac.at/Job/269595",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -138,7 +138,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Master Thesis \"Differentiable Ray Tracing for Radio Propagation Modeling\"\", \"description\" : \"\", \"datePosted\" : \"2026-07-09\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Master Thesis \"Differentiable Ray Tracing for Radio Propagation Modeling\" Navigate to content Accesskey [1] Go to main menu Accesskey [2] Go to search Accesskey [3]...",
       "url": "https://jobs.ait.ac.at/Job/269596",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -164,7 +164,7 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Masterarbeit \"Cybersecurity Testlabor Landwirtschaft\" \", \"description\" : \"\", \"datePosted\" : \"2026-09-03\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Masterarbeit \"Cybersecurity Testlabor Landwirtschaft\" Navigate to content Accesskey [1] Go to main menu Accesskey [2] Go to search Accesskey [3] AIT Logo Menü ein (oder ausklappen) Se...",
       "url": "https://jobs.ait.ac.at/Job/271280",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
@@ -190,11 +190,11 @@
       "description": "{ \"@context\" : \"https://schema.org/\", \"@type\" : \"JobPosting\", \"title\" : \"Masterarbeit \"Elektrochemische Biosensoren für die Nukleinsäuredetektion der Nächsten Generation\"\", \"description\" : \"\", \"datePosted\" : \"2026-08-27\", \"validThrough\" : \"\" ,\"hiringOrganization\" : { \"@type\" : \"Organization\", \"name\" : \"\", \"sameAs\" : \"https://jobs.ait.ac.at\", \"logo\" : \"\" } } Masterarbeit \"Elektrochemische Biosensoren für die Nukleinsäuredetektion der Nächsten Generation\" Navigate to content Accesskey [1] Go to ma...",
       "url": "https://jobs.ait.ac.at/Job/269965",
       "source": "AIT (Austrian Institute of Technology)",
-      "posted_at": "2026-11-15",
+      "posted_at": "2026-11-16",
       "first_seen": "2026-10-31"
     },
     {
-      "id": "tuwien-cg-927441",
+      "id": "tuwien-cg-256138",
       "title": "Master Thesis: Shapes and Fictions of Synthetic Data: Generative Visual Analytics in an Underdetermined World",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -212,11 +212,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Shapes and Fictions of Synthetic Data: Generative Visual Analytics in an Underdetermined World.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Shapes-and-Fictions-Synthetic-Data-Generative-Visual-Analytics-Underdetermined",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-711296",
+      "id": "tuwien-cg-20561",
       "title": "Master Thesis: Generating 3D Assets for Geospatial Visualization (3D Maps)",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -234,11 +234,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Generating 3D Assets for Geospatial Visualization (3D Maps).",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Generating-3D-Assets-Geospatial-Visualization-3D-Maps",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-414606",
+      "id": "tuwien-cg-231732",
       "title": "Master Thesis: Variable Rate Texture Compression",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -256,11 +256,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Variable Rate Texture Compression.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Variable-Rate-Texture-Compression",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-315698",
+      "id": "tuwien-cg-922754",
       "title": "Master Thesis: Traffic Violations",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -278,11 +278,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Traffic Violations.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Traffic-Violations",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-787628",
+      "id": "tuwien-cg-969785",
       "title": "Master Thesis: AI Music Visualization",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -302,11 +302,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: AI Music Visualization.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-AI-Music-Visualization",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-546854",
+      "id": "tuwien-cg-381594",
       "title": "Master Thesis: Improve 3D Scans using RGB",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -324,11 +324,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Improve 3D Scans using RGB.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Improve-3D-Scans-using-RGB",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-762928",
+      "id": "tuwien-cg-749808",
       "title": "Master Thesis: Probabilistic Representations from Scans",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -346,11 +346,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Probabilistic Representations from Scans.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Probabilistic-Representations-Scans",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-643464",
+      "id": "tuwien-cg-140636",
       "title": "Master Thesis: Noisy SDF Meshing",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -368,11 +368,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Noisy SDF Meshing.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Noisy-SDF-Meshing",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-118932",
+      "id": "tuwien-cg-534265",
       "title": "Master Thesis: Volumetric Meshing",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -390,11 +390,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Volumetric Meshing.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Volumetric-Meshing",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-59245",
+      "id": "tuwien-cg-597702",
       "title": "Master Thesis: Plants Modeling for Green Facades",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -412,11 +412,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Plants Modeling for Green Facades.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Plants-Modeling-Green-Facades",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-77643",
+      "id": "tuwien-cg-874553",
       "title": "Master Thesis: Real-Time Multimodal Background for Narratives",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -434,11 +434,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Real-Time Multimodal Background for Narratives.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Real-Time-Multimodal-Background-Narratives",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-164926",
+      "id": "tuwien-cg-149071",
       "title": "Master Thesis: Object 3D Scan Guiding",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -456,11 +456,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Object 3D Scan Guiding.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Object-3D-Scan-Guiding",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-368807",
+      "id": "tuwien-cg-207952",
       "title": "Master Thesis: Traffic Counting",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -478,11 +478,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Traffic Counting.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Traffic-Counting",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-95446",
+      "id": "tuwien-cg-763841",
       "title": "Master Thesis: Experiments with DSL synthesis with LLMs",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -500,11 +500,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Experiments with DSL synthesis with LLMs.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Experiments-DSL-synthesis-LLMs",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-232225",
+      "id": "tuwien-cg-893560",
       "title": "Master Thesis: Sports AR Navigation",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -522,11 +522,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Sports AR Navigation.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Sports-AR-Navigation",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-52542",
+      "id": "tuwien-cg-15617",
       "title": "Master Thesis: Reconstruct Outdoor Scenes",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -544,11 +544,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Reconstruct Outdoor Scenes.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Reconstruct-Outdoor-Scenes",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-589974",
+      "id": "tuwien-cg-581465",
       "title": "Master Thesis: Sharp Features from Scans",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -566,11 +566,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Sharp Features from Scans.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Sharp-Features-Scans",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-333928",
+      "id": "tuwien-cg-205600",
       "title": "Master Thesis: Differentiable Rendering Framework",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -588,11 +588,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Differentiable Rendering Framework.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Differentiable-Rendering-Framework",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-387165",
+      "id": "tuwien-cg-272500",
       "title": "Master Thesis: Global optimization and learning for lighting design",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -610,11 +610,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Global optimization and learning for lighting design.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Global-optimization-and-learning-lighting-design",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-448281",
+      "id": "tuwien-cg-682996",
       "title": "Master Thesis: CycleSafely",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -632,11 +632,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: CycleSafely.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-CycleSafely",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-986478",
+      "id": "tuwien-cg-693367",
       "title": "Master Thesis: Scene Change Detect App",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -654,11 +654,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Scene Change Detect App.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Scene-Change-Detect-App",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-229435",
+      "id": "tuwien-cg-929079",
       "title": "Master Thesis: Using a Drone for Automated 3D Scanning",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -676,11 +676,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Using a Drone for Automated 3D Scanning.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/%E2%82%AC1000-Using-Drone-Automated-3D-Scanning",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-186394",
+      "id": "tuwien-cg-805102",
       "title": "Master Thesis: Real-Time Rendering",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -698,11 +698,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Real-Time Rendering.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Real-Time-Rendering",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-725562",
+      "id": "tuwien-cg-426516",
       "title": "Master Thesis: Master's Thesis Project: Gamification or Serious Games for Climate Adaptation Education",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -720,11 +720,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: Master's Thesis Project: Gamification or Serious Games for Climate Adaptation Education.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/Masters-Thesis-Project-Gamification-or-Serious-Games-Climate-Adaptation-Education",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-cg-142265",
+      "id": "tuwien-cg-429750",
       "title": "Master Thesis: ImNDT: Immersive Workspace for the Analysis of Multidimensional Material Data from Non-Destructive Testing",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -742,11 +742,11 @@
       "description": "Master's thesis project at TU Wien Faculty of Informatics (Institute of Visual Computing and Human-Centered Technology). Focus: Master Thesis: ImNDT: Immersive Workspace for the Analysis of Multidimensional Material Data from Non-Destructive Testing.",
       "url": "https://www.cg.tuwien.ac.at/courses/projekte/ImNDT-Immersive-Workspace-Analysis-Multidimensional-Material-Data-Non-Destructive",
       "source": "TU Wien Faculty of Informatics",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-acin-788300",
+      "id": "tuwien-acin-1269",
       "title": "Master Thesis: Deep Learning for Robot Vision and Manipulation in Cluttered Environments",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -769,11 +769,11 @@
       "description": "Master thesis research project at TU Wien Automation and Control Institute (ACIN) and Telecommunications. Students collaborate on cutting-edge research in Robotic Systems Lab (RSL).",
       "url": "https://www.acin.tuwien.ac.at/bachelor-master-diplomarbeiten/",
       "source": "TU Wien ACIN / Telecommunications",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-acin-518267",
+      "id": "tuwien-acin-553244",
       "title": "Master Thesis: Non-linear Control of Quantum Mechanical States and Laser-Cooled Particles",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -796,11 +796,11 @@
       "description": "Master thesis research project at TU Wien Automation and Control Institute (ACIN) and Telecommunications. Students collaborate on cutting-edge research in Complex Dynamical Systems (CDS).",
       "url": "https://www.acin.tuwien.ac.at/bachelor-master-diplomarbeiten/",
       "source": "TU Wien ACIN / Telecommunications",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-acin-406579",
+      "id": "tuwien-acin-931062",
       "title": "Master Thesis: Autonomous Mobile Manipulation and Trajectory Optimization on Mobile Platforms",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -823,11 +823,11 @@
       "description": "Master thesis research project at TU Wien Automation and Control Institute (ACIN) and Telecommunications. Students collaborate on cutting-edge research in Robotic Systems Lab (RSL).",
       "url": "https://www.acin.tuwien.ac.at/bachelor-master-diplomarbeiten/",
       "source": "TU Wien ACIN / Telecommunications",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tuwien-acin-328201",
+      "id": "tuwien-acin-563012",
       "title": "Master Thesis: Next-Generation MIMO Antenna Array Beamforming for 6G Wireless Telecommunications",
       "degree_level": "Master's Thesis",
       "institution": "TU Wien (Vienna University of Technology)",
@@ -850,11 +850,11 @@
       "description": "Master thesis research project at TU Wien Automation and Control Institute (ACIN) and Telecommunications. Students collaborate on cutting-edge research in Institute of Telecommunications.",
       "url": "https://www.acin.tuwien.ac.at/bachelor-master-diplomarbeiten/",
       "source": "TU Wien ACIN / Telecommunications",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tugraz-152914",
+      "id": "tugraz-296652",
       "title": "Master Thesis: Microarchitectural Side-Channel Attacks and Hardware Security in Modern CPUs",
       "degree_level": "Master's Thesis",
       "institution": "TU Graz (Graz University of Technology)",
@@ -877,11 +877,11 @@
       "description": "Master's thesis opportunity at TU Graz in ISEC (Applied Information Processing and Communications). Offers direct academic supervision, access to high-performance labs, and joint university/industry research networks.",
       "url": "https://www.isec.tugraz.at/teaching/master-thesis/",
       "source": "TU Graz (ISDS / ISEC)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tugraz-620885",
+      "id": "tugraz-661611",
       "title": "Master Thesis: Privacy-Preserving Federated Learning with Differential Privacy Guarantees",
       "degree_level": "Master's Thesis",
       "institution": "TU Graz (Graz University of Technology)",
@@ -904,11 +904,11 @@
       "description": "Master's thesis opportunity at TU Graz in Institute of Interactive Systems and Data Science (ISDS / HCC). Offers direct academic supervision, access to high-performance labs, and joint university/industry research networks.",
       "url": "https://www.isec.tugraz.at/teaching/master-thesis/",
       "source": "TU Graz (ISDS / ISEC)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tugraz-778331",
+      "id": "tugraz-534653",
       "title": "Master Thesis: Explainable AI and Human-in-the-Loop Visual Data Exploration",
       "degree_level": "Master's Thesis",
       "institution": "TU Graz (Graz University of Technology)",
@@ -931,11 +931,11 @@
       "description": "Master's thesis opportunity at TU Graz in Institute of Interactive Systems and Data Science (ISDS / HCC). Offers direct academic supervision, access to high-performance labs, and joint university/industry research networks.",
       "url": "https://www.isec.tugraz.at/teaching/master-thesis/",
       "source": "TU Graz (ISDS / ISEC)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "tugraz-922157",
+      "id": "tugraz-147913",
       "title": "Master Thesis: Zero-Knowledge Proofs and Post-Quantum Cryptography Implementations",
       "degree_level": "Master's Thesis",
       "institution": "TU Graz (Graz University of Technology)",
@@ -958,11 +958,11 @@
       "description": "Master's thesis opportunity at TU Graz in ISEC (Cryptology & Privacy). Offers direct academic supervision, access to high-performance labs, and joint university/industry research networks.",
       "url": "https://www.isec.tugraz.at/teaching/master-thesis/",
       "source": "TU Graz (ISDS / ISEC)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sal-101312",
+      "id": "sal-609278",
       "title": "Master Thesis - Metasurface Characterization​ (all genders)",
       "degree_level": "Master's Thesis",
       "institution": "Silicon Austria Labs (SAL)",
@@ -980,35 +980,11 @@
       "description": "Funded Master's thesis at Silicon Austria Labs (SAL) in Graz. Conduct industry-partnered research in advanced microelectronics, photonics, and sensor systems.",
       "url": "https://career.silicon-austria-labs.com/Master-Thesis-Metasurface-Characterization-all-genders-eng-j128.html",
       "source": "Silicon Austria Labs (SAL)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sal-787299",
-      "title": "Master Thesis - Brillouin-Active Integrated Photonics (all genders)",
-      "degree_level": "Master's Thesis",
-      "institution": "Silicon Austria Labs (SAL)",
-      "institution_logo": "https://silicon-austria-labs.com/fileadmin/templates/img/sal_logo.svg",
-      "department": "Electronic Based Systems Research Division",
-      "research_group": "Integrated Photonics & Microelectronics",
-      "location": "Graz",
-      "duration": "6 months",
-      "workload": "Paid employment (Collective Agreement)",
-      "compensation": "Paid (Collective Agreement for Non-University Research)",
-      "is_paid": true,
-      "category": "Robotics & Hardware",
-      "tags": [
-        "Photonics"
-      ],
-      "language": "English",
-      "description": "Funded Master's thesis at Silicon Austria Labs (SAL) in Graz. Conduct industry-partnered research in advanced microelectronics, photonics, and sensor systems.",
-      "url": "https://career.silicon-austria-labs.com/Master-Thesis-Brillouin-Active-Integrated-Photonics-all-ge-eng-j45.html",
-      "source": "Silicon Austria Labs (SAL)",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
-    },
-    {
-      "id": "joanneum-121952",
+      "id": "joanneum-171148",
       "title": "Master Thesis: AI-Driven Object Detection and Navigation in Satellite Imagery",
       "degree_level": "Master's Thesis",
       "institution": "JOANNEUM RESEARCH",
@@ -1031,11 +1007,11 @@
       "description": "Master thesis research project at JOANNEUM RESEARCH in Graz. Work directly with industry partners on real-world applied technology development in DIGITAL - Institute for Information and Communication Technologies.",
       "url": "https://www.joanneum.at/karriere/stellenmarkt-uebersicht/",
       "source": "JOANNEUM RESEARCH",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "joanneum-375994",
+      "id": "joanneum-774203",
       "title": "Master Thesis: Collaborative Human-Robot Interaction and Safety Monitoring in Industrial Workcells",
       "degree_level": "Master's Thesis",
       "institution": "JOANNEUM RESEARCH",
@@ -1058,11 +1034,11 @@
       "description": "Master thesis research project at JOANNEUM RESEARCH in Klagenfurt. Work directly with industry partners on real-world applied technology development in ROBOTICS - Institute for Robotics and Mechatronics.",
       "url": "https://www.joanneum.at/karriere/stellenmarkt-uebersicht/",
       "source": "JOANNEUM RESEARCH",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "joanneum-36289",
+      "id": "joanneum-889751",
       "title": "Master Thesis: Sensor Fusion and Real-time Navigation for Connected Vehicles",
       "degree_level": "Master's Thesis",
       "institution": "JOANNEUM RESEARCH",
@@ -1085,11 +1061,11 @@
       "description": "Master thesis research project at JOANNEUM RESEARCH in Graz. Work directly with industry partners on real-world applied technology development in DIGITAL - Institute for Information and Communication Technologies.",
       "url": "https://www.joanneum.at/karriere/stellenmarkt-uebersicht/",
       "source": "JOANNEUM RESEARCH",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "infineon-675220",
+      "id": "infineon-469816",
       "title": "Master Thesis: Dynamische Batterie Charakterisierung und Modellierung (w/m/div)*",
       "degree_level": "Master's Thesis",
       "institution": "Infineon Technologies Austria",
@@ -1107,11 +1083,11 @@
       "description": "Master's thesis position at Infineon Technologies Austria in Graz. Research semiconductor technologies, testing methods, and power electronics under the guidance of senior R&D staff.",
       "url": "https://www.karriere.at/jobs/graz",
       "source": "Infineon Austria",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "infineon-583357",
+      "id": "infineon-214353",
       "title": "Master Thesis: Elektrische Charakterisierung von Ladungsansammlungen in GaN HEMTs (w/m/div)*",
       "degree_level": "Master's Thesis",
       "institution": "Infineon Technologies Austria",
@@ -1129,11 +1105,11 @@
       "description": "Master's thesis position at Infineon Technologies Austria in Villach. Research semiconductor technologies, testing methods, and power electronics under the guidance of senior R&D staff.",
       "url": "https://www.karriere.at/jobs/villach",
       "source": "Infineon Austria",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "infineon-583357",
+      "id": "infineon-214353",
       "title": "Masterarbeitsthema: Fehlerursachenanalyse von Laborergebnissen mit Hilfe von AI",
       "degree_level": "Master's Thesis",
       "institution": "Infineon Technologies Austria",
@@ -1153,11 +1129,11 @@
       "description": "Master's thesis position at Infineon Technologies Austria in Villach. Research semiconductor technologies, testing methods, and power electronics under the guidance of senior R&D staff.",
       "url": "https://www.karriere.at/jobs/villach",
       "source": "Infineon Austria",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "infineon-583357",
+      "id": "infineon-214353",
       "title": "Masterarbeitsthema: Funktionale Chipstrukturen als Imprint-Indikator",
       "degree_level": "Master's Thesis",
       "institution": "Infineon Technologies Austria",
@@ -1175,11 +1151,11 @@
       "description": "Master's thesis position at Infineon Technologies Austria in Villach. Research semiconductor technologies, testing methods, and power electronics under the guidance of senior R&D staff.",
       "url": "https://www.karriere.at/jobs/villach",
       "source": "Infineon Austria",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "infineon-583357",
+      "id": "infineon-214353",
       "title": "Masterarbeitsthema: Optimierung der Analogen Testabdeckung eines Halbleiterchips",
       "degree_level": "Master's Thesis",
       "institution": "Infineon Technologies Austria",
@@ -1197,11 +1173,11 @@
       "description": "Master's thesis position at Infineon Technologies Austria in Villach. Research semiconductor technologies, testing methods, and power electronics under the guidance of senior R&D staff.",
       "url": "https://www.karriere.at/jobs/villach",
       "source": "Infineon Austria",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sba-468394",
+      "id": "sba-68891",
       "title": "Master Thesis: Combinatorial Security Testing for Hardware Malware Detection and Hardware Trojans",
       "degree_level": "Master's Thesis",
       "institution": "SBA Research",
@@ -1224,11 +1200,11 @@
       "description": "Master's thesis topic offered by SBA Research in Vienna in collaboration with Austrian universities (TU Wien, Uni Wien, TU Graz). Focus: Master Thesis: Combinatorial Security Testing for Hardware Malware Detection and Hardware Trojans.",
       "url": "https://www.sba-research.org/teaching/bachelor-master-phd-thesis-supervision/",
       "source": "SBA Research",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sba-142741",
+      "id": "sba-990309",
       "title": "Master Thesis: Web Application Security Testing and Automated Content-Injection Generation",
       "degree_level": "Master's Thesis",
       "institution": "SBA Research",
@@ -1250,11 +1226,11 @@
       "description": "Master's thesis topic offered by SBA Research in Vienna in collaboration with Austrian universities (TU Wien, Uni Wien, TU Graz). Focus: Master Thesis: Web Application Security Testing and Automated Content-Injection Generation.",
       "url": "https://www.sba-research.org/teaching/bachelor-master-phd-thesis-supervision/",
       "source": "SBA Research",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sba-411472",
+      "id": "sba-385042",
       "title": "Master Thesis: Privacy-Preserving Machine Learning and Homomorphic Encryption in Federated Systems",
       "degree_level": "Master's Thesis",
       "institution": "SBA Research",
@@ -1277,11 +1253,11 @@
       "description": "Master's thesis topic offered by SBA Research in Vienna in collaboration with Austrian universities (TU Wien, Uni Wien, TU Graz). Focus: Master Thesis: Privacy-Preserving Machine Learning and Homomorphic Encryption in Federated Systems.",
       "url": "https://www.sba-research.org/teaching/bachelor-master-phd-thesis-supervision/",
       "source": "SBA Research",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sba-275749",
+      "id": "sba-220570",
       "title": "Master Thesis: Cryptography Engineering and Protocol Implementations for Digital Identity & Wallets",
       "degree_level": "Master's Thesis",
       "institution": "SBA Research",
@@ -1303,11 +1279,11 @@
       "description": "Master's thesis topic offered by SBA Research in Vienna in collaboration with Austrian universities (TU Wien, Uni Wien, TU Graz). Focus: Master Thesis: Cryptography Engineering and Protocol Implementations for Digital Identity & Wallets.",
       "url": "https://www.sba-research.org/teaching/bachelor-master-phd-thesis-supervision/",
       "source": "SBA Research",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "sba-163619",
+      "id": "sba-727318",
       "title": "Master Thesis: IoT/Firmware Security Analysis and RISC-V Open CPU Core Fuzzing",
       "degree_level": "Master's Thesis",
       "institution": "SBA Research",
@@ -1330,11 +1306,11 @@
       "description": "Master's thesis topic offered by SBA Research in Vienna in collaboration with Austrian universities (TU Wien, Uni Wien, TU Graz). Focus: Master Thesis: IoT/Firmware Security Analysis and RISC-V Open CPU Core Fuzzing.",
       "url": "https://www.sba-research.org/teaching/bachelor-master-phd-thesis-supervision/",
       "source": "SBA Research",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "dynatrace-227261",
+      "id": "dynatrace-252808",
       "title": "Master Thesis: Large Language Models and Retrieval-Augmented Generation for Cloud Observability",
       "degree_level": "Master's Thesis",
       "institution": "Dynatrace Research Lab",
@@ -1357,11 +1333,11 @@
       "description": "Master's thesis project at Dynatrace in Linz in partnership with Austrian university labs (JKU Linz LIT Open Innovation Center / TU Wien). Focus: Master Thesis: Large Language Models and Retrieval-Augmented Generation for Cloud Observability. Apply via the Dynatrace Thesis Program.",
       "url": "https://www.dynatrace.com/careers/early-careers/#thesis",
       "source": "Dynatrace Research Lab",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "dynatrace-435247",
+      "id": "dynatrace-650606",
       "title": "Master Thesis: Automated Root-Cause Analysis and Causality Graphs in Distributed Cloud Microservices",
       "degree_level": "Master's Thesis",
       "institution": "Dynatrace Research Lab",
@@ -1384,11 +1360,11 @@
       "description": "Master's thesis project at Dynatrace in Vienna in partnership with Austrian university labs (JKU Linz LIT Open Innovation Center / TU Wien). Focus: Master Thesis: Automated Root-Cause Analysis and Causality Graphs in Distributed Cloud Microservices. Apply via the Dynatrace Thesis Program.",
       "url": "https://www.dynatrace.com/careers/early-careers/#thesis",
       "source": "Dynatrace Research Lab",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     },
     {
-      "id": "dynatrace-898900",
+      "id": "dynatrace-837396",
       "title": "Master Thesis: Memory Profiling and JIT Compiler Optimization for Cloud-Native Run-times",
       "degree_level": "Master's Thesis",
       "institution": "Dynatrace Research Lab",
@@ -1411,8 +1387,8 @@
       "description": "Master's thesis project at Dynatrace in Linz in partnership with Austrian university labs (JKU Linz LIT Open Innovation Center / TU Wien). Focus: Master Thesis: Memory Profiling and JIT Compiler Optimization for Cloud-Native Run-times. Apply via the Dynatrace Thesis Program.",
       "url": "https://www.dynatrace.com/careers/early-careers/#thesis",
       "source": "Dynatrace Research Lab",
-      "posted_at": "2026-11-15",
-      "first_seen": "2026-11-15"
+      "posted_at": "2026-11-16",
+      "first_seen": "2026-11-16"
     }
   ]
 }
