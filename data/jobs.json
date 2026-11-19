@@ -1,7 +1,69 @@
 {
-  "updated_at": "2026-11-18T14:59:41.330742+00:00",
-  "total_count": 38,
+  "updated_at": "2026-11-19T15:06:19.904057+00:00",
+  "total_count": 39,
   "jobs": [
+    {
+      "id": "karriere-10036534",
+      "title": "Senior Rust Developer (all genders)",
+      "company": "Commend International GmbH",
+      "company_logo": "https://kcdn.at/company/7370/3487263/logo-gross.companysquare.gif",
+      "location": "Salzburg",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Engineers ensure the excellence of our intercom solutions by designing, developing, and maintaining its core business logic. They contribute to test automation, solve complex technical challenges, and act as experts across projects.",
+      "url": "https://www.karriere.at/jobs/10036534",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-19",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Salzburg",
+      "salary": {
+        "min": 4800,
+        "max": 4800,
+        "currency": "EUR",
+        "period": "month",
+        "annual_min": 67200,
+        "annual_max": 67200,
+        "raw": "EUR 4,800 per month",
+        "label": "€67.2k+ /yr"
+      },
+      "cities": [
+        "Salzburg"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "karriere-10038403",
+      "title": "Data Engineer (all genders)",
+      "company": "smaXtec animal care GmbH",
+      "company_logo": "https://kcdn.at/company/109630/3563559/logo.companysquare.png",
+      "location": "Graz",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "We are looking for a motivated Data Engineer to join our Data Engineering team. In this role, you will build reliable data models, pipelines, and data products that help teams across smaXtec make better decisions and run operational use cases with high-quality data.",
+      "url": "https://www.karriere.at/jobs/10038403",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-19",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
+      "city": "Graz",
+      "salary": {
+        "min": 42000,
+        "max": 42000,
+        "currency": "EUR",
+        "period": "year",
+        "annual_min": 42000,
+        "annual_max": 42000,
+        "raw": "EUR 42,000 per year",
+        "label": "€42k+ /yr"
+      },
+      "cities": [
+        "Graz"
+      ],
+      "first_seen": "2026-11-09"
+    },
     {
       "id": "karriere-10038618",
       "title": "Cloud Data Platform Engineer (m/w/d)",
@@ -13,7 +75,7 @@
       "description": "Together with hokify and jobs.at, karriere.at is part of norika, House of Digital Recruiting. Together, we pool our expertise and commitment to the Austrian job market.",
       "url": "https://www.karriere.at/jobs/10038618",
       "source": "Karriere.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -45,7 +107,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -66,37 +128,6 @@
       "first_seen": "2026-11-02"
     },
     {
-      "id": "karriere-10038403",
-      "title": "Data Engineer (all genders)",
-      "company": "smaXtec animal care GmbH",
-      "company_logo": "https://kcdn.at/company/109630/3563559/logo.companysquare.png",
-      "location": "Graz",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "We are looking for a motivated Data Engineer to join our Data Engineering team. In this role, you will build reliable data models, pipelines, and data products that help teams across smaXtec make better decisions and run operational use cases with high-quality data.",
-      "url": "https://www.karriere.at/jobs/10038403",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-18",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Graz",
-      "salary": {
-        "min": 42000,
-        "max": 42000,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 42000,
-        "annual_max": 42000,
-        "raw": "EUR 42,000 per year",
-        "label": "€42k+ /yr"
-      },
-      "cities": [
-        "Graz"
-      ],
-      "first_seen": "2026-11-09"
-    },
-    {
       "id": "karriere-10033357",
       "title": "AI Automation Specialist & Executive Assistant to the C-Level (f/m/d)",
       "company": "Holzkern - Time for Nature GmbH",
@@ -107,7 +138,7 @@
       "description": "As our AI & Automation Specialist (f/m/d) , you will work closely with our CEO and CMO to fundamentally improve how we work through AI, automation, and technology.",
       "url": "https://www.karriere.at/jobs/10033357",
       "source": "Karriere.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "1+ years exp",
@@ -138,7 +169,7 @@
       "description": "Help us run and evolve the AWS infrastructure behind our spatial computing and AI products.",
       "url": "https://www.karriere.at/jobs/10039363",
       "source": "Karriere.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -169,7 +200,7 @@
       "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
       "url": "https://www.karriere.at/jobs/10037275",
       "source": "Karriere.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -190,111 +221,50 @@
       "first_seen": "2026-10-28"
     },
     {
-      "id": "arbeitnow-remote-full-stack-engineer-elevenmusic-301874",
-      "title": "Full-Stack Engineer - ElevenMusic",
-      "company": "ElevenLabs",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Engineering & Product"
-      ],
-      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
-      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-elevenmusic-301874",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
+      "id": "karriere-7912841",
+      "title": "IT-Systemadministrator (w/m/d)",
+      "company": "KERN engineering careers GmbH",
+      "company_logo": "https://kcdn.at/company/17783/2513736/logo.companysquare.gif",
+      "location": "Graz",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "IT-Systemadministrator (w/m/d) Zwischen Datenmanagement, Systemintegration & Prozessoptimierung 19.11.2026   Job-Nr.: 217051 Jetzt Bewerben Diese Rolle richtet sich an IT-Administrator...",
+      "url": "https://www.karriere.at/jobs/7912841",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-19",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
-      "city": "Remote",
+      "city": "Graz",
+      "salary": {
+        "min": 3500,
+        "max": 3500,
+        "currency": "EUR",
+        "period": "month",
+        "annual_min": 49000,
+        "annual_max": 49000,
+        "raw": "eur 3500",
+        "label": "€49k+ /yr"
+      },
       "cities": [
-        "Remote"
+        "Graz"
       ],
-      "first_seen": "2026-11-18"
+      "first_seen": "2026-11-19"
     },
     {
-      "id": "arbeitnow-remote-full-stack-engineer-backend-leaning-payments-engineering-51351",
-      "title": "Full-Stack Engineer (Backend Leaning) - Payments Engineering",
-      "company": "ElevenLabs",
+      "id": "arbeitnow-remote-principal-software-engineer-data-lakes-26266",
+      "title": "Principal Software Engineer, Data Lakes",
+      "company": "Fivetran",
       "company_logo": "",
       "location": "Remote",
       "category": "Data & AI",
       "tags": [
-        "Engineering & Product"
+        "Engineering Department"
       ],
-      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
-      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-backend-leaning-payments-engineering-51351",
+      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;From Fivetran’s founding until now, our mission has remained the same: to make access to data as simple and reliable as electricity. With Fivetran, customer data arrives in their warehouses, canonical and ready to query, with no...",
+      "url": "https://www.arbeitnow.com/jobs/companies/fivetran/remote-principal-software-engineer-data-lakes-26266",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-18"
-    },
-    {
-      "id": "arbeitnow-remote-full-stack-engineer-backend-leaning-platform-engineering-8063",
-      "title": "Full-Stack Engineer (Backend Leaning) - Platform Engineering",
-      "company": "ElevenLabs",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Engineering & Product"
-      ],
-      "description": " About ElevenLabs  ElevenLabs is an AI research and product company transforming how we interact with technology.  We launched in January 2023 with the first human-like AI voice model. Today, we serve millions of users and thousands of businesses - from fast-growing startups to l...",
-      "url": "https://www.arbeitnow.com/jobs/companies/elevenlabs/remote-full-stack-engineer-backend-leaning-platform-engineering-8063",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-18"
-    },
-    {
-      "id": "arbeitnow-sre-platform-manager-paris-167482",
-      "title": "SRE Platform Manager",
-      "company": "Yubo",
-      "company_logo": "",
-      "location": "Paris - Full Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Platform Engineering"
-      ],
-      "description": "  Who we are     Yubo is the instantly social, social app: the leading real-time social discovery platform where you can meet new people for friendship, crushes and community. Our mission is to help young adults find community - whoever they are, wherever they are and whenever th...",
-      "url": "https://www.arbeitnow.fr/jobs/companies/yubo/sre-platform-manager-paris-167482",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
-      "seniority": "Lead / Manager",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-18"
-    },
-    {
-      "id": "arbeitnow-remote-cloud-native-architect-strategic-accounts-emea-418277",
-      "title": "Cloud Native Architect, Strategic Accounts (EMEA)",
-      "company": "purestorage",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Sales"
-      ],
-      "description": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Everpure (NYSE: P) has evolved from storage pioneer to data platform, closing fiscal 2026 with $3.7 billion in revenue, its first billion-dollar quarter, and accelerating growth into FY27. Our strategic agenda spans the companie...",
-      "url": "https://www.arbeitnow.fr/jobs/companies/purestorage/remote-cloud-native-architect-strategic-accounts-emea-418277",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -302,30 +272,165 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-18"
+      "first_seen": "2026-11-19"
     },
     {
-      "id": "arbeitnow-senior-data-architect-remote-from-europe-amsterdam-328688",
-      "title": "Senior Data Architect (remote from Europe)",
-      "company": "AlmavivA de Belgique",
+      "id": "arbeitnow-remote-mobile-developer-utrecht-286555",
+      "title": "Mobile Developer",
+      "company": "Luscii",
       "company_logo": "",
       "location": "Remote job",
-      "category": "Data & AI",
+      "category": "Frontend",
       "tags": [
+        "Software Development",
         "Remote"
       ],
-      "description": "   Data Architecture &amp; Governance    Designs scalable and reusable data architectures to support transversal use across multiple domains and systems.  Leads the definition and standardization of enterprise-wide common data models (submissions, cases, products, etc.).  Develop...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/almaviva-de-belgique/senior-data-architect-remote-from-europe-amsterdam-328688",
+      "description": " At Luscii, we develop several applications within the OMRON Digital Health Circle, including the Luscii Thuismeten app and OMRON Connect. Together, we build technology that makes healthcare more accessible, giving patients and healthcare professionals more space to focus on care...",
+      "url": "https://www.arbeitnow.nl/jobs/companies/luscii/remote-mobile-developer-utrecht-286555",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-18",
-      "seniority": "Senior",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
+      "experience_level": "2-5 years exp",
       "city": "Remote",
+      "salary": {
+        "min": 4600,
+        "max": 5900,
+        "currency": "EUR",
+        "period": "month",
+        "annual_min": 64400,
+        "annual_max": 82600,
+        "raw": "EUR 4,600 - 5,900 per month",
+        "label": "€64.4k–82.6k /yr"
+      },
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-18"
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobicy-163264",
+      "title": "iOS Developer - AI Finance Agent",
+      "company": "BJAK",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/11/3597740ddc1e-221.webp",
+      "location": "Austria",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "About BJAK The original mission of BJAK is we believe people deserve smarter ways to plan, save and grow their money. This is the origin of our name. Started in 2019, we built the first mobile-first, insurance platform, enabling insurance to be accessible online by millions in th...",
+      "url": "https://jobicy.com/jobs/163264-ios-developer-ai-finance-agent",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Austria (Other)",
+      "salary": {
+        "min": 80000,
+        "max": 80000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 80000,
+        "annual_max": 80000,
+        "raw": "$80,000",
+        "label": "$80k+ /yr"
+      },
+      "cities": [
+        "Austria (Other)"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobicy-163259",
+      "title": "Backend Software Engineer - AI Finance Agent",
+      "company": "BJAK",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/11/3597740ddc1e-221.webp",
+      "location": "Austria",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "About BJAK The original mission of BJAK is we believe people deserve smarter ways to plan, save and grow their money. This is the origin of our name. Started in 2019, we built the first mobile-first, insurance platform, enabling insurance to be accessible online by millions in th...",
+      "url": "https://jobicy.com/jobs/163259-backend-software-engineer-ai-finance-agent",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Austria (Other)",
+      "salary": {
+        "min": 125000,
+        "max": 125000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 125000,
+        "annual_max": 125000,
+        "raw": "$125,000",
+        "label": "$125k+ /yr"
+      },
+      "cities": [
+        "Austria (Other)"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobicy-163238",
+      "title": "Android Developer - AI Finance Agent",
+      "company": "BJAK",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/11/3597740ddc1e-221.webp",
+      "location": "Austria",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "About BJAK The original mission of BJAK is we believe people deserve smarter ways to plan, save and grow their money. This is the origin of our name. Started in 2019, we built the first mobile-first, insurance platform, enabling insurance to be accessible online by millions in th...",
+      "url": "https://jobicy.com/jobs/163238-android-developer-ai-finance-agent",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Austria (Other)",
+      "salary": {
+        "min": 105000,
+        "max": 105000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 105000,
+        "annual_max": 105000,
+        "raw": "$105,000",
+        "label": "$105k+ /yr"
+      },
+      "cities": [
+        "Austria (Other)"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobicy-163236",
+      "title": "Applied AI Engineer",
+      "company": "BJAK",
+      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2026/11/3597740ddc1e-221.webp",
+      "location": "Austria",
+      "category": "Data & AI",
+      "tags": [],
+      "description": "About BJAK The original mission of BJAK is we believe people deserve smarter ways to plan, save and grow their money. This is the origin of our name. Started in 2019, we built the first mobile-first, insurance platform, enabling insurance to be accessible online by millions in th...",
+      "url": "https://jobicy.com/jobs/163236-applied-ai-engineer-4",
+      "source": "Jobicy / Stepstone Partner Network",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Austria (Other)",
+      "salary": {
+        "min": 135000,
+        "max": 135000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 135000,
+        "annual_max": 135000,
+        "raw": "$135,000",
+        "label": "$135k+ /yr"
+      },
+      "cities": [
+        "Austria (Other)"
+      ],
+      "first_seen": "2026-11-19"
     },
     {
       "id": "remotive-2091137",
@@ -350,6 +455,16 @@
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
       "city": "Remote",
+      "salary": {
+        "min": 80000,
+        "max": 80000,
+        "currency": "USD",
+        "period": "year",
+        "annual_min": 80000,
+        "annual_max": 80000,
+        "raw": "usd 80,000",
+        "label": "$80k+ /yr"
+      },
       "cities": [
         "Remote"
       ],
@@ -471,27 +586,6 @@
       "first_seen": "2026-10-29"
     },
     {
-      "id": "remotive-2091134",
-      "title": "Head of Engineering",
-      "company": "Lemon.io",
-      "company_logo": "https://remotive.com/job/2091134/logo",
-      "location": "Worldwide",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "        About    Lemon.io     Lemon.io  is a profitable, growing talent marketplace that connects vetted senior engineers with companies that need them. We’ve been in business for 10 years, have 60 people across Ukraine, Europe, Canada, and the US, and process over $16M in annual...",
-      "url": "https://remotive.com/remote-jobs/software-development/head-of-engineering-2091134",
-      "source": "Remotive",
-      "posted_at": "2026-10-26",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "10+ years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-10-28"
-    },
-    {
       "id": "remotive-2091161",
       "title": "AI Trainer - Video Annotation",
       "company": "iMerit Technology",
@@ -513,130 +607,130 @@
       "first_seen": "2026-10-24"
     },
     {
-      "id": "jobleads-data-engineer-for-ai-driven-analytics--elsbethen--e2d6c084b0dce00608e60edec3864afae",
-      "title": "Data Engineer for AI-Driven Analytics",
-      "company": "Red Bull GmbH",
+      "id": "jobleads-embedded-software-lifecycle-engineer-80-100--lavamund--ee0be93ee4d9003e09cff8fbf7085044d",
+      "title": "Embedded Software Lifecycle Engineer (80- 100%)",
+      "company": "all about automation",
       "company_logo": "",
-      "location": "Elsbethen",
-      "category": "Data & AI",
+      "location": "Lavamünd",
+      "category": "Software Engineering",
       "tags": [],
-      "description": "Data Engineer for AI-Driven Analytics at Red Bull GmbH in Elsbethen. Vor Ort, EUR 24.000 - 29.000",
-      "url": "https://www.jobleads.com/at/job/data-engineer-for-ai-driven-analytics--elsbethen--e2d6c084b0dce00608e60edec3864afae",
+      "description": "Embedded Software Lifecycle Engineer (80- 100%) at all about automation in Lavamünd. Vor Ort, EUR 60.000 - 80.000, Flexible working hours, Home office options, Ergonomic workplaces, +1",
+      "url": "https://www.jobleads.com/at/job/embedded-software-lifecycle-engineer-80-100--lavamund--ee0be93ee4d9003e09cff8fbf7085044d",
       "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Carinthia",
+      "cities": [
+        "Carinthia"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobleads-software-engineer-web-configurator-flexible-hours--wien--e67760913d97ced83bbff74e941004893",
+      "title": "Software Engineer - Web Configurator Flexible Hours",
+      "company": "Noir",
+      "company_logo": "",
+      "location": "Wien",
+      "category": "Frontend",
+      "tags": [],
+      "description": "Software Engineer - Web Configurator Flexible Hours at Noir in Wien. Hybrid, EUR 60.000 - 80.000",
+      "url": "https://www.jobleads.com/at/job/software-engineer-web-configurator-flexible-hours--wien--e67760913d97ced83bbff74e941004893",
+      "source": "JobLeads.com",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Vienna",
+      "cities": [
+        "Vienna"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobleads-software-engineer--wien--e80489a88d97b55a48d8dfbe9b57607eb",
+      "title": "Software Engineer",
+      "company": "Noir",
+      "company_logo": "",
+      "location": "Wien",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Software Engineer at Noir in Wien. Hybrid, EUR 60.000 - 80.000",
+      "url": "https://www.jobleads.com/at/job/software-engineer--wien--e80489a88d97b55a48d8dfbe9b57607eb",
+      "source": "JobLeads.com",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Vienna",
+      "cities": [
+        "Vienna"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobleads-application-engineer-software--graz--ee3e46b21027253b75d72a91e607eba9c",
+      "title": "Application Engineer (Software)",
+      "company": "Renesas Electronics Corp.",
+      "company_logo": "",
+      "location": "Graz",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Application Engineer (Software) at Renesas Electronics Corp. in Graz. Vor Ort, EUR 45.000 - 65.000",
+      "url": "https://www.jobleads.com/at/job/application-engineer-software--graz--ee3e46b21027253b75d72a91e607eba9c",
+      "source": "JobLeads.com",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Graz",
+      "cities": [
+        "Graz"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobleads-embedded-software-lifecycle-engineer-flexible-hours--lavamund--e010cfb1bdaf4a4a26556c7eaec68e86a",
+      "title": "Embedded Software Lifecycle Engineer — Flexible Hours",
+      "company": "all about automation",
+      "company_logo": "",
+      "location": "Lavamünd",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Embedded Software Lifecycle Engineer — Flexible Hours at all about automation in Lavamünd. Hybrid, EUR 60.000 - 80.000, Flexible working hours, Home office options, Ergonomic workplaces, +1",
+      "url": "https://www.jobleads.com/at/job/embedded-software-lifecycle-engineer-flexible-hours--lavamund--e010cfb1bdaf4a4a26556c7eaec68e86a",
+      "source": "JobLeads.com",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
+      "relocation_support": "Not Specified",
+      "experience_level": "2-5 years exp",
+      "city": "Carinthia",
+      "cities": [
+        "Carinthia"
+      ],
+      "first_seen": "2026-11-19"
+    },
+    {
+      "id": "jobleads-staff-software-engineer-remote-build-scalable-systems--austria--ec87164275918d21482350f3e59a7e736",
+      "title": "Staff Software Engineer - Remote, Build Scalable Systems",
+      "company": "Doit",
+      "company_logo": "",
+      "location": "Österreich",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "Staff Software Engineer - Remote, Build Scalable Systems at Doit in Österreich. Remote, EUR 90.000 - 130.000",
+      "url": "https://www.jobleads.com/at/job/staff-software-engineer-remote-build-scalable-systems--austria--ec87164275918d21482350f3e59a7e736",
+      "source": "JobLeads.com",
+      "posted_at": "2026-11-19",
+      "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Austria (Other)",
       "cities": [
         "Austria (Other)"
       ],
-      "first_seen": "2026-11-17"
-    },
-    {
-      "id": "jobleads-data-engineer-44457--wien--e315355b09f24de07f5bce08c277fe3e4",
-      "title": "Data Engineer (44457)",
-      "company": "CoolPeople Technology",
-      "company_logo": "",
-      "location": "Wien",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "Data Engineer (44457) at CoolPeople Technology in Wien. Vor Ort, EUR 70.000 - 110.000",
-      "url": "https://www.jobleads.com/at/job/data-engineer-44457--wien--e315355b09f24de07f5bce08c277fe3e4",
-      "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Vienna",
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-17"
-    },
-    {
-      "id": "jobleads-data-engineer-m-w-d--wien--e77233b21e534e432e3f57dc36b47a7ff",
-      "title": "Data Engineer (m/w/d)",
-      "company": "softwareXperts GmbH",
-      "company_logo": "",
-      "location": "Wien",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "Data Engineer (m/w/d) at softwareXperts GmbH in Wien. Vor Ort, EUR 60.000 - 80.000",
-      "url": "https://www.jobleads.com/at/job/data-engineer-m-w-d--wien--e77233b21e534e432e3f57dc36b47a7ff",
-      "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Vienna",
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-17"
-    },
-    {
-      "id": "jobleads-data-engineer-drwn--wien--e15870e865100439d31ab3d4b2e7feda1",
-      "title": "Data Engineer (DRWN)",
-      "company": "Darwin Recruitment",
-      "company_logo": "",
-      "location": "Wien",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "Data Engineer (DRWN) at Darwin Recruitment in Wien. Remote, EUR 96.000 - 165.000",
-      "url": "https://www.jobleads.com/at/job/data-engineer-drwn--wien--e15870e865100439d31ab3d4b2e7feda1",
-      "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Vienna",
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-17"
-    },
-    {
-      "id": "jobleads-data-engineer-build-scalable-cloud-data-platforms--wien--e7de37a632d8aa40b35529f4c939753a0",
-      "title": "Data Engineer: Build Scalable Cloud Data Platforms",
-      "company": "softwareXperts GmbH",
-      "company_logo": "",
-      "location": "Wien",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "Data Engineer: Build Scalable Cloud Data Platforms at softwareXperts GmbH in Wien. Vor Ort, EUR 60.000 - 80.000",
-      "url": "https://www.jobleads.com/at/job/data-engineer-build-scalable-cloud-data-platforms--wien--e7de37a632d8aa40b35529f4c939753a0",
-      "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Vienna",
-      "cities": [
-        "Vienna"
-      ],
-      "first_seen": "2026-11-18"
-    },
-    {
-      "id": "jobleads-senior-data-engineer-build-scalable-data-platforms--linz--ed84a92146f0bb448b7ee6378ce0c6010",
-      "title": "Senior Data Engineer: Build Scalable Data Platforms",
-      "company": "Tieto",
-      "company_logo": "",
-      "location": "Linz",
-      "category": "Data & AI",
-      "tags": [],
-      "description": "Senior Data Engineer: Build Scalable Data Platforms at Tieto in Linz. Hybrid, EUR 40.000 - 48.000, Flexible hybrid work model, Laptop and smartphone for private use, Health programs, +5",
-      "url": "https://www.jobleads.com/at/job/senior-data-engineer-build-scalable-data-platforms--linz--ed84a92146f0bb448b7ee6378ce0c6010",
-      "source": "JobLeads.com",
-      "posted_at": "2026-11-18",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Linz",
-      "cities": [
-        "Linz"
-      ],
-      "first_seen": "2026-11-17"
+      "first_seen": "2026-11-19"
     },
     {
       "id": "ait-272796",
@@ -646,24 +740,14 @@
       "location": "Vienna",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
+      "description": "Vacancies\nSearch\nSign in / Sign up\nTHIS JOB IS CLOSED FOR NEW APPLICATIONS.\n\nPlease go to our open jobs for more jobs.",
       "url": "https://jobs.ait.ac.at/Job/272796",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
-      "seniority": "Internship / Student",
+      "posted_at": "2026-11-19",
+      "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
-      "salary": {
-        "min": 56784,
-        "max": 56784,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 56784,
-        "annual_max": 56784,
-        "raw": "eur 56.784,--",
-        "label": "€56.8k+ /yr"
-      },
       "cities": [
         "Vienna"
       ],
@@ -680,7 +764,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273301",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -711,7 +795,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -742,7 +826,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -773,7 +857,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -804,7 +888,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -835,7 +919,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -866,7 +950,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -897,7 +981,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -1015,30 +1099,30 @@
       "first_seen": "2026-11-09"
     },
     {
-      "id": "devjobs-98b10d70db9105a6bdcbe41bafad409c",
+      "id": "devjobs-491c171e1c90cfb82d687b7c0dde7b93",
       "title": "Current searches",
       "company": "Tech Company",
       "company_logo": "",
       "location": "Vienna",
       "category": "Software Engineering",
       "tags": [],
-      "description": "Your role in the team We're looking for a QA Engineer who doesn't just find bugs—they prevent them. You'll be embedded in a cross-functional product team, working closely with developers and a Product Owner to build quality in from day one.",
-      "url": "https://en.devjobs.at/job/98b10d70db9105a6bdcbe41bafad409c",
+      "description": "Your role in the team Build the function.",
+      "url": "https://en.devjobs.at/job/491c171e1c90cfb82d687b7c0dde7b93",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-18",
+      "posted_at": "2026-11-19",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
       "city": "Vienna",
       "salary": {
-        "min": 47255,
-        "max": 47255,
+        "min": 3954,
+        "max": 3954,
         "currency": "EUR",
-        "period": "year",
-        "annual_min": 47255,
-        "annual_max": 47255,
-        "raw": "EUR 47,255 per year",
-        "label": "€47.3k+ /yr"
+        "period": "month",
+        "annual_min": 55356,
+        "annual_max": 55356,
+        "raw": "EUR 3,954 per month",
+        "label": "€55.4k+ /yr"
       },
       "cities": [
         "Vienna"
