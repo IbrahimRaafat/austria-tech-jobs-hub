@@ -1,7 +1,38 @@
 {
-  "updated_at": "2026-11-24T16:52:36.574708+00:00",
-  "total_count": 33,
+  "updated_at": "2026-11-25T16:41:38.527438+00:00",
+  "total_count": 32,
   "jobs": [
+    {
+      "id": "karriere-10037281",
+      "title": "Software Developer - Cybersecurity (f/m/d)",
+      "company": "Hitachi Rail Austria GmbH",
+      "company_logo": "https://kcdn.at/company/14372/3959719/cs_01_01.companysquare.jpg",
+      "location": "Wien",
+      "category": "Software Engineering",
+      "tags": [],
+      "description": "With its multicultural team of diverse backgrounds, Hitachi Rail in Austria supports domestic and international rail operators with technologies and expertise in the field of signaling technology.",
+      "url": "https://www.karriere.at/jobs/10037281",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-25",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "3+ years exp",
+      "city": "Vienna",
+      "salary": {
+        "min": 60000,
+        "max": 60000,
+        "currency": "EUR",
+        "period": "year",
+        "annual_min": 60000,
+        "annual_max": 60000,
+        "raw": "EUR 60,000 per year",
+        "label": "€60k+ /yr"
+      },
+      "cities": [
+        "Vienna"
+      ],
+      "first_seen": "2026-11-25"
+    },
     {
       "id": "karriere-10040106",
       "title": "Analytics Engineer (m/w/d) — BI & Data Products",
@@ -13,7 +44,7 @@
       "description": "At norika, karriere.at, hokify and jobs.at bring together their expertise to connect people and employers. Our central Data & AI team builds the data platform and analytical products that enable informed business decisions across the group.",
       "url": "https://www.karriere.at/jobs/10040106",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -45,7 +76,7 @@
       "description": "At norika, karriere.at, hokify and jobs.at bring together their expertise to connect people and employers. Our central Data & AI team builds and operates the data platform that enables reliable data integration, analytics, reporting, and AI use cases across the group.",
       "url": "https://www.karriere.at/jobs/10038618",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -77,7 +108,7 @@
       "description": "Join us for the \"Pathways to Google Data Centers\" event on 12th November, 2026, an evening in Kronstorf where you can explore high-impact career opportunities, meet the team, and see how your skilled background fits into our shared future.",
       "url": "https://www.karriere.at/jobs/10037173",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -108,7 +139,7 @@
       "description": "We are looking for a motivated Data Engineer to join our Data Engineering team. In this role, you will build reliable data models, pipelines, and data products that help teams across smaXtec make better decisions and run operational use cases with high-quality data.",
       "url": "https://www.karriere.at/jobs/10038403",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -129,37 +160,6 @@
       "first_seen": "2026-11-09"
     },
     {
-      "id": "karriere-10032002",
-      "title": "Test Case Automation Engineer - Software Tester (m/f/x)",
-      "company": "ISIS Papyrus Europe AG",
-      "company_logo": "https://kcdn.at/company/3229/3499887/logo-gross.companysquare.gif",
-      "location": "Brunn am Gebirge",
-      "category": "Software Engineering",
-      "tags": [],
-      "description": "ISIS Papyrus is a profitable, privately owned group of companies founded in Austria. Our software solution enables business applications for digital transformation and communication.",
-      "url": "https://www.karriere.at/jobs/10032002",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-24",
-      "seniority": "Senior",
-      "relocation_support": "Not Specified",
-      "experience_level": "5+ years exp",
-      "city": "Austria (Other)",
-      "salary": {
-        "min": 41284,
-        "max": 41284,
-        "currency": "EUR",
-        "period": "year",
-        "annual_min": 41284,
-        "annual_max": 41284,
-        "raw": "41.283,90 €",
-        "label": "€41.3k+ /yr"
-      },
-      "cities": [
-        "Austria (Other)"
-      ],
-      "first_seen": "2026-11-24"
-    },
-    {
       "id": "karriere-10037729",
       "title": "AI & Automation Engineer (f/m/x)",
       "company": "MP Corporate Finance GmbH",
@@ -170,7 +170,7 @@
       "description": "You don't just enjoy writing code -- you want to see it used on live deals ? You thrive in a fast-paced, dynamic environment where finance meets technology ? Working alongside colleagues from more than 25 countries on cross-border M&A transactions across Europe is something that...",
       "url": "https://www.karriere.at/jobs/10037729",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -191,37 +191,6 @@
       "first_seen": "2026-11-22"
     },
     {
-      "id": "karriere-10039363",
-      "title": "DevOps Engineer (Cloud Infrastructure)",
-      "company": "AMRAX",
-      "company_logo": "https://kcdn.at/company/119723/3491831/amrax-logo_karriere.at.companysquare.jpg",
-      "location": "Urstein (Gemeinde Puch bei Hallein)",
-      "category": "DevOps & Cloud",
-      "tags": [],
-      "description": "Help us run and evolve the AWS infrastructure behind our spatial computing and AI products.",
-      "url": "https://www.karriere.at/jobs/10039363",
-      "source": "Karriere.at",
-      "posted_at": "2026-11-24",
-      "seniority": "Junior",
-      "relocation_support": "Not Specified",
-      "experience_level": "2+ years exp",
-      "city": "Austria (Other)",
-      "salary": {
-        "min": 4061,
-        "max": 4061,
-        "currency": "EUR",
-        "period": "month",
-        "annual_min": 56854,
-        "annual_max": 56854,
-        "raw": "EUR 4,061 per month",
-        "label": "€56.9k+ /yr"
-      },
-      "cities": [
-        "Austria (Other)"
-      ],
-      "first_seen": "2026-11-17"
-    },
-    {
       "id": "karriere-10037275",
       "title": "Product Owner / Lead - Devops Team (f/m/d)",
       "company": "Hitachi Rail Austria GmbH",
@@ -232,7 +201,7 @@
       "description": "Austria is a full system provider and global supplier of train control technology and traffic management systems (f.",
       "url": "https://www.karriere.at/jobs/10037275",
       "source": "Karriere.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "2+ years exp",
@@ -253,100 +222,73 @@
       "first_seen": "2026-10-28"
     },
     {
-      "id": "arbeitnow-fullstack-engineer-prospect-data-solutions-munich-211449",
-      "title": "FullStack Engineer - Prospect Data Solutions",
-      "company": "Constructor",
-      "company_logo": "",
-      "location": "Remote",
-      "category": "Data & AI",
-      "tags": [
-        "Engineering"
-      ],
-      "description": "  About You   You have a knack for solving intricate Software Development problems. You're driven by the idea of writing code that simplifies life for millions of users globally. You're committed to continuous learning and enjoy tackling new challenges. Pair programming, code rev...",
-      "url": "https://www.arbeitnow.com/jobs/companies/constructor/fullstack-engineer-prospect-data-solutions-munich-211449",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-24",
-      "seniority": "Mid-Level",
+      "id": "karriere-10039363",
+      "title": "DevOps Engineer (Cloud Infrastructure)",
+      "company": "AMRAX",
+      "company_logo": "https://kcdn.at/company/119723/3491831/amrax-logo_karriere.at.companysquare.jpg",
+      "location": "Urstein (Gemeinde Puch bei Hallein)",
+      "category": "DevOps & Cloud",
+      "tags": [],
+      "description": "Help us run and evolve the AWS infrastructure behind our spatial computing and AI products.",
+      "url": "https://www.karriere.at/jobs/10039363",
+      "source": "Karriere.at",
+      "posted_at": "2026-11-25",
+      "seniority": "Junior",
       "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
+      "experience_level": "2+ years exp",
+      "city": "Austria (Other)",
       "salary": {
-        "min": 80000,
-        "max": 80000,
-        "currency": "USD",
-        "period": "year",
-        "annual_min": 80000,
-        "annual_max": 80000,
-        "raw": "$80k",
-        "label": "$80k+ /yr"
+        "min": 4061,
+        "max": 4061,
+        "currency": "EUR",
+        "period": "month",
+        "annual_min": 56854,
+        "annual_max": 56854,
+        "raw": "EUR 4,061 per month",
+        "label": "€56.9k+ /yr"
       },
       "cities": [
-        "Remote"
+        "Austria (Other)"
       ],
-      "first_seen": "2026-11-24"
+      "first_seen": "2026-11-17"
     },
     {
-      "id": "arbeitnow-remote-software-engineer-core-180673",
-      "title": "Software Engineer: Core",
-      "company": "Constructor",
+      "id": "arbeitnow-remote-senior-java-test-automation-engineer-110894",
+      "title": "(Senior) Java Test Automation Engineer (m/f/d)",
+      "company": "ecosio",
       "company_logo": "",
-      "location": "Remote",
+      "location": "Austria, Spain, UK, Italy, Hungary, Portugal, Croatia - Remote",
       "category": "Data & AI",
       "tags": [
-        "Engineering"
+        "Messaging Development"
       ],
-      "description": "  About Us   Constructor is the next-generation platform for search and discovery in ecommerce, built to explicitly optimize for metrics like revenue, conversion rate, and profit. Our search engine is entirely invented in-house utilizing transformers and generative LLMs, and we u...",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/constructor/remote-software-engineer-core-180673",
+      "description": "&lt;p&gt;ecosio is a fast-growing, innovative service company and a leading provider of B2B integration, specialising in electronic data interchange (EDI), Web EDI and e-invoicing. ecosio is part of Vertex, Inc., a leading global provider of indirect tax solutions listed on Nasda...",
+      "url": "https://www.arbeitnow.com/jobs/companies/ecosio/remote-senior-java-test-automation-engineer-110894",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-24",
-      "seniority": "Mid-Level",
-      "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
-      "city": "Remote",
-      "cities": [
-        "Remote"
-      ],
-      "first_seen": "2026-11-24"
-    },
-    {
-      "id": "arbeitnow-staff-product-engineer-saas-remote-amsterdam-176256",
-      "title": "Staff Product Engineer ( SaaS / Remote )",
-      "company": "Publitas.com B.V.",
-      "company_logo": "",
-      "location": "Remote job",
-      "category": "Data & AI",
-      "tags": [
-        "Product",
-        "Remote"
-      ],
-      "description": "   Ready to own it, build it, and grow it?        The Mission:      Publitas lets people, and increasingly agents, create, host and distribute digital flyers and catalogues for retail brands. Our customers include ALDI, IKEA, Carrefour, Metro and Decathlon. Right now we’re buildi...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/publitascom-bv/staff-product-engineer-saas-remote-amsterdam-176256",
-      "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
+      "experience_level": "5+ years exp",
       "city": "Remote",
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-24"
+      "first_seen": "2026-11-25"
     },
     {
-      "id": "arbeitnow-remote-ai-engineer-rotterdam-22878",
-      "title": "AI Engineer",
-      "company": "AnywhereNow",
+      "id": "arbeitnow-remote-full-stack-developer-java-react-492442",
+      "title": "Full Stack Developer - Java & React (f/m/d)",
+      "company": "ecosio",
       "company_logo": "",
-      "location": "Remote job",
+      "location": "Austria, Spain, UK, Italy, Hungary, Portugal, Croatia - Remote",
       "category": "Data & AI",
       "tags": [
-        "Product Development",
-        "Remote"
+        "Web App Development"
       ],
-      "description": " Founded in 2010 in the Netherlands,  AnywhereNow  is a global leader in Enterprise Dialogue Management, with a vision to ensure every employee and customer feels heard, understood, and valued.    Today, our team of approximately 240 employees spans 22 countries, supporting more ...",
-      "url": "https://www.arbeitnow.nl/jobs/companies/anywherenow/remote-ai-engineer-rotterdam-22878",
+      "description": "&lt;div&gt;\n&lt;h2 class=&quot;title&quot;&gt;Company Description&lt;/h2&gt;\n&lt;/div&gt;\n&lt;div class=&quot;wysiwyg&quot;&gt;\n&lt;p&gt;ecosio is a fast-growing, innovative service company and a leading provider of B2B integration, specialising in electronic data interchange (ED...",
+      "url": "https://www.arbeitnow.com/jobs/companies/ecosio/remote-full-stack-developer-java-react-492442",
       "source": "Arbeitnow / Indeed Network",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Lead / Manager",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -354,38 +296,64 @@
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-23"
+      "first_seen": "2026-11-25"
     },
     {
-      "id": "jobicy-164087",
-      "title": "Staff Security Engineer",
-      "company": "OpenSea",
-      "company_logo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2022/02/c66c7f48ebd8a4287d879b26995a5edc.jpeg",
-      "location": "Europe,  USA",
+      "id": "arbeitnow-remote-senior-product-manager-berlin-118232",
+      "title": "Senior Product Manager",
+      "company": "Nucs AI",
+      "company_logo": "",
+      "location": "Remote job",
       "category": "Data & AI",
-      "tags": [],
-      "description": "OpenSea is building the gateway to the onchain economy - a rich world of communities, assets &amp; creative expression uniquely possible with native digital ownership. Our products support millions of users and have helped shape onchain markets that exist today—and we're just get...",
-      "url": "https://jobicy.com/jobs/164087-staff-security-engineer-2",
-      "source": "Jobicy / Stepstone Partner Network",
-      "posted_at": "2026-11-24",
+      "tags": [
+        "Remote"
+      ],
+      "description": "   About Nucs AI     Nucs AI is revolutionizing cancer care through cutting-edge AI and medical imaging technology. Founded in 2024 by a multidisciplinary team of oncologists, AI researchers, and healthcare innovators, we’re tackling one of medicine’s most pressing challenges: th...",
+      "url": "https://www.arbeitnow.com/jobs/companies/nucs-ai/remote-senior-product-manager-berlin-118232",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
-      "experience_level": "2-5 years exp",
+      "experience_level": "5+ years exp",
+      "city": "Remote",
+      "cities": [
+        "Remote"
+      ],
+      "first_seen": "2026-11-25"
+    },
+    {
+      "id": "arbeitnow-remote-senior-engineering-team-lead-paris-127335",
+      "title": "Senior Engineering Team Lead",
+      "company": "Adikteev",
+      "company_logo": "",
+      "location": "Remote job",
+      "category": "Data & AI",
+      "tags": [
+        "Engineering",
+        "Remote"
+      ],
+      "description": "   WHO WE ARE       Adikteev is an AdTech company that helps mobile app publishers grow their revenue through targeted advertising. We deliver personalized ads that drive users to install an app or re-engage with one they've stopped using.&nbsp;      Our clients are mostly mobile...",
+      "url": "https://www.arbeitnow.fr/jobs/companies/adikteev/remote-senior-engineering-team-lead-paris-127335",
+      "source": "Arbeitnow / Indeed Network",
+      "posted_at": "2026-11-25",
+      "seniority": "Senior",
+      "relocation_support": "Not Specified",
+      "experience_level": "5+ years exp",
       "city": "Remote",
       "salary": {
-        "min": 200000,
-        "max": 295000,
-        "currency": "USD",
+        "min": 100000,
+        "max": 120000,
+        "currency": "EUR",
         "period": "year",
-        "annual_min": 200000,
-        "annual_max": 295000,
-        "raw": "USD 200,000 - 295,000 per year",
-        "label": "$200k–295k /yr"
+        "annual_min": 100000,
+        "annual_max": 120000,
+        "raw": "EUR 100,000 - 120,000 per year",
+        "label": "€100k–120k /yr"
       },
       "cities": [
         "Remote"
       ],
-      "first_seen": "2026-11-24"
+      "first_seen": "2026-11-25"
     },
     {
       "id": "remotive-2091137",
@@ -606,7 +574,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/274379",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -637,7 +605,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273301",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -668,7 +636,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270413",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Junior",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -699,7 +667,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/272680",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -730,7 +698,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/273190",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Internship / Student",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -761,7 +729,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/273043",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -792,7 +760,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of Advanced Computing Austria and AIT.  It brings together top-level expertise in high-performance computing, artif...",
       "url": "https://jobs.ait.ac.at/Job/273044",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -823,7 +791,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nAI:AT – the AI Factory Austria – is making Austria a hotspot for Artificial Intelligence in Europe.\n\n \n\nAI:AT is a joint project of AIT and Advanced Computing Austria. It brings together top-level expertise in high-performance computing, artifi...",
       "url": "https://jobs.ait.ac.at/Job/266176",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
@@ -854,7 +822,7 @@
       "description": "Vacancies\nSearch\nSign in / Sign up\n\nThe AIT Austrian Institute of Technology is Austria’s largest Research and Technology Organisation (RTO). We aim to transform scientific excellence into innovation with impact. Together with our partners, we develop technologies and solutions f...",
       "url": "https://jobs.ait.ac.at/Job/270960",
       "source": "AIT Austrian Institute of Technology",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Senior",
       "relocation_support": "Not Specified",
       "experience_level": "5+ years exp",
@@ -982,7 +950,7 @@
       "description": "Your role in the team We are recruiting an ambitious Biomedical Data Scientist or Bioinformatician for EU-funded research that employs AI methods to accelerate the development and clinical translation of CAR T-cell immunotherapies.",
       "url": "https://en.devjobs.at/job/79f2b64127bccefa9fdae0d513a252df",
       "source": "DEVjobs.at",
-      "posted_at": "2026-11-24",
+      "posted_at": "2026-11-25",
       "seniority": "Mid-Level",
       "relocation_support": "Not Specified",
       "experience_level": "2-5 years exp",
